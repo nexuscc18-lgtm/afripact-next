@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   description:
     'CIDB-registered civil engineering contractor (Grade 2CE, 2GB) based in Pietermaritzburg, KwaZulu-Natal. Earthworks, site preparation, stormwater, and civil infrastructure.',
   metadataBase: new URL('https://www.afripact.net'),
+  verification: {
+    google: '--F9c1OjxdcwIkighiTW4eiJzf0NIgtO3Zvi9oNFOps',
+  },
   openGraph: {
     siteName: 'Afripact Civils',
     locale: 'en_ZA',
