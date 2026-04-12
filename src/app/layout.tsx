@@ -31,6 +31,10 @@ export const metadata: Metadata = {
     locale: 'en_ZA',
     type: 'website',
   },
+  icons: {
+    icon: '/AfriPact.png',
+    apple: '/AfriPact.png',
+  },
 };
 
 export default function RootLayout({
