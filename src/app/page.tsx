@@ -8,41 +8,6 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.afripact.net/' },
 };
 
-const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'Afripact Civils',
-  description:
-    'CIDB-registered civil engineering contractor (Grade 2CE, 2GB) based in Pietermaritzburg, KwaZulu-Natal.',
-  url: 'https://www.afripact.net',
-  telephone: '+27330010397',
-  email: 'quotes@afripact.net',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Pietermaritzburg',
-    addressRegion: 'KwaZulu-Natal',
-    addressCountry: 'ZA',
-  },
-  areaServed: { '@type': 'State', name: 'KwaZulu-Natal' },
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Civil Engineering Services',
-    itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Bulk Earthworks' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Site Preparation' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Stormwater Systems' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Road Construction' } },
-    ],
-  },
-};
-
-const websiteSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'Afripact Civils',
-  url: 'https://www.afripact.net',
-};
-
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -117,14 +82,6 @@ const faqSchema = {
 export default function HomePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
