@@ -16,7 +16,7 @@ const localBusinessSchema = {
     'CIDB-registered civil engineering contractor (Grade 2CE, 2GB) based in Pietermaritzburg, KwaZulu-Natal.',
   url: 'https://www.afripact.net',
   telephone: '+27330010397',
-  email: 'info@afripact.net',
+  email: 'quotes@afripact.net',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Pietermaritzburg',

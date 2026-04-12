@@ -102,7 +102,7 @@ export default function AboutContent() {
             For tender or project enquiries, contact us at{' '}
             <a href="tel:0330010397" className="text-orange-500 font-semibold hover:text-orange-600 transition-colors">033 001 0397</a>
             {' '}or{' '}
-            <a href="mailto:info@afripact.net" className="text-orange-500 font-semibold hover:text-orange-600 transition-colors">info@afripact.net</a>.
+            <a href="mailto:projects@afripact.net" className="text-orange-500 font-semibold hover:text-orange-600 transition-colors">projects@afripact.net</a>.
           </p>
         </div>
       </section>

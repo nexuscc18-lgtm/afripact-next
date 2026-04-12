@@ -58,9 +58,9 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@afripact.net" className="flex items-center gap-2 text-gray-400 hover:text-orange-500 transition-colors text-sm group focus:outline-none focus:ring-2 focus:ring-orange-500 rounded px-2 py-1 -ml-2">
+                <a href="mailto:quotes@afripact.net" className="flex items-center gap-2 text-gray-400 hover:text-orange-500 transition-colors text-sm group focus:outline-none focus:ring-2 focus:ring-orange-500 rounded px-2 py-1 -ml-2">
                   <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                  info@afripact.net
+                  quotes@afripact.net
                 </a>
               </li>
             </ul>

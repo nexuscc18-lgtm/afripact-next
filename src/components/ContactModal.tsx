@@ -139,11 +139,11 @@ export default function ContactModal({
                 <p className="font-semibold text-gray-900">069 503 6291</p>
               </div>
             </a>
-            <a href="mailto:info@afripact.net" className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group focus:outline-none focus:ring-2 focus:ring-orange-500">
+            <a href="mailto:quotes@afripact.net" className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group focus:outline-none focus:ring-2 focus:ring-orange-500">
               <Mail className="w-5 h-5 text-orange-500 group-hover:scale-110 transition-transform" />
               <div>
                 <p className="text-xs text-gray-600">Email</p>
-                <p className="font-semibold text-gray-900 text-sm">info@afripact.net</p>
+                <p className="font-semibold text-gray-900 text-sm">quotes@afripact.net</p>
               </div>
             </a>
           </div>

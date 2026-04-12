@@ -112,8 +112,8 @@ export default function EarthworksKZNContent() {
                 <a href="tel:0330010397" className="block text-2xl font-bold text-orange-500 hover:text-orange-400 transition-colors">
                   033 001 0397
                 </a>
-                <a href="mailto:info@afripact.net" className="block text-lg text-gray-300 hover:text-white transition-colors">
-                  info@afripact.net
+                <a href="mailto:projects@afripact.net" className="block text-lg text-gray-300 hover:text-white transition-colors">
+                  projects@afripact.net
                 </a>
               </div>
               <button onClick={goToContact}

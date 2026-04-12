@@ -46,7 +46,7 @@ export default function LocationsContent() {
                   {[
                     { href: 'tel:0330010397', label: '033 001 0397', sub: 'Landline', icon: Phone },
                     { href: 'tel:0695036291', label: '069 503 6291', sub: 'Mobile', icon: Phone },
-                    { href: 'mailto:info@afripact.net', label: 'info@afripact.net', sub: 'Email', icon: Mail },
+                    { href: 'mailto:quotes@afripact.net', label: 'quotes@afripact.net', sub: 'Email', icon: Mail },
                     { href: 'mailto:cebo@afripact.net', label: 'cebo@afripact.net', sub: 'Direct Email', icon: Mail },
                   ].map(({ href, label, sub, icon: Icon }) => (
                     <a key={href} href={href}
