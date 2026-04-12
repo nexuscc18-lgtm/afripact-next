@@ -96,7 +96,7 @@ export default function EarthworksKZNContent() {
                   <div key={point.title} className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl">
                     <CheckCircle className="w-6 h-6 text-orange-500 flex-shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="font-bold text-gray-900">{point.title}</h4>
+                      <h3 className="font-bold text-gray-900">{point.title}</h3>
                       <p className="text-gray-600 mt-1">{point.desc}</p>
                     </div>
                   </div>

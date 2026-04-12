@@ -1,58 +1,14 @@
-import type { MetadataRoute } from 'next';
-
-const BASE_URL = 'https://www.afripact.net';
+import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
-
   return [
-    {
-      url: `${BASE_URL}/`,
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 1.0,
-    },
-    {
-      url: `${BASE_URL}/services`,
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/about`,
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/projects`,
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/industries`,
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/earthworks-kzn`,
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/locations`,
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/contact`,
-      lastModified,
-      changeFrequency: 'yearly',
-      priority: 0.8,
-    },
-  ];
+    { url: 'https://www.afripact.net',                priority: 1.0, changeFrequency: 'weekly' },
+    { url: 'https://www.afripact.net/services',       priority: 0.9, changeFrequency: 'monthly' },
+    { url: 'https://www.afripact.net/contact',        priority: 0.9, changeFrequency: 'monthly' },
+    { url: 'https://www.afripact.net/industries',     priority: 0.8, changeFrequency: 'monthly' },
+    { url: 'https://www.afripact.net/projects',       priority: 0.8, changeFrequency: 'monthly' },
+    { url: 'https://www.afripact.net/locations',      priority: 0.8, changeFrequency: 'monthly' },
+    { url: 'https://www.afripact.net/earthworks-kzn', priority: 0.8, changeFrequency: 'monthly' },
+    { url: 'https://www.afripact.net/about',          priority: 0.7, changeFrequency: 'monthly' },
+  ]
 }

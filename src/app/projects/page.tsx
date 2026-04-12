@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import ProjectsContent from '@/components/pages/ProjectsContent';
 
 export const metadata: Metadata = {
-  title: 'Projects',
+  title: 'Civil Engineering Projects KwaZulu-Natal | Afripact Civils Portfolio',
   description:
-    'Civil engineering project case studies from Afripact Civils — earthworks, drainage, and site infrastructure delivered across KwaZulu-Natal.',
+    'Completed civil engineering projects across KZN — township infrastructure, commercial site development, and road rehabilitation. Delivered on time, without compromise.',
   alternates: { canonical: 'https://www.afripact.net/projects' },
 };
 

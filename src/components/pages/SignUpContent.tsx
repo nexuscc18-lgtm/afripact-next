@@ -61,7 +61,7 @@ export default function SignUpContent() {
             <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <CheckCircle2 className="w-12 h-12 text-green-600" />
             </div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Account Created!</h2>
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">Account Created!</h1>
             <p className="text-gray-600 text-lg mb-6">Your admin account has been successfully created. You can now sign in to access the dashboard.</p>
             <p className="text-sm text-gray-500">Redirecting to login...</p>
           </div>

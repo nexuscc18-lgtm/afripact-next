@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import LocationsContent from '@/components/pages/LocationsContent';
 
 export const metadata: Metadata = {
-  title: 'Service Areas in KwaZulu-Natal',
+  title: 'Civil Engineering Services Across KwaZulu-Natal | Afripact Civils',
   description:
-    'Afripact Civils serves Pietermaritzburg, Durban, Msunduzi, Umgungundlovu, and surrounding areas across KwaZulu-Natal. Contact us for your area.',
+    'Afripact Civils operates across KwaZulu-Natal — Pietermaritzburg, Durban, and surrounding areas. CIDB-registered civil contractor serving the full KZN region.',
   alternates: { canonical: 'https://www.afripact.net/locations' },
 };
 

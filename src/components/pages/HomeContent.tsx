@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation';
 import {
   ArrowRight, CheckCircle, X, Shovel, Droplet, Map, ClipboardCheck,
-  Shield, Clock, Award, Building2, HardHat, Factory,
+  Shield, Clock, Award, Building2, HardHat, Factory, ChevronDown,
 } from 'lucide-react';
 
 export default function HomeContent() {
@@ -232,6 +232,57 @@ export default function HomeContent() {
               View All Projects
               <ArrowRight className="w-5 h-5" />
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 bg-white border-t border-gray-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+          </div>
+          <div className="space-y-4">
+            {([
+              {
+                q: 'What CIDB grade does Afripact Civils hold?',
+                a: 'Afripact Civils is registered as a CIDB Grade 2CE (Civil Engineering) and Grade 2GB (General Building) contractor. Our CRS number is 10262268.',
+              },
+              {
+                q: 'Do you work as a subcontractor?',
+                a: 'Yes. We regularly work alongside construction companies as a reliable civils subcontractor, delivering to specification without delays or rework.',
+              },
+              {
+                q: 'What areas do you serve?',
+                a: 'We operate across KwaZulu-Natal, with a primary base in Pietermaritzburg and active projects throughout the greater KZN region including Durban.',
+              },
+              {
+                q: 'What is the minimum project size you take on?',
+                a: 'We focus on commercial, industrial, and development-scale projects. Contact us to discuss your specific scope and we\u2019ll advise on fit.',
+              },
+              {
+                q: 'How long does a typical earthworks project take?',
+                a: 'Timeline depends on site size and conditions. We provide a detailed schedule at assessment stage \u2014 and we hold to it. No open-ended timelines.',
+              },
+              {
+                q: 'How do I request a quote or project assessment?',
+                a: 'Call 033 001 0397, email quotes@afripact.net, or use the Request Assessment form on this site. We respond within 1 business day.',
+              },
+              {
+                q: 'What is included in your site development service?',
+                a: 'Our site development service covers earthworks, bulk services, stormwater, access roads, and full site preparation \u2014 coordinated under one contractor.',
+              },
+            ] as { q: string; a: string }[]).map(({ q, a }) => (
+              <details key={q} className="group border-2 border-gray-200 rounded-xl overflow-hidden open:border-orange-500 transition-colors">
+                <summary className="flex items-center justify-between cursor-pointer p-6 font-bold text-lg text-gray-900 list-none select-none hover:bg-orange-50 transition-colors">
+                  {q}
+                  <ChevronDown className="ml-4 flex-shrink-0 w-5 h-5 text-orange-500 group-open:rotate-180 transition-transform duration-200" />
+                </summary>
+                <div className="px-6 pb-6 text-gray-700 leading-relaxed border-t border-gray-100 pt-4">
+                  {a}
+                </div>
+              </details>
+            ))}
           </div>
         </div>
       </section>

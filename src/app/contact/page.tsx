@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import ContactContent from '@/components/pages/ContactContent';
 
 export const metadata: Metadata = {
-  title: 'Contact Us',
+  title: 'Request a Civil Engineering Quote | Pietermaritzburg | Afripact Civils',
   description:
-    'Get in touch with Afripact Civils for civil engineering projects in KwaZulu-Natal. Call 033 001 0397 or email quotes@afripact.net.',
+    'Request a project assessment from Afripact Civils. Civil engineering and construction across KwaZulu-Natal. Call 033 001 0397 or email quotes@afripact.net.',
   alternates: { canonical: 'https://www.afripact.net/contact' },
 };
 

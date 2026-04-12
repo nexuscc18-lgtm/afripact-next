@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import ServicesContent from '@/components/pages/ServicesContent';
 
 export const metadata: Metadata = {
-  title: 'Civil Engineering Services',
+  title: 'Civil Engineering Services Pietermaritzburg | Afripact Civils',
   description:
-    'Bulk earthworks, site preparation, stormwater systems, access roads, and water & sewer reticulation in KwaZulu-Natal. CIDB Grade 2CE contractor.',
+    'Full-scope civil and building services in KZN. Earthworks, stormwater, roads, site development, paving, and more. CIDB-registered. Get a quote today.',
   alternates: { canonical: 'https://www.afripact.net/services' },
 };
 
