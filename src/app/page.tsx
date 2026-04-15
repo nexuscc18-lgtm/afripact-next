@@ -4,7 +4,7 @@ import HomeContent from '@/components/pages/HomeContent';
 export const metadata: Metadata = {
   title: 'Civil Engineering Contractors KZN | Earthworks, Roads & Site Prep | Afripact Civils',
   description:
-    'CIDB Grade 2CE & 2GB civil contractors in KwaZulu-Natal. Earthworks, stormwater, roads, and site development — on time, on budget. Request a free project assessment.',
+    'CIDB Grade 2CE & 2GB civil contractors in KwaZulu-Natal. Earthworks, stormwater, roads, and site development \u2014 on time, on budget. Request a free project assessment.',
   alternates: { canonical: 'https://www.afripact.net/' },
 };
 

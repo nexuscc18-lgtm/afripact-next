@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { AuthProvider } from '@/contexts/AuthContext';
 import LayoutShell from '@/components/LayoutShell';
-import { localBusinessSchema, organizationSchema } from '@/lib/schema';
+import { localBusinessSchema, organizationSchema, websiteSchema } from '@/lib/schema';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -30,6 +30,24 @@ export const metadata: Metadata = {
     siteName: 'Afripact Civils',
     locale: 'en_ZA',
     type: 'website',
+    title: 'Afripact Civils | Civil Engineering Contractors KZN',
+    description:
+      'CIDB-registered civil engineering contractor (Grade 2CE, 2GB) based in Pietermaritzburg, KwaZulu-Natal. Earthworks, site preparation, stormwater, and civil infrastructure.',
+    url: 'https://www.afripact.net',
+    images: [
+      {
+        url: 'https://www.afripact.net/AfriPact.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Afripact Civils | Civil Engineering Contractors KZN',
+    description:
+      'CIDB-registered civil engineering contractor (Grade 2CE, 2GB) based in Pietermaritzburg, KwaZulu-Natal. Earthworks, site preparation, stormwater, and civil infrastructure.',
+    images: ['https://www.afripact.net/AfriPact.png'],
   },
   icons: {
     icon: '/AfriPact.png',
@@ -53,6 +71,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
       <body className="min-h-full flex flex-col">
