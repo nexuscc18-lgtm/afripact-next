@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { ArrowRight, MapPin, CheckCircle } from 'lucide-react';
 
@@ -17,7 +18,7 @@ const caseStudies: CaseStudy[] = [
   {
     id: 'driveway-tar-resurfacing',
     name: 'Driveway Tar Resurfacing',
-    location: 'Pietermaritzburg, KwaZulu-Natal',
+    location: 'Durban, KwaZulu-Natal',
     scope: 'Full driveway removal and tar resurfacing with improved stormwater drainage',
     challenge: 'An existing residential driveway had deteriorated beyond repair — cracked, uneven, with poor water runoff causing pooling and structural damage.',
     whatWasDone: 'Complete removal of the failed driveway surface, sub-base preparation and compaction, installation of a new tar surface with correct fall and edge details to direct water away from the structure.',
@@ -71,14 +72,53 @@ const caseStudies: CaseStudy[] = [
 ];
 
 function CaseStudyCard({ study }: { study: CaseStudy }) {
+  const hasBeforeAfter = study.images.length > 1;
+  const [showAfter, setShowAfter] = useState(false);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  useEffect(() => {
+    if (!hasBeforeAfter) return;
+
+    const isMobile = window.matchMedia('(hover: none)').matches;
+
+    if (isMobile) {
+      intervalRef.current = setInterval(() => {
+        setShowAfter((prev) => !prev);
+      }, 2000);
+    }
+
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [hasBeforeAfter]);
+
+  const handleMouseEnter = () => { if (hasBeforeAfter) setShowAfter(true); };
+  const handleMouseLeave = () => { if (hasBeforeAfter) setShowAfter(false); };
+
   return (
-    <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100">
+    <div
+      className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <div className="relative h-56 overflow-hidden">
-        <img src={study.images[0]} alt={study.name}
-          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
-        {study.images.length > 1 && (
-          <div className="absolute top-4 right-4 bg-black/70 text-white text-xs font-bold px-2 py-1 rounded">
-            Before &amp; After
+        <img
+          src={study.images[0]}
+          alt={`${study.name} — before`}
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
+        {hasBeforeAfter && (
+          <img
+            src={study.images[1]}
+            alt={`${study.name} — after`}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${showAfter ? 'opacity-100' : 'opacity-0'}`}
+            loading="lazy"
+          />
+        )}
+        {hasBeforeAfter && (
+          <div className="absolute top-4 right-4 bg-black/70 text-white text-xs font-bold px-2 py-1 rounded transition-all duration-300">
+            {showAfter ? 'After' : 'Before'}
           </div>
         )}
       </div>
