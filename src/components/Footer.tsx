@@ -83,9 +83,14 @@ export default function Footer() {
           <p className="text-gray-400 text-sm text-center sm:text-left">
             © {currentYear} Afripact Civils (PTY) LTD. All rights reserved.
           </p>
-          <p className="text-gray-500 text-xs text-center sm:text-right">
-            Registered civil engineering and construction company
-          </p>
+          <div className="flex flex-col items-center sm:items-end gap-1">
+            <p className="text-gray-500 text-xs text-center sm:text-right">
+              Registered civil engineering and construction company
+            </p>
+            <a href="https://www.avaloncapitalgroup.co.za/ada" className="text-gray-600 text-xs hover:text-gray-400 transition-colors">
+              Digital partner: Avalon Digital Agency
+            </a>
+          </div>
         </div>
       </div>
     </footer>
