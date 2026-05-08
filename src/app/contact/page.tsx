@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import ContactContent from '@/components/pages/ContactContent';
 
 export const metadata: Metadata = {
-  title: 'Request a Civil Engineering Quote | Pietermaritzburg | Afripact Civils',
+  title: 'Get a Renovation or Building Quote | KZN | Afripact',
   description:
-    'Request a project assessment from Afripact Civils. Civil engineering and construction across KwaZulu-Natal. Call 033 001 0397 or email quotes@afripact.net.',
+    'Request a free quote from Afripact. Bathroom renovations, kitchen remodels, full home renovations, and civil engineering across KwaZulu-Natal. Call 069 503 6291 or email info@afripact.net.',
   alternates: { canonical: 'https://www.afripact.net/contact' },
 };
 

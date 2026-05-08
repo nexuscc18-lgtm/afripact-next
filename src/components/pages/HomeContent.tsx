@@ -1,9 +1,11 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import {
   ArrowRight, CheckCircle, X, Shovel, Droplet, Map, ClipboardCheck,
   Shield, Clock, Award, Building2, HardHat, Factory, ChevronDown,
+  Bath, Utensils, House, Store, Hammer,
 } from 'lucide-react';
 
 export default function HomeContent() {
@@ -18,7 +20,7 @@ export default function HomeContent() {
         <div
           className="absolute inset-0 opacity-20"
           style={{
-            backgroundImage: 'url(https://images.pexels.com/photos/1078884/pexels-photo-1078884.jpeg?auto=compress&cs=tinysrgb&w=1600)',
+            backgroundImage: 'url(https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1600)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -28,62 +30,85 @@ export default function HomeContent() {
           <div className="mb-8 inline-flex justify-center">
             <img src="/AfriPact.png" alt="Afripact Civils" className="h-40 w-auto" />
           </div>
+          <p className="text-orange-500 font-semibold uppercase tracking-widest text-sm mb-4">
+            Durban · Pietermaritzburg · KwaZulu-Natal
+          </p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Engineering & Construction Done Right. <br />
+            Renovation Contractors KZN <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500">
-              No Delays. No Excuses.
+              Done Right. No Delays.
             </span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-400 mb-8 font-medium">
-            CIDB Grade 2CE & 2GB contractor delivering civil and building solutions across KZN.
+          <p className="text-xl md:text-2xl text-gray-300 mb-4 max-w-4xl mx-auto leading-relaxed">
+            Bathroom renovations, kitchen remodels, full home renovations, and commercial refurbishment across KwaZulu-Natal.
           </p>
-          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
-            If you&apos;re building, expanding, or preparing land, you can&apos;t afford sloppy civils work. With us, your project is on schedule, on budget, and built to last.
+          <p className="text-lg text-gray-400 mb-10 max-w-3xl mx-auto">
+            CIDB Grade 2CE &amp; 2GB registered contractor. One team, all trades, fixed timelines.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button onClick={goToContact}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
+            <button onClick={() => router.push('/renovations')}
               className="bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-orange-500/50 hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-orange-500/50 flex items-center gap-2">
-              Discuss Your Project
+              View Renovation Services
               <ArrowRight className="w-5 h-5" />
             </button>
             <button onClick={goToContact}
               className="bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-bold text-lg border-2 border-white/20 hover:bg-white/20 hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-white/30">
-              Request Project Assessment
+              Get a Free Quote
             </button>
+          </div>
+          {/* Quick renovation links */}
+          <div className="flex flex-wrap justify-center gap-3">
+            {[
+              { href: '/renovations/bathroom', label: 'Bathroom Renovations' },
+              { href: '/renovations/kitchen', label: 'Kitchen Renovations' },
+              { href: '/renovations/home', label: 'Full Home Renovations' },
+              { href: '/renovations/commercial', label: 'Commercial Renovations' },
+            ].map(({ href, label }) => (
+              <Link key={href} href={href}
+                className="text-sm text-gray-400 hover:text-orange-400 border border-white/10 hover:border-orange-500/50 rounded-full px-4 py-1.5 transition-all">
+                {label}
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Audience */}
+      {/* Renovation services grid */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Built for Developers, Contractors, and Industrial Projects
+              Home &amp; Commercial Renovations — KwaZulu-Natal
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              We don&apos;t take on everything. We work with teams that need reliability, speed, and execution done right the first time.
+              We manage all trades under one contract. No coordinating five different contractors. One point of contact, one timeline, one sign-off.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {[
-              { icon: Building2, title: 'Property Developers', desc: 'Large-scale developments require strict timelines and cost control. We deliver structured execution that keeps projects on track from start to finish.' },
-              { icon: HardHat, title: 'Construction Companies', desc: 'We work alongside construction teams as a reliable subcontractor, delivering work on time and to specification without delays or rework.' },
-              { icon: Factory, title: 'Industrial & Commercial', desc: 'Precision and compliance are critical. We execute projects to exact requirements, ensuring durability and long-term performance.' },
-            ].map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="bg-gray-50 border-2 border-gray-200 rounded-xl p-8 hover:border-orange-500 hover:shadow-lg transition-all group">
+              { icon: Bath, title: 'Bathroom Renovations', desc: 'Full bathroom remodels — tiling, plumbing, waterproofing, and fixtures.', href: '/renovations/bathroom' },
+              { icon: Utensils, title: 'Kitchen Renovations', desc: 'Complete kitchen transformations from demolition through to final finishes.', href: '/renovations/kitchen' },
+              { icon: House, title: 'Full Home Renovations', desc: 'Structural changes, layout redesign, and complete interior refurbishment.', href: '/renovations/home' },
+              { icon: Store, title: 'Commercial Renovations', desc: 'Office, retail, and commercial space refurbishment planned around your operations.', href: '/renovations/commercial' },
+            ].map(({ icon: Icon, title, desc, href }) => (
+              <Link key={title} href={href}
+                className="group bg-gray-50 border-2 border-gray-200 rounded-xl p-8 hover:border-orange-500 hover:shadow-lg transition-all">
                 <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Icon className="w-7 h-7 text-black" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{title}</h3>
-                <p className="text-gray-700 leading-relaxed text-lg">{desc}</p>
-              </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
+                <p className="text-gray-700 leading-relaxed mb-3">{desc}</p>
+                <div className="flex items-center gap-1 text-orange-500 text-sm font-semibold group-hover:gap-2 transition-all">
+                  <span>Learn more</span>
+                  <ArrowRight className="w-4 h-4" />
+                </div>
+              </Link>
             ))}
           </div>
           <div className="text-center">
-            <button onClick={goToContact}
-              className="bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg hover:shadow-xl hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-orange-500/50">
-              Discuss Your Project
+            <button onClick={() => router.push('/renovations')}
+              className="bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg hover:shadow-xl hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-orange-500/50 inline-flex items-center gap-2">
+              All Renovation Services <ArrowRight className="w-5 h-5" />
             </button>
           </div>
         </div>
@@ -95,11 +120,11 @@ export default function HomeContent() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">What You Actually Want</h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-12">
-              You want the ground prepped correctly, the drainage working, the levels perfect, and the job finished when we said it would be finished. That&apos;s exactly what we deliver.
+              Whether it is a bathroom renovation, a full home remodel, or a civil infrastructure project — you want it done correctly, finished on time, and to a standard you can see.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {['No blown timelines', 'No "hidden issues" appearing halfway', 'No shortcuts', 'No crews that disappear after deposit', 'No rework', 'No excuses'].map((item, index) => (
+            {['No blown timelines', 'No "hidden issues" halfway through', 'No shortcuts on materials or method', 'No contractors who disappear after deposit', 'No rework', 'No excuses'].map((item, index) => (
               <div key={index} className="bg-gray-50 border-2 border-gray-200 rounded-xl p-6 flex items-start gap-4 hover:border-orange-500 transition-all">
                 <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
                 <span className="text-lg font-semibold text-gray-900">{item}</span>
@@ -109,39 +134,64 @@ export default function HomeContent() {
           <div className="text-center">
             <button onClick={goToContact}
               className="bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg hover:shadow-xl hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-orange-500/50">
-              Discuss Your Project
+              Get a Free Quote
             </button>
           </div>
         </div>
       </section>
 
-      {/* Services overview */}
+      {/* Roof repair callout */}
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-orange-50 to-yellow-50 border-2 border-orange-200 rounded-2xl p-10 flex flex-col md:flex-row items-center gap-8">
+            <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Hammer className="w-10 h-10 text-black" />
+            </div>
+            <div className="flex-1 text-center md:text-left">
+              <h2 className="text-3xl font-bold text-gray-900 mb-2">Roof Repair &amp; Maintenance — KZN</h2>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Leaking roofs, failed waterproofing, damaged tiles or sheeting — we repair and maintain residential and commercial roofs across KwaZulu-Natal.
+              </p>
+            </div>
+            <button onClick={goToContact}
+              className="flex-shrink-0 bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-6 py-3 rounded-lg font-bold hover:shadow-xl hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-orange-500/50 inline-flex items-center gap-2">
+              Get a Quote <ArrowRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Civil capabilities — TIER 2 */}
       <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Civil Engineering That Doesn&apos;t Need Fixing Later</h2>
+            <p className="text-orange-500 font-semibold uppercase tracking-widest text-sm mb-3">Civil &amp; Infrastructure Capability</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Scale and Technical Track Record</h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+              Our background in civil infrastructure is the foundation of our renovation quality. The discipline, documentation, and execution standards we apply to large civil projects come with every renovation contract.
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             {[
-              { icon: Shovel, title: 'Earthworks', desc: 'Your site cleared, shaped, compacted, and ready — without weak spots or collapses that cost you double later.' },
-              { icon: Droplet, title: 'Civil Infrastructure', desc: 'Stormwater, drainage, retaining structures, access roads — built to spec, to code, and to last.' },
-              { icon: Map, title: 'Site Preparation', desc: 'A fully prepped site so the next contractor can step in immediately. No delays. No failed groundwork.' },
-              { icon: ClipboardCheck, title: 'Project Management', desc: `We handle the planning, sequencing, and execution so you aren't stuck babysitting contractors.` },
+              { icon: Shovel, title: 'Earthworks &amp; Site Preparation', desc: 'Bulk excavation, compaction, and site prep — the groundwork that everything else depends on.' },
+              { icon: Droplet, title: 'Civil Infrastructure', desc: 'Stormwater, drainage, water and sewer reticulation — built to engineering specification.' },
+              { icon: Map, title: 'Roads &amp; Paving', desc: 'Access roads, parking areas, and paving surfaces for residential and commercial sites.' },
+              { icon: ClipboardCheck, title: 'Project Management', desc: 'Planning, sequencing, and coordination handled end-to-end. You do not babysit contractors with us.' },
             ].map(({ icon: Icon, title, desc }) => (
               <div key={title} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:border-orange-500 transition-all">
                 <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-lg flex items-center justify-center mb-6">
                   <Icon className="w-7 h-7 text-black" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">{title}</h3>
+                <h3 className="text-2xl font-bold mb-4" dangerouslySetInnerHTML={{ __html: title }} />
                 <p className="text-gray-300 leading-relaxed text-lg">{desc}</p>
               </div>
             ))}
           </div>
           <div className="text-center">
-            <button onClick={goToContact}
-              className="bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-orange-500/50 hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-orange-500/50">
-              Tell Us About Your Site
-            </button>
+            <Link href="/services"
+              className="bg-white/10 text-white px-8 py-4 rounded-lg font-bold text-lg border-2 border-white/20 hover:bg-white/20 hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-white/30 inline-flex items-center gap-2">
+              View All Services <ArrowRight className="w-5 h-5" />
+            </Link>
           </div>
         </div>
       </section>
@@ -245,32 +295,32 @@ export default function HomeContent() {
           <div className="space-y-4">
             {([
               {
-                q: 'What CIDB grade does Afripact Civils hold?',
-                a: 'Afripact Civils is registered as a CIDB Grade 2CE (Civil Engineering) and Grade 2GB (General Building) contractor. Our CRS number is 10262268.',
+                q: 'Do you do bathroom and kitchen renovations in Durban and Pietermaritzburg?',
+                a: 'Yes. We carry out bathroom renovations, kitchen renovations, and full home renovations across KwaZulu-Natal \u2014 including Durban, Pietermaritzburg, uMhlanga, Ballito, and surrounding areas.',
               },
               {
-                q: 'Do you work as a subcontractor?',
-                a: 'Yes. We regularly work alongside construction companies as a reliable civils subcontractor, delivering to specification without delays or rework.',
+                q: 'Do you manage all trades in a renovation, or do I need to hire separately?',
+                a: 'We manage all trades under one contract \u2014 plumbing, tiling, electrical, waterproofing, painting, and carpentry. You deal with one point of contact from start to finish.',
+              },
+              {
+                q: 'What CIDB grade does Afripact hold?',
+                a: 'We are registered as a CIDB Grade 2CE (Civil Engineering) and Grade 2GB (General Building) contractor. CRS number: 10262268.',
+              },
+              {
+                q: 'Are you NHBRC registered?',
+                a: 'NHBRC registration is in progress and expected to be confirmed by 30 June 2025. We will update this page upon confirmation. Our current CIDB Grade 2GB registration covers general building work.',
               },
               {
                 q: 'What areas do you serve?',
-                a: 'We operate across KwaZulu-Natal, with a primary base in Pietermaritzburg and active projects throughout the greater KZN region including Durban.',
+                a: 'We operate across KwaZulu-Natal \u2014 Durban, Pietermaritzburg, uMhlanga, Ballito, Pinetown, Margate, Port Shepstone, and surrounding KZN areas.',
               },
               {
-                q: 'What is the minimum project size you take on?',
-                a: 'We focus on commercial, industrial, and development-scale projects. Contact us to discuss your specific scope and we\u2019ll advise on fit.',
+                q: 'How long does a bathroom renovation take?',
+                a: 'A standard bathroom renovation typically takes 2 to 4 weeks depending on scope. We provide a detailed schedule at quote stage \u2014 and we hold to it.',
               },
               {
-                q: 'How long does a typical earthworks project take?',
-                a: 'Timeline depends on site size and conditions. We provide a detailed schedule at assessment stage \u2014 and we hold to it. No open-ended timelines.',
-              },
-              {
-                q: 'How do I request a quote or project assessment?',
-                a: 'Call 033 001 0397, email quotes@afripact.net, or use the Request Assessment form on this site. We respond within 1 business day.',
-              },
-              {
-                q: 'What is included in your site development service?',
-                a: 'Our site development service covers earthworks, bulk services, stormwater, access roads, and full site preparation \u2014 coordinated under one contractor.',
+                q: 'How do I get a quote?',
+                a: 'Call 069 503 6291, email info@afripact.net, or use the contact form on this site. We respond within one business day.',
               },
             ] as { q: string; a: string }[]).map(({ q, a }) => (
               <details key={q} className="group border-2 border-gray-200 rounded-xl overflow-hidden open:border-orange-500 transition-colors">

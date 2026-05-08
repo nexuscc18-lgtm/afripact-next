@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import HomeContent from '@/components/pages/HomeContent';
 
 export const metadata: Metadata = {
-  title: 'Civil Engineering Contractors KZN | Earthworks, Roads & Site Prep | Afripact Civils',
+  title: 'Renovation Contractors KZN | Home Renovations Durban & Pietermaritzburg | Afripact',
   description:
-    'CIDB Grade 2CE & 2GB civil contractors in KwaZulu-Natal. Earthworks, stormwater, roads, and site development \u2014 on time, on budget. Request a free project assessment.',
+    'CIDB-registered renovation and civil contractor in KwaZulu-Natal. Bathroom renovations, kitchen remodels, full home and commercial renovations in Durban, Pietermaritzburg, and KZN.',
   alternates: { canonical: 'https://www.afripact.net/' },
 };
 
@@ -22,18 +22,34 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What CIDB grade does Afripact Civils hold?",
+      "name": "Do you do bathroom and kitchen renovations in Durban and Pietermaritzburg?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Afripact Civils is registered as a CIDB Grade 2CE (Civil Engineering) and Grade 2GB (General Building) contractor. Our CRS number is 10262268."
+        "text": "Yes. We carry out bathroom renovations, kitchen renovations, and full home renovations across KwaZulu-Natal — including Durban, Pietermaritzburg, uMhlanga, Ballito, and surrounding areas."
       }
     },
     {
       "@type": "Question",
-      "name": "Do you work as a subcontractor?",
+      "name": "Do you manage all trades in a renovation?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. We regularly work alongside construction companies as a reliable civils subcontractor, delivering to specification without delays or rework."
+        "text": "We manage all trades under one contract — plumbing, tiling, electrical, waterproofing, painting, and carpentry. You deal with one point of contact from start to finish."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What CIDB grade does Afripact hold?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We are registered as a CIDB Grade 2CE (Civil Engineering) and Grade 2GB (General Building) contractor. CRS number: 10262268."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are you NHBRC registered?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NHBRC registration is in progress and expected to be confirmed by 30 June 2025. Our current CIDB Grade 2GB registration covers general building work."
       }
     },
     {
@@ -41,39 +57,23 @@ const faqSchema = {
       "name": "What areas do you serve?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We operate across KwaZulu-Natal, with a primary base in Pietermaritzburg and active projects throughout the greater KZN region including Durban."
+        "text": "We operate across KwaZulu-Natal — Durban, Pietermaritzburg, uMhlanga, Ballito, Pinetown, Margate, Port Shepstone, and surrounding KZN areas."
       }
     },
     {
       "@type": "Question",
-      "name": "What is the minimum project size you take on?",
+      "name": "How long does a bathroom renovation take?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We focus on commercial, industrial, and development-scale projects. Contact us to discuss your specific scope and we will advise on fit."
+        "text": "A standard bathroom renovation typically takes 2 to 4 weeks depending on scope. We provide a detailed schedule at quote stage and we hold to it."
       }
     },
     {
       "@type": "Question",
-      "name": "How long does a typical earthworks project take?",
+      "name": "How do I get a quote?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Timeline depends on site size and conditions. We provide a detailed schedule at assessment stage and we hold to it. No open-ended timelines."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I request a quote or project assessment?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Call 033 001 0397, email quotes@afripact.net, or use the Request Assessment form on this site. We respond within 1 business day."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is included in your site development service?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Our site development service covers earthworks, bulk services, stormwater, access roads, and full site preparation — coordinated under one contractor."
+        "text": "Call 069 503 6291, email info@afripact.net, or use the contact form on this site. We respond within one business day."
       }
     }
   ]

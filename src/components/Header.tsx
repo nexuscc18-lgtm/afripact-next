@@ -9,6 +9,7 @@ import { useQuoteModal } from '@/contexts/QuoteModalContext';
 
 const navItems = [
   { href: '/', label: 'Home' },
+  { href: '/renovations', label: 'Renovations' },
   { href: '/services', label: 'Services' },
   { href: '/industries', label: 'Industries' },
   { href: '/projects', label: 'Projects' },

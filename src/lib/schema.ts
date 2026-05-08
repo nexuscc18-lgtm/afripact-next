@@ -8,7 +8,7 @@ export const localBusinessSchema = {
   "logo": "https://www.afripact.net/AfriPact.png",
   "image": "https://www.afripact.net/AfriPact.png",
   "telephone": ["+27330010397", "+27695036291"],
-  "email": "quotes@afripact.net",
+  "email": "info@afripact.net",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "193 Pine Street",
@@ -50,16 +50,25 @@ export const localBusinessSchema = {
     },
     "geoRadius": 500000
   },
-  "hasCredential": {
-    "@type": "EducationalOccupationalCredential",
-    "credentialCategory": "Professional Certification",
-    "name": "CIDB Grade 2CE & 2GB",
-    "description": "CIDB Grade 2CE (Civil Engineering) and Grade 2GB (General Building) contractor registration. CRS number: 10262268.",
-    "recognizedBy": {
-      "@type": "Organization",
-      "name": "Construction Industry Development Board (CIDB)"
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Professional Certification",
+      "name": "CIDB Grade 2CE & 2GB",
+      "description": "CIDB Grade 2CE (Civil Engineering) and Grade 2GB (General Building) contractor registration. CRS number: 10262268.",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Construction Industry Development Board (CIDB)"
+      }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Professional Certification",
+      "name": "NHBRC Registration (Pending)",
+      "description": "NHBRC registration in progress. Expected confirmation by 30 June 2025."
     }
-  },
+  ],
+  "knowsAbout": ["Bathroom Renovations", "Kitchen Renovations", "Home Renovations", "Commercial Renovations", "Civil Engineering", "Earthworks", "Site Development"],
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": 5,

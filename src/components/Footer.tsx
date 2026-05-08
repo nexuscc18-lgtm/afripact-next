@@ -5,10 +5,16 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/services', label: 'Services' },
+  { href: '/renovations', label: 'Renovations' },
+  { href: '/renovations/bathroom', label: 'Bathroom Renovations' },
+  { href: '/renovations/kitchen', label: 'Kitchen Renovations' },
+  { href: '/renovations/home', label: 'Full Home Renovations' },
+  { href: '/renovations/commercial', label: 'Commercial Renovations' },
+  { href: '/services', label: 'All Services' },
   { href: '/industries', label: 'Industries' },
   { href: '/projects', label: 'Projects' },
   { href: '/about', label: 'About Us' },
+  { href: '/nhbrc', label: 'NHBRC' },
   { href: '/contact', label: 'Request Assessment' },
 ];
 
@@ -58,9 +64,9 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:quotes@afripact.net" className="flex items-center gap-2 text-gray-400 hover:text-orange-500 transition-colors text-sm group focus:outline-none focus:ring-2 focus:ring-orange-500 rounded px-2 py-1 -ml-2">
+                <a href="mailto:info@afripact.net" className="flex items-center gap-2 text-gray-400 hover:text-orange-500 transition-colors text-sm group focus:outline-none focus:ring-2 focus:ring-orange-500 rounded px-2 py-1 -ml-2">
                   <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                  quotes@afripact.net
+                  info@afripact.net
                 </a>
               </li>
             </ul>

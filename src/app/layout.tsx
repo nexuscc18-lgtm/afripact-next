@@ -17,22 +17,22 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Afripact Civils | Civil Engineering Contractors KZN',
-    template: '%s | Afripact Civils',
+    default: 'Afripact | Renovation Contractors KZN',
+    template: '%s | Afripact',
   },
   description:
-    'CIDB-registered civil engineering contractor (Grade 2CE, 2GB) based in Pietermaritzburg, KwaZulu-Natal. Earthworks, site preparation, stormwater, and civil infrastructure.',
+    'CIDB-registered renovation and civil contractor based in Pietermaritzburg, KwaZulu-Natal. Bathroom renovations, kitchen remodels, full home and commercial renovations across Durban, Pietermaritzburg, and KZN.',
   metadataBase: new URL('https://www.afripact.net'),
   verification: {
     google: '--F9c1OjxdcwIkighiTW4eiJzf0NIgtO3Zvi9oNFOps',
   },
   openGraph: {
-    siteName: 'Afripact Civils',
+    siteName: 'Afripact',
     locale: 'en_ZA',
     type: 'website',
-    title: 'Afripact Civils | Civil Engineering Contractors KZN',
+    title: 'Afripact | Renovation Contractors KZN',
     description:
-      'CIDB-registered civil engineering contractor (Grade 2CE, 2GB) based in Pietermaritzburg, KwaZulu-Natal. Earthworks, site preparation, stormwater, and civil infrastructure.',
+      'CIDB-registered renovation contractor in KwaZulu-Natal. Bathroom, kitchen, full home, and commercial renovations in Durban, Pietermaritzburg, and KZN.',
     url: 'https://www.afripact.net',
     images: [
       {
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Afripact Civils | Civil Engineering Contractors KZN',
+    title: 'Afripact | Renovation Contractors KZN',
     description:
-      'CIDB-registered civil engineering contractor (Grade 2CE, 2GB) based in Pietermaritzburg, KwaZulu-Natal. Earthworks, site preparation, stormwater, and civil infrastructure.',
+      'CIDB-registered renovation contractor in KwaZulu-Natal. Bathroom, kitchen, full home, and commercial renovations in Durban, Pietermaritzburg, and KZN.',
     images: ['https://www.afripact.net/AfriPact.png'],
   },
   icons: {

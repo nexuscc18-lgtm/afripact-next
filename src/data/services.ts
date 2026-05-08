@@ -275,4 +275,84 @@ export const services: Service[] = [
     ],
     icon: 'Grid3x3',
   },
+  {
+    id: 'roof-repair',
+    title: 'Roof Repair and Maintenance',
+    description: 'Afripact repairs leaking roofs and provides ongoing roof maintenance for residential and commercial properties.',
+    detailedDescription:
+      'Our roof repair and maintenance services cover leak detection, waterproofing, tile replacement, IBR and corrugated sheet repairs, flashing repairs, and full roof refurbishment. We work on residential homes and commercial buildings across KwaZulu-Natal, restoring structural integrity and extending the life of your roof.',
+    benefits: [
+      'Leak detection and repair',
+      'Waterproofing and flashing',
+      'Roof tile and sheeting replacement',
+      'Preventive maintenance programmes',
+      'Residential and commercial properties',
+    ],
+    examples: [
+      'Residential leaking roof repairs',
+      'Commercial flat roof waterproofing',
+      'Annual roof maintenance contracts',
+    ],
+    icon: 'Hammer',
+  },
+  {
+    id: 'kitchen-renovations',
+    title: 'Kitchen Renovations',
+    description: 'Complete kitchen renovation services — from layout redesign to finished installation.',
+    detailedDescription:
+      'We transform kitchens with end-to-end renovation services including demolition, plumbing relocation, tiling, cabinetry installation, countertop fitting, and electrical work. Our team handles every trade so you deal with one contractor, not five.',
+    benefits: [
+      'Full-service kitchen renovation',
+      'Plumbing and electrical coordination',
+      'Quality cabinetry and countertop fitting',
+      'Expert tiling and waterproofing',
+      'Minimal project disruption',
+    ],
+    examples: [
+      'Full kitchen remodels in Durban and Pietermaritzburg',
+      'Open-plan kitchen conversions',
+      'Commercial kitchen fit-outs',
+    ],
+    icon: 'Utensils',
+  },
+  {
+    id: 'full-home-renovations',
+    title: 'Full Home Renovations',
+    description: 'Comprehensive home renovation and remodelling — from structural changes to final finishes.',
+    detailedDescription:
+      'We manage full home renovation projects across KwaZulu-Natal, coordinating all trades under one roof. From structural modifications and layout changes to tiling, painting, plumbing, electrical, and final finishes — we deliver renovated homes that are built to last.',
+    benefits: [
+      'Single-contractor project management',
+      'Structural and cosmetic works',
+      'All trades coordinated on your behalf',
+      'Transparent timelines and budgets',
+      'Quality finishes throughout',
+    ],
+    examples: [
+      'Complete home renovations in Durban',
+      'Structural extension and internal reconfiguration',
+      'Full interior renovation and refurbishment',
+    ],
+    icon: 'House',
+  },
+  {
+    id: 'commercial-renovations',
+    title: 'Commercial Renovations',
+    description: 'Office, retail, and commercial space renovations that minimise disruption and maximise impact.',
+    detailedDescription:
+      'We renovate commercial spaces — offices, retail outlets, warehouses, and hospitality venues — across KwaZulu-Natal. Our team works to your programme, minimising downtime while delivering high-quality refurbishment work to specification.',
+    benefits: [
+      'Planned around your business operations',
+      'Compliance with commercial building codes',
+      'Phased delivery to minimise disruption',
+      'All trades under one contractor',
+      'Quality finishes for client-facing spaces',
+    ],
+    examples: [
+      'Office fitout and refurbishment',
+      'Retail space renovation and redesign',
+      'Restaurant and hospitality renovation',
+    ],
+    icon: 'Store',
+  },
 ];

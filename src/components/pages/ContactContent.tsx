@@ -7,14 +7,19 @@ import { supabase } from '@/lib/supabase';
 import { ContactFormData } from '@/types';
 
 const projectTypes = [
+  'Bathroom Renovation',
+  'Kitchen Renovation',
+  'Full Home Renovation',
+  'Commercial Renovation',
+  'Roof Repair & Maintenance',
   'Earthworks & Bulk Excavation',
   'Road Construction & Rehabilitation',
   'Stormwater & Drainage',
   'Water & Sewer Reticulation',
   'Site Development & Preparation',
   'Paving & Surfacing',
-  'General Building',
-  'Other Civil Works',
+  'New Build',
+  'Other Works',
 ];
 
 const budgetRanges = [
@@ -117,9 +122,9 @@ export default function ContactContent() {
             <ArrowRight className="w-4 h-4" />
             <span className="text-orange-500">Request a Project Assessment</span>
           </nav>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Request a Project Assessment</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">Get a Free Quote</h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            We focus on projects where execution, timelines, and reliability matter. Provide a few details and we will assess how we can support your project.
+            Bathroom renovations, kitchen remodels, full home renovations, civil works — tell us about your project and we will come back with a clear quote and timeline.
           </p>
         </div>
       </section>
@@ -137,7 +142,7 @@ export default function ContactContent() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
             {[
               { icon: Phone, title: 'Call Us', items: [{ href: 'tel:0330010397', label: '033 001 0397' }, { href: 'tel:0695036291', label: '069 503 6291' }] },
-              { icon: Mail, title: 'Email Us', items: [{ href: 'mailto:quotes@afripact.net', label: 'quotes@afripact.net' }, { href: 'mailto:cebo@afripact.net', label: 'cebo@afripact.net' }] },
+              { icon: Mail, title: 'Email Us', items: [{ href: 'mailto:info@afripact.net', label: 'info@afripact.net' }, { href: 'mailto:cebo@afripact.net', label: 'cebo@afripact.net' }] },
             ].map(({ icon: Icon, title, items }) => (
               <div key={title} className="bg-gradient-to-br from-orange-50 to-yellow-50 border-2 border-orange-200 rounded-xl p-8 hover:shadow-lg transition-all">
                 <Icon className="w-12 h-12 text-orange-500 mb-4" />

@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import IndustriesContent from '@/components/pages/IndustriesContent';
 
 export const metadata: Metadata = {
-  title: 'CIDB Contractor for Developers & Construction Companies | Afripact Civils KZN',
+  title: 'Civil Contractor for Developers, NGOs & Construction Companies | Afripact Civils KZN',
   description:
-    'We work with property developers, construction companies, and industrial clients across KwaZulu-Natal. Reliable civils subcontracting and project execution.',
+    'We work with property developers, construction companies, NGOs, and donor-funded organisations across KwaZulu-Natal. CIDB-registered civil contractor for community infrastructure and development projects.',
   alternates: { canonical: 'https://www.afripact.net/industries' },
 };
 

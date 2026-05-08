@@ -5,6 +5,7 @@ import Link from 'next/link';
 import {
   Shovel, Route, Droplet, CloudRain, Square, Building2, ArrowRight,
   Paintbrush, Wrench, Home, Zap, Bath, Fence, Grid3x3, Truck,
+  Hammer, Utensils, House, Store,
 } from 'lucide-react';
 import { services } from '@/data/services';
 import { Service } from '@/types';
@@ -14,6 +15,7 @@ import { useQuoteModal } from '@/contexts/QuoteModalContext';
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Shovel, Route, Droplet, CloudRain, Square, Building2, Truck,
   Paintbrush, Wrench, Home, Zap, Bath, Fence, Grid3x3,
+  Hammer, Utensils, House, Store,
 };
 
 export default function ServicesContent() {
