@@ -57,7 +57,7 @@ export default function NHBRCContent() {
                     'Contractor meets nationally recognised competency standards',
                     'New homes qualify for the NHBRC warranty scheme',
                     'Protection against structural defects in residential construction',
-                    'Regulatory compliance — required for all new home builds',
+                    'Regulatory compliance, required for all new home builds',
                     'Additional confidence in the contractor\'s track record',
                   ].map((item) => (
                     <div key={item} className="flex items-start gap-3">
@@ -80,7 +80,7 @@ export default function NHBRCContent() {
                 <div className="bg-black/10 rounded-xl p-5">
                   <p className="font-bold text-lg mb-1">Existing Registration</p>
                   <p className="text-sm leading-relaxed">
-                    Afripact currently holds CIDB Grade 2CE (Civil Engineering) and Grade 2GB (General Building) contractor registration — CRS number 10262268.
+                    Afripact currently holds CIDB Grade 2CE (Civil Engineering) and Grade 2GB (General Building) contractor registration. CRS number: 10262268.
                   </p>
                 </div>
               </div>
@@ -89,8 +89,8 @@ export default function NHBRCContent() {
                 <Shield className="w-10 h-10 text-orange-500 mb-4" />
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Our Current Credentials</h3>
                 <ul className="space-y-3 text-gray-700">
-                  <li><strong>CIDB Grade 2CE</strong> — Civil Engineering contractor</li>
-                  <li><strong>CIDB Grade 2GB</strong> — General Building contractor</li>
+                  <li><strong>CIDB Grade 2CE</strong> - Civil Engineering contractor</li>
+                  <li><strong>CIDB Grade 2GB</strong> - General Building contractor</li>
                   <li><strong>Additional:</strong> 1SQ | 1ME</li>
                   <li><strong>CRS Number:</strong> 10262268</li>
                   <li><strong>NHBRC Registration:</strong> Pending (expected 30 June 2025)</li>

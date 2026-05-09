@@ -4,7 +4,7 @@ import KitchenRenovationsContent from '@/components/pages/KitchenRenovationsCont
 export const metadata: Metadata = {
   title: 'Kitchen Renovations Durban & Pietermaritzburg | Afripact KZN',
   description:
-    'Full kitchen renovations in Durban, Pietermaritzburg, and KwaZulu-Natal. Plumbing, cabinetry, tiling, countertops — all trades under one contractor. CIDB-registered.',
+    'Full kitchen renovations in Durban, Pietermaritzburg, and KwaZulu-Natal. Plumbing, cabinetry, tiling, countertops, all trades under one contractor. CIDB-registered.',
   alternates: { canonical: 'https://www.afripact.net/renovations/kitchen' },
   openGraph: {
     title: 'Kitchen Renovations KZN | Afripact',

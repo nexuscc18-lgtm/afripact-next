@@ -27,7 +27,7 @@ export default function BathroomRenovationsContent() {
               Bathroom Renovations KZN
             </h1>
             <p className="text-xl text-gray-300 leading-relaxed mb-8 max-w-3xl">
-              Complete bathroom renovations in Durban, Pietermaritzburg, and across KwaZulu-Natal. We handle every element — waterproofing, tiling, plumbing, fixtures, and finishes — so you deal with one contractor from start to finish.
+              Complete bathroom renovations in Durban, Pietermaritzburg, and across KwaZulu-Natal. We handle every element: waterproofing, tiling, plumbing, fixtures, and finishes. You deal with one contractor from start to finish.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button onClick={goToContact}
@@ -52,7 +52,7 @@ export default function BathroomRenovationsContent() {
               </div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">What We Do</h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                A bathroom renovation is one of the highest-value improvements you can make to a residential or commercial property. Done right, it adds lasting value. Done badly, it creates problems — damp, leaks, failed waterproofing — that cost far more to fix later.
+                A bathroom renovation is one of the highest-value improvements you can make to a residential or commercial property. Done right, it adds lasting value. Done badly, it creates problems - damp, leaks, failed waterproofing - that cost far more to fix later.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed mb-8">
                 We deliver bathroom renovations that are planned, properly waterproofed, and finished to a standard you can see and touch. No sub-standard shortcuts. No disappearing contractors.
@@ -61,7 +61,7 @@ export default function BathroomRenovationsContent() {
                 {[
                   'Full bathroom strip-out and demolition',
                   'Waterproofing and screeding',
-                  'Ceramic, porcelain, and stone tiling — floors and walls',
+                  'Ceramic, porcelain, and stone tiling - floors and walls',
                   'Plumbing relocation and new fixture installation',
                   'Shower enclosures and bath installations',
                   'Vanity and cabinetry fitting',
@@ -107,12 +107,12 @@ export default function BathroomRenovationsContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">Why Afripact for Bathroom Renovations?</h2>
           <p className="text-xl text-gray-600 text-center max-w-2xl mx-auto mb-12">
-            We bring civil-grade accountability to residential renovation — the same discipline that keeps infrastructure projects on time and on budget.
+            We bring civil-grade accountability to residential renovation: the same discipline that keeps infrastructure projects on time and on budget.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { title: 'CIDB-Registered Contractor', desc: 'Grade 2GB (General Building) registration. Verified competency. Proper documentation at completion.' },
-              { title: 'All Trades, One Quote', desc: 'Tiling, plumbing, electrical, waterproofing. We coordinate everything in-house — no finger-pointing between sub-trades.' },
+              { title: 'All Trades, One Quote', desc: 'Tiling, plumbing, electrical, waterproofing. We coordinate everything in-house. No finger-pointing between sub-trades.' },
               { title: 'Fixed Timeline', desc: 'We agree a start date and a finish date. You keep access to your bathroom within the agreed window.' },
             ].map(({ title, desc }) => (
               <div key={title} className="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-orange-500 transition-all">
@@ -127,7 +127,7 @@ export default function BathroomRenovationsContent() {
 
       <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-4">Bathroom Renovation Quote — Durban &amp; Pietermaritzburg</h2>
+          <h2 className="text-4xl font-bold mb-4">Bathroom Renovation Quote - Durban &amp; Pietermaritzburg</h2>
           <p className="text-xl text-gray-300 mb-8 leading-relaxed">
             We serve Durban, Pietermaritzburg, uMhlanga, Ballito, Pinetown, and surrounding KZN areas. Send us your details and we will get back to you within one business day.
           </p>

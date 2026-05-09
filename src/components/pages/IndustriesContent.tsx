@@ -42,7 +42,7 @@ export default function IndustriesContent() {
                   'Platform preparation ready before follow-on contractors mobilise',
                   'Stormwater and drainage installed to approval standards',
                   'Access roads and parking areas completed to specification',
-                  'Full accountability — one point of contact, no runaround',
+                  'Full accountability: one point of contact, no runaround',
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
@@ -86,7 +86,7 @@ export default function IndustriesContent() {
               </p>
               <div className="space-y-3 mb-8">
                 {[
-                  'Work delivered to your programme — not ours',
+                  'Work delivered to your programme, not ours',
                   'Clear communication at every stage, no chasing required',
                   'Quality that passes inspection first time',
                   'CIDB-registered contractor, compliant documentation',
@@ -169,7 +169,7 @@ export default function IndustriesContent() {
                   'Drainage systems and stormwater management',
                   'Maintenance works with clear scope and documentation',
                   'Reporting-friendly project delivery and sign-off processes',
-                  'CIDB-registered — meets procurement and due-diligence requirements',
+                  'CIDB-registered, meeting procurement and due-diligence requirements',
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />

@@ -4,7 +4,7 @@ import FullHomeRenovationsContent from '@/components/pages/FullHomeRenovationsCo
 export const metadata: Metadata = {
   title: 'Full Home Renovations KZN | Durban & Pietermaritzburg | Afripact',
   description:
-    'Complete home renovation services across KwaZulu-Natal. Structural changes, bathrooms, kitchens, flooring, painting — managed under one contractor. Serving Durban, Pietermaritzburg, and KZN.',
+    'Complete home renovation services across KwaZulu-Natal. Structural changes, bathrooms, kitchens, flooring, painting, all managed under one contractor. Serving Durban, Pietermaritzburg, and KZN.',
   alternates: { canonical: 'https://www.afripact.net/renovations/home' },
   openGraph: {
     title: 'Full Home Renovations KZN | Afripact',

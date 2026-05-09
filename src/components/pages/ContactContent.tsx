@@ -124,7 +124,7 @@ export default function ContactContent() {
           </nav>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Get a Free Quote</h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Bathroom renovations, kitchen remodels, full home renovations, civil works — tell us about your project and we will come back with a clear quote and timeline.
+            Bathroom renovations, kitchen remodels, full home renovations, civil works: tell us about your project and we will come back with a clear quote and timeline.
           </p>
         </div>
       </section>

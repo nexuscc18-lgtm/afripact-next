@@ -41,7 +41,7 @@ export default function ServicesContent() {
           </nav>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Services</h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Comprehensive civil engineering and construction solutions designed to meet the unique needs of your project
+            From bathroom renovations and full home remodels to civil infrastructure and site development - every service is delivered under one accountable contractor. No handoffs. No excuses.
           </p>
         </div>
       </section>

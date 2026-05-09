@@ -27,7 +27,7 @@ export default function KitchenRenovationsContent() {
               Kitchen Renovations KZN
             </h1>
             <p className="text-xl text-gray-300 leading-relaxed mb-8 max-w-3xl">
-              Full kitchen renovations in Durban, Pietermaritzburg, and across KwaZulu-Natal. We manage every trade — demolition, plumbing, tiling, cabinetry, countertops, and electrical — under one contract.
+              Full kitchen renovations in Durban, Pietermaritzburg, and across KwaZulu-Natal. We manage every trade - demolition, plumbing, tiling, cabinetry, countertops, and electrical - under one contract.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button onClick={goToContact}
@@ -55,7 +55,7 @@ export default function KitchenRenovationsContent() {
                 A kitchen renovation involves more trades than most homeowners anticipate. Plumbing has to move. Electrical needs reconfiguring. Walls come down or go up. Tiling needs proper surface preparation or it fails within months.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed mb-8">
-                We manage the entire process — so you are not coordinating five different contractors who do not talk to each other. One point of contact, one timeline, one sign-off.
+                We manage the entire process, so you are not coordinating five different contractors who do not talk to each other. One point of contact, one timeline, one sign-off.
               </p>
               <div className="space-y-3">
                 {[
@@ -110,7 +110,7 @@ export default function KitchenRenovationsContent() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { title: 'Residential Kitchen Renovations', desc: 'Full kitchen remodels for homes across KZN — from layout redesign through to the final coat of paint.' },
+              { title: 'Residential Kitchen Renovations', desc: 'Full kitchen remodels for homes across KZN, from layout redesign through to the final coat of paint.' },
               { title: 'Open-Plan Conversions', desc: 'We handle the structural work, knock-through, and finish to create open, modern kitchen-living spaces.' },
               { title: 'Commercial Kitchen Fit-Outs', desc: 'Restaurants, guesthouses, and commercial catering facilities. Built to compliance and operational standards.' },
               { title: 'Kitchen Updates and Upgrades', desc: 'Not a full remodel? We update cabinetry, replace countertops, retile, and refresh without full demolition.' },
@@ -127,7 +127,7 @@ export default function KitchenRenovationsContent() {
 
       <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-4">Kitchen Renovation Quote — KZN</h2>
+          <h2 className="text-4xl font-bold mb-4">Kitchen Renovation Quote - KZN</h2>
           <p className="text-xl text-gray-300 mb-8 leading-relaxed">
             We operate across Durban, Pietermaritzburg, and the broader KwaZulu-Natal region. Enquire today and we will respond within one business day.
           </p>

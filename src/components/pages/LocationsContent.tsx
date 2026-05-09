@@ -18,9 +18,9 @@ export default function LocationsContent() {
             <ArrowRight className="w-4 h-4" />
             <span className="text-orange-500">Locations</span>
           </nav>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Location & Service Area</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">Based in Pietermaritzburg. Working Across KZN.</h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Proudly serving Pietermaritzburg and communities throughout KwaZulu-Natal
+            Our teams operate out of Pietermaritzburg and Durban. If your project is in KwaZulu-Natal, there is a good chance we can get to you.
           </p>
         </div>
       </section>
@@ -123,9 +123,9 @@ export default function LocationsContent() {
 
       <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Visit Us or Contact Us Today</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Your Project is Worth a Proper Conversation</h2>
           <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-            Whether you prefer to visit our office, call us, or send an email, we&apos;re here to help with your civil engineering needs.
+            Do not send a message into the void. Call us directly, come in, or drop us an email - whichever works for you. We respond within one business day and we will tell you upfront whether we are the right fit for your project.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:0330010397"

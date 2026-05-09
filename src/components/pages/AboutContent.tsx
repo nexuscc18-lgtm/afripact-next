@@ -48,9 +48,9 @@ export default function AboutContent() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
             {[
-              { icon: Target, title: 'Our Mission', desc: 'To deliver high-quality civil engineering solutions that uplift communities and create lasting infrastructure for future generations.' },
-              { icon: Heart, title: 'Our Values', desc: 'Integrity, quality, safety, community empowerment, and environmental responsibility guide everything we do.' },
-              { icon: TrendingUp, title: 'Our Vision', desc: 'To be the leading civil engineering partner in KwaZulu-Natal, recognized for excellence and community impact.' },
+              { icon: Target, title: 'Our Mission', desc: 'Every project we take on gets the same treatment - proper planning, honest communication, and workmanship we are prepared to put our name on. That is not a mission statement. That is how we work.' },
+              { icon: Heart, title: 'Our Values', desc: 'We do not cut corners to save time. We do not go quiet when something is difficult. We do not hand over work we are not proud of. Those are not values written on a wall - they are the standard we are held to on every site.' },
+              { icon: TrendingUp, title: 'Our Vision', desc: 'KwaZulu-Natal deserves contractors who build things that last. We intend to be the name people reach for when the job actually matters.' },
             ].map(({ icon: Icon, title, desc }) => (
               <div key={title} className="bg-gradient-to-br from-orange-50 to-yellow-50 border-2 border-orange-200 rounded-xl p-8 text-center">
                 <Icon className="w-12 h-12 text-orange-500 mx-auto mb-4" />
@@ -109,9 +109,9 @@ export default function AboutContent() {
 
       <section className="py-20 bg-gradient-to-r from-orange-500 to-yellow-500">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Let&apos;s Work Together</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Ready When You Are</h2>
           <p className="text-xl text-black/80 mb-8 leading-relaxed">
-            Partner with us for your next civil engineering project and experience the Afripact difference
+            Whether you found us through a search, a referral, or a recommendation - you are in the right place. Tell us what you need. We will give you an honest assessment, a clear quote, and a start date you can plan around.
           </p>
           <button onClick={() => openModal('', 'contact')}
             className="bg-black text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-900 hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-black/30">

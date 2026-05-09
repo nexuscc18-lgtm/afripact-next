@@ -31,19 +31,16 @@ export default function HomeContent() {
             <img src="/AfriPact.png" alt="Afripact Civils" className="h-40 w-auto" />
           </div>
           <p className="text-orange-500 font-semibold uppercase tracking-widest text-sm mb-4">
-            Durban · Pietermaritzburg · KwaZulu-Natal
+            KwaZulu-Natal
           </p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Renovation Contractors KZN <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-500">
-              Done Right. No Delays.
-            </span>
+            Your Renovation. Done Once. Done Right.
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-4 max-w-4xl mx-auto leading-relaxed">
-            Bathroom renovations, kitchen remodels, full home renovations, and commercial refurbishment across KwaZulu-Natal.
+            Bathroom renovations, kitchen remodels, full home renovations, and commercial refurbishment across KwaZulu-Natal. One contractor managing every trade, from first quote to final handover.
           </p>
           <p className="text-lg text-gray-400 mb-10 max-w-3xl mx-auto">
-            CIDB Grade 2CE &amp; 2GB registered contractor. One team, all trades, fixed timelines.
+            CIDB Grade 2CE and 2GB registered. The same standards we bring to civil infrastructure - on your home.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
             <button onClick={() => router.push('/renovations')}
@@ -78,7 +75,7 @@ export default function HomeContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Home &amp; Commercial Renovations — KwaZulu-Natal
+              Home &amp; Commercial Renovations in KwaZulu-Natal
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
               We manage all trades under one contract. No coordinating five different contractors. One point of contact, one timeline, one sign-off.
@@ -86,7 +83,7 @@ export default function HomeContent() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {[
-              { icon: Bath, title: 'Bathroom Renovations', desc: 'Full bathroom remodels — tiling, plumbing, waterproofing, and fixtures.', href: '/renovations/bathroom' },
+              { icon: Bath, title: 'Bathroom Renovations', desc: 'Full bathroom remodels: tiling, plumbing, waterproofing, and fixtures.', href: '/renovations/bathroom' },
               { icon: Utensils, title: 'Kitchen Renovations', desc: 'Complete kitchen transformations from demolition through to final finishes.', href: '/renovations/kitchen' },
               { icon: House, title: 'Full Home Renovations', desc: 'Structural changes, layout redesign, and complete interior refurbishment.', href: '/renovations/home' },
               { icon: Store, title: 'Commercial Renovations', desc: 'Office, retail, and commercial space refurbishment planned around your operations.', href: '/renovations/commercial' },
@@ -120,7 +117,7 @@ export default function HomeContent() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">What You Actually Want</h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-12">
-              Whether it is a bathroom renovation, a full home remodel, or a civil infrastructure project — you want it done correctly, finished on time, and to a standard you can see.
+              Whether it is a bathroom renovation, a full home remodel, or a civil infrastructure project, you want it done correctly, finished on time, and to a standard you can see.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
@@ -148,9 +145,9 @@ export default function HomeContent() {
               <Hammer className="w-10 h-10 text-black" />
             </div>
             <div className="flex-1 text-center md:text-left">
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">Roof Repair &amp; Maintenance — KZN</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-2">Roof Repair &amp; Maintenance in KZN</h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Leaking roofs, failed waterproofing, damaged tiles or sheeting — we repair and maintain residential and commercial roofs across KwaZulu-Natal.
+                Leaking roofs, failed waterproofing, damaged tiles or sheeting: we repair and maintain residential and commercial roofs across KwaZulu-Natal.
               </p>
             </div>
             <button onClick={goToContact}
@@ -161,7 +158,7 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* Civil capabilities — TIER 2 */}
+      {/* Civil capabilities - TIER 2 */}
       <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -173,8 +170,8 @@ export default function HomeContent() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             {[
-              { icon: Shovel, title: 'Earthworks &amp; Site Preparation', desc: 'Bulk excavation, compaction, and site prep — the groundwork that everything else depends on.' },
-              { icon: Droplet, title: 'Civil Infrastructure', desc: 'Stormwater, drainage, water and sewer reticulation — built to engineering specification.' },
+              { icon: Shovel, title: 'Earthworks &amp; Site Preparation', desc: 'Bulk excavation, compaction, and site prep: the groundwork that everything else depends on.' },
+              { icon: Droplet, title: 'Civil Infrastructure', desc: 'Stormwater, drainage, water and sewer reticulation, built to engineering specification.' },
               { icon: Map, title: 'Roads &amp; Paving', desc: 'Access roads, parking areas, and paving surfaces for residential and commercial sites.' },
               { icon: ClipboardCheck, title: 'Project Management', desc: 'Planning, sequencing, and coordination handled end-to-end. You do not babysit contractors with us.' },
             ].map(({ icon: Icon, title, desc }) => (
@@ -296,11 +293,11 @@ export default function HomeContent() {
             {([
               {
                 q: 'Do you do bathroom and kitchen renovations in Durban and Pietermaritzburg?',
-                a: 'Yes. We carry out bathroom renovations, kitchen renovations, and full home renovations across KwaZulu-Natal \u2014 including Durban, Pietermaritzburg, uMhlanga, Ballito, and surrounding areas.',
+                a: 'Yes. We carry out bathroom renovations, kitchen renovations, and full home renovations across KwaZulu-Natal, including Durban, Pietermaritzburg, uMhlanga, Ballito, and surrounding areas.',
               },
               {
                 q: 'Do you manage all trades in a renovation, or do I need to hire separately?',
-                a: 'We manage all trades under one contract \u2014 plumbing, tiling, electrical, waterproofing, painting, and carpentry. You deal with one point of contact from start to finish.',
+                a: 'We manage all trades under one contract: plumbing, tiling, electrical, waterproofing, painting, and carpentry. You deal with one point of contact from start to finish.',
               },
               {
                 q: 'What CIDB grade does Afripact hold?',
@@ -312,11 +309,11 @@ export default function HomeContent() {
               },
               {
                 q: 'What areas do you serve?',
-                a: 'We operate across KwaZulu-Natal \u2014 Durban, Pietermaritzburg, uMhlanga, Ballito, Pinetown, Margate, Port Shepstone, and surrounding KZN areas.',
+                a: 'We operate across KwaZulu-Natal: Durban, Pietermaritzburg, uMhlanga, Ballito, Pinetown, Margate, Port Shepstone, and surrounding KZN areas.',
               },
               {
                 q: 'How long does a bathroom renovation take?',
-                a: 'A standard bathroom renovation typically takes 2 to 4 weeks depending on scope. We provide a detailed schedule at quote stage \u2014 and we hold to it.',
+                a: 'A standard bathroom renovation typically takes 2 to 4 weeks depending on scope. We provide a detailed schedule at quote stage, and we hold to it.',
               },
               {
                 q: 'How do I get a quote?',

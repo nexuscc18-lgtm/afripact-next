@@ -30,7 +30,7 @@ export default function Footer() {
               <img src="/AfriPact.png" alt="Afripact Civils" className="h-16 w-auto" />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Premium quality civil engineering and construction services. Built right the first time.
+              One contractor. All trades. Every project delivered to a standard worth standing behind.
             </p>
           </div>
 

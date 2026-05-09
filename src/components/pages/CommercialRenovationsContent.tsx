@@ -52,7 +52,7 @@ export default function CommercialRenovationsContent() {
               </div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">Commercial Renovation Services</h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Commercial renovation work requires a different level of discipline. Timelines cannot slip — downtime costs money. Work has to be sequenced correctly. Finishes must meet the standards that clients and customers see.
+                Commercial renovation work requires a different level of discipline. Timelines cannot slip. Downtime costs money. Work has to be sequenced correctly. Finishes must meet the standards that clients and customers see.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed mb-8">
                 We bring the same project management rigour to commercial renovations that we apply to civil infrastructure work. Detailed scope, agreed programme, single point of accountability.
@@ -109,7 +109,7 @@ export default function CommercialRenovationsContent() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             {[
               { icon: Shield, title: 'CIDB-Registered Contractor', desc: 'Grade 2CE and 2GB registration gives you a building contractor with verified competency and proper sign-off documentation.' },
-              { icon: Clock, title: 'Works Around Your Business', desc: 'We schedule phases to minimise operational disruption — after-hours work, phased delivery, or full shutdown options.' },
+              { icon: Clock, title: 'Works Around Your Business', desc: 'We schedule phases to minimise operational disruption: after-hours work, phased delivery, or full shutdown options.' },
               { icon: Store, title: 'Track Record of Delivery', desc: 'Our civil infrastructure background means we are used to delivering complex, multi-trade projects to a strict programme.' },
               { icon: CheckCircle, title: 'One Contractor, Full Scope', desc: 'No coordinating multiple sub-contractors. We take responsibility for the full scope from first day to handover.' },
             ].map(({ icon: Icon, title, desc }) => (
@@ -129,7 +129,7 @@ export default function CommercialRenovationsContent() {
 
       <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-4">Commercial Renovations — Durban, Pietermaritzburg &amp; KZN</h2>
+          <h2 className="text-4xl font-bold mb-4">Commercial Renovations - Durban, Pietermaritzburg &amp; KZN</h2>
           <p className="text-xl text-gray-300 mb-8 leading-relaxed">
             We carry out commercial renovation projects throughout KwaZulu-Natal. Contact us to discuss your space and timeline.
           </p>

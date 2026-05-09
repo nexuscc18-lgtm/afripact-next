@@ -31,9 +31,9 @@ export default function EarthworksKZNContent() {
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">Earthworks Done Right, Across KwaZulu-Natal</h2>
               <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
-                <p>Earthworks is where projects succeed or fail. Get the platform preparation wrong, and everything that follows costs more and takes longer. We&apos;ve seen it happen — and we&apos;ve been brought in to fix it.</p>
+                <p>Earthworks is where projects succeed or fail. Get the platform preparation wrong, and everything that follows costs more and takes longer. We have seen it happen, and we have been brought in to fix it.</p>
                 <p>Our earthworks teams operate across the greater KwaZulu-Natal region, from Pietermaritzburg to surrounding areas. We handle bulk excavation, cut and fill, compaction, and platform preparation for residential, commercial, and industrial sites.</p>
-                <p>We&apos;re a CIDB-registered contractor — Grade 2CE — which means you get a team with verified competency in civil engineering, not someone learning on your project.</p>
+                <p>We are a CIDB-registered contractor, Grade 2CE, which means you get a team with verified competency in civil engineering, not someone learning on your project.</p>
               </div>
             </div>
             <div>
@@ -90,7 +90,7 @@ export default function EarthworksKZNContent() {
                 {[
                   { title: 'CIDB Grade 2CE Registered', desc: 'Verified civil engineering competency. Your project meets compliance requirements from the start.' },
                   { title: 'Operates Across KZN', desc: 'Pietermaritzburg, Durban, and surrounding areas. One reliable contractor, wherever your project is.' },
-                  { title: 'No Rework Policy', desc: "We get it right the first time. If there's a problem, we fix it at our cost — not yours." },
+                  { title: 'No Rework Policy', desc: "We get it right the first time. If there's a problem, we fix it at our cost, not yours." },
                   { title: 'Predictable Timelines', desc: 'Clear programme, regular updates, and a team that shows up and gets the job done.' },
                 ].map((point) => (
                   <div key={point.title} className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl">

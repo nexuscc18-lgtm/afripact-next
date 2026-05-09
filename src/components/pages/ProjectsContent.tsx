@@ -20,7 +20,7 @@ const caseStudies: CaseStudy[] = [
     name: 'Driveway Tar Resurfacing',
     location: 'Durban, KwaZulu-Natal',
     scope: 'Full driveway removal and tar resurfacing with improved stormwater drainage',
-    challenge: 'An existing residential driveway had deteriorated beyond repair — cracked, uneven, with poor water runoff causing pooling and structural damage.',
+    challenge: 'An existing residential driveway had deteriorated beyond repair: cracked, uneven, with poor water runoff causing pooling and structural damage.',
     whatWasDone: 'Complete removal of the failed driveway surface, sub-base preparation and compaction, installation of a new tar surface with correct fall and edge details to direct water away from the structure.',
     images: ['/project1-before.jpg', '/project1-after.jpg'],
   },
@@ -55,9 +55,9 @@ const caseStudies: CaseStudy[] = [
     id: 'pmb-commercial-site',
     name: 'Pietermaritzburg Commercial Site Development',
     location: 'Pietermaritzburg, KwaZulu-Natal',
-    scope: 'Full site development — earthworks, stormwater, parking, and access roads for a 5000m² commercial complex',
+    scope: 'Full site development - earthworks, stormwater, parking, and access roads for a 5000m² commercial complex',
     challenge: 'A greenfields commercial development required complete civil site preparation from raw land. Tight programme constraints meant zero tolerance for delays between phases.',
-    whatWasDone: 'Bulk earthworks and platform preparation, stormwater design and installation, parking area construction and kerbing, access road formation and surfacing — all phased to allow follow-on contractors to mobilise without delays.',
+    whatWasDone: 'Bulk earthworks and platform preparation, stormwater design and installation, parking area construction and kerbing, access road formation and surfacing, all phased to allow follow-on contractors to mobilise without delays.',
     images: ['https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=800'],
   },
   {
@@ -104,14 +104,14 @@ function CaseStudyCard({ study }: { study: CaseStudy }) {
       <div className="relative h-56 overflow-hidden">
         <img
           src={study.images[0]}
-          alt={`${study.name} — before`}
+          alt={`${study.name} - before`}
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
         />
         {hasBeforeAfter && (
           <img
             src={study.images[1]}
-            alt={`${study.name} — after`}
+            alt={`${study.name} - after`}
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${showAfter ? 'opacity-100' : 'opacity-0'}`}
             loading="lazy"
           />

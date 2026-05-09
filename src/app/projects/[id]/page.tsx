@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = projectTitles[id] ?? 'Project Case Study';
   return {
     title,
-    description: `Case study: ${title} — civil engineering project delivered by Afripact Civils in KwaZulu-Natal.`,
+    description: `Case study: ${title} - civil engineering project delivered by Afripact Civils in KwaZulu-Natal.`,
     alternates: { canonical: `https://www.afripact.net/projects/${id}` },
   };
 }

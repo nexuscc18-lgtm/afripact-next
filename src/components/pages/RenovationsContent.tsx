@@ -12,14 +12,14 @@ const renovationServices = [
     id: 'bathroom',
     icon: Bath,
     title: 'Bathroom Renovations',
-    desc: 'Complete bathroom remodels in Durban and Pietermaritzburg. Tiling, plumbing, waterproofing, fixtures — one team, one quote.',
+    desc: 'Complete bathroom remodels in Durban and Pietermaritzburg. Tiling, plumbing, waterproofing, fixtures. One team, one quote.',
     href: '/renovations/bathroom',
   },
   {
     id: 'kitchen',
     icon: Utensils,
     title: 'Kitchen Renovations',
-    desc: 'Full kitchen transformations. We handle the plumbing, cabinetry, tiling, and electrical — coordinated under one contractor.',
+    desc: 'Full kitchen transformations. We handle the plumbing, cabinetry, tiling, and electrical, coordinated under one contractor.',
     href: '/renovations/kitchen',
   },
   {
@@ -60,7 +60,7 @@ export default function RenovationsContent() {
               Renovation Contractors KZN
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 leading-relaxed mb-6 max-w-3xl">
-              Bathroom renovations, kitchen remodels, full home renovations, and commercial refurbishment — serving Durban, Pietermaritzburg, and KwaZulu-Natal.
+              Bathroom renovations, kitchen remodels, full home renovations, and commercial refurbishment, serving Durban, Pietermaritzburg, and KwaZulu-Natal.
             </p>
             <p className="text-lg text-gray-400 mb-10 max-w-3xl">
               CIDB-registered contractor. One team handling all trades. No surprises on price or timeline.
@@ -85,7 +85,7 @@ export default function RenovationsContent() {
           <div className="text-center mb-14">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Renovation Services</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We manage every trade in-house. You deal with one point of contact — from first quote to final handover.
+              We manage every trade in-house. You deal with one point of contact, from first quote to final handover.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -118,7 +118,7 @@ export default function RenovationsContent() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {[
-              { icon: Shield, title: 'One Contractor, All Trades', desc: 'Plumbing, electrical, tiling, painting, carpentry — we coordinate everything. You have one number to call.' },
+              { icon: Shield, title: 'One Contractor, All Trades', desc: 'Plumbing, electrical, tiling, painting, carpentry: we coordinate everything. You have one number to call.' },
               { icon: Clock, title: 'Clear Timelines, No Drift', desc: 'We set a start date and an end date and we hold to both. No open-ended renovations that drag on for months.' },
               { icon: Award, title: 'CIDB-Registered Contractor', desc: 'Grade 2CE and 2GB registration means verified competency, compliant workmanship, and proper sign-off documentation.' },
             ].map(({ icon: Icon, title, desc }) => (
@@ -144,7 +144,7 @@ export default function RenovationsContent() {
               </div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Roof Repair and Maintenance</h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Leaking roofs, damaged tiles, failing waterproofing — we repair and maintain residential and commercial roofs across KwaZulu-Natal. Fast response, proper repairs, and documented maintenance programmes.
+                Leaking roofs, damaged tiles, failing waterproofing: we repair and maintain residential and commercial roofs across KwaZulu-Natal. Fast response, proper repairs, and documented maintenance programmes.
               </p>
               <div className="space-y-2 mb-8">
                 {['Leaking roof repairs', 'Tile and sheeting replacement', 'Waterproofing and flashing', 'Flat roof and IBR repairs', 'Ongoing maintenance contracts'].map((item) => (

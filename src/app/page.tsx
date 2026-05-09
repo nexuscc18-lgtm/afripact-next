@@ -25,7 +25,7 @@ const faqSchema = {
       "name": "Do you do bathroom and kitchen renovations in Durban and Pietermaritzburg?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. We carry out bathroom renovations, kitchen renovations, and full home renovations across KwaZulu-Natal — including Durban, Pietermaritzburg, uMhlanga, Ballito, and surrounding areas."
+        "text": "Yes. We carry out bathroom renovations, kitchen renovations, and full home renovations across KwaZulu-Natal, including Durban, Pietermaritzburg, uMhlanga, Ballito, and surrounding areas."
       }
     },
     {
@@ -33,7 +33,7 @@ const faqSchema = {
       "name": "Do you manage all trades in a renovation?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We manage all trades under one contract — plumbing, tiling, electrical, waterproofing, painting, and carpentry. You deal with one point of contact from start to finish."
+        "text": "We manage all trades under one contract: plumbing, tiling, electrical, waterproofing, painting, and carpentry. You deal with one point of contact from start to finish."
       }
     },
     {
@@ -57,7 +57,7 @@ const faqSchema = {
       "name": "What areas do you serve?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We operate across KwaZulu-Natal — Durban, Pietermaritzburg, uMhlanga, Ballito, Pinetown, Margate, Port Shepstone, and surrounding KZN areas."
+        "text": "We operate across KwaZulu-Natal: Durban, Pietermaritzburg, uMhlanga, Ballito, Pinetown, Margate, Port Shepstone, and surrounding KZN areas."
       }
     },
     {

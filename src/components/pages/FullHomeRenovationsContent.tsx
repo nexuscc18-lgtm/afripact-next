@@ -27,7 +27,7 @@ export default function FullHomeRenovationsContent() {
               Full Home Renovations KZN
             </h1>
             <p className="text-xl text-gray-300 leading-relaxed mb-8 max-w-3xl">
-              Complete home renovation services in Durban, Pietermaritzburg, and across KwaZulu-Natal. Structural changes, full interior refurbishment, extensions — managed end-to-end under one roof.
+              Complete home renovation services in Durban, Pietermaritzburg, and across KwaZulu-Natal. Structural changes, full interior refurbishment, and extensions, managed end-to-end under one roof.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button onClick={goToContact}
@@ -62,8 +62,8 @@ export default function FullHomeRenovationsContent() {
                   'Structural modifications and additions',
                   'Internal layout changes and knock-throughs',
                   'Bathroom and kitchen renovations',
-                  'Flooring — tiling, screed, and finishes',
-                  'Painting — interior and exterior',
+                  'Flooring - tiling, screed, and finishes',
+                  'Painting - interior and exterior',
                   'Roofing repairs and replacement',
                   'Plumbing and electrical updates',
                   'Window and door replacement',
@@ -112,7 +112,7 @@ export default function FullHomeRenovationsContent() {
             {[
               { icon: Shield, title: 'One Accountable Contractor', desc: 'We take full responsibility for the project from first day to handover. No passing blame between sub-trades. If it needs fixing, we fix it.' },
               { icon: Clock, title: 'A Completion Date You Can Trust', desc: 'We set a date at the outset and we hold to it. Your renovation does not drag on indefinitely.' },
-              { icon: Award, title: 'CIDB-Registered — Grade 2GB', desc: 'General Building contractor registration. The same standards and accountability we bring to commercial and civil projects.' },
+              { icon: Award, title: 'CIDB-Registered - Grade 2GB', desc: 'General Building contractor registration. The same standards and accountability we bring to commercial and civil projects.' },
             ].map(({ icon: Icon, title, desc }) => (
               <div key={title} className="bg-white border-2 border-gray-200 rounded-xl p-8 text-center hover:border-orange-500 hover:shadow-lg transition-all">
                 <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-xl flex items-center justify-center mx-auto mb-5">
@@ -128,7 +128,7 @@ export default function FullHomeRenovationsContent() {
 
       <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-4">Home Renovations — Durban, Pietermaritzburg &amp; KZN</h2>
+          <h2 className="text-4xl font-bold mb-4">Home Renovations - Durban, Pietermaritzburg &amp; KZN</h2>
           <p className="text-xl text-gray-300 mb-8 leading-relaxed">
             We carry out full home renovations throughout KwaZulu-Natal. Contact us to discuss your project.
           </p>

@@ -298,7 +298,7 @@ export const services: Service[] = [
   {
     id: 'kitchen-renovations',
     title: 'Kitchen Renovations',
-    description: 'Complete kitchen renovation services — from layout redesign to finished installation.',
+    description: 'Complete kitchen renovation services, from layout redesign to finished installation.',
     detailedDescription:
       'We transform kitchens with end-to-end renovation services including demolition, plumbing relocation, tiling, cabinetry installation, countertop fitting, and electrical work. Our team handles every trade so you deal with one contractor, not five.',
     benefits: [
@@ -318,9 +318,9 @@ export const services: Service[] = [
   {
     id: 'full-home-renovations',
     title: 'Full Home Renovations',
-    description: 'Comprehensive home renovation and remodelling — from structural changes to final finishes.',
+    description: 'Comprehensive home renovation and remodelling, from structural changes to final finishes.',
     detailedDescription:
-      'We manage full home renovation projects across KwaZulu-Natal, coordinating all trades under one roof. From structural modifications and layout changes to tiling, painting, plumbing, electrical, and final finishes — we deliver renovated homes that are built to last.',
+      'We manage full home renovation projects across KwaZulu-Natal, coordinating all trades under one roof. From structural modifications and layout changes to tiling, painting, plumbing, electrical, and final finishes, we deliver renovated homes that are built to last.',
     benefits: [
       'Single-contractor project management',
       'Structural and cosmetic works',
@@ -340,7 +340,7 @@ export const services: Service[] = [
     title: 'Commercial Renovations',
     description: 'Office, retail, and commercial space renovations that minimise disruption and maximise impact.',
     detailedDescription:
-      'We renovate commercial spaces — offices, retail outlets, warehouses, and hospitality venues — across KwaZulu-Natal. Our team works to your programme, minimising downtime while delivering high-quality refurbishment work to specification.',
+      'We renovate commercial spaces - offices, retail outlets, warehouses, and hospitality venues - across KwaZulu-Natal. Our team works to your programme, minimising downtime while delivering high-quality refurbishment work to specification.',
     benefits: [
       'Planned around your business operations',
       'Compliance with commercial building codes',
