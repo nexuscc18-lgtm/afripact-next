@@ -77,12 +77,7 @@ export default function FullHomeRenovationsContent() {
               </div>
             </div>
             <div>
-              <img
-                src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Full home renovations KwaZulu-Natal"
-                className="rounded-2xl shadow-2xl w-full mb-8"
-                loading="lazy"
-              />
+              <div className="rounded-2xl shadow-2xl w-full mb-8 bg-[#1a1a1a] aspect-[4/3]" />
               <div className="bg-gradient-to-br from-orange-50 to-yellow-50 border-2 border-orange-200 rounded-xl p-8">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Discuss Your Home Renovation</h3>
                 <p className="text-gray-700 mb-6">
