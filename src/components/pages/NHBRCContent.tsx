@@ -27,7 +27,7 @@ export default function NHBRCContent() {
               NHBRC Registered Contractor
             </h1>
             <p className="text-xl text-gray-300 leading-relaxed mb-8 max-w-3xl">
-              Afripact is in the process of completing NHBRC registration. This page will go live with full registration details upon confirmation. Registration is expected to be confirmed by 30 June 2025.
+              Afripact is in the process of completing NHBRC registration. This page will go live with full registration details upon confirmation. Registration is expected to be confirmed by Q3 2026.
             </p>
           </div>
         </div>
@@ -75,7 +75,7 @@ export default function NHBRCContent() {
                 <h3 className="text-3xl font-bold mb-3">NHBRC Registration</h3>
                 <p className="text-xl font-semibold mb-4">Pending Confirmation</p>
                 <p className="text-lg leading-relaxed mb-6">
-                  Registration is in progress and expected to be confirmed by 30 June 2025. This page will be updated with full registration details upon confirmation.
+                  Registration is in progress and expected to be confirmed by Q3 2026. This page will be updated with full registration details upon confirmation.
                 </p>
                 <div className="bg-black/10 rounded-xl p-5">
                   <p className="font-bold text-lg mb-1">Existing Registration</p>
@@ -93,7 +93,7 @@ export default function NHBRCContent() {
                   <li><strong>CIDB Grade 2GB</strong> - General Building contractor</li>
                   <li><strong>Additional:</strong> 1SQ | 1ME</li>
                   <li><strong>CRS Number:</strong> 10262268</li>
-                  <li><strong>NHBRC Registration:</strong> Pending (expected 30 June 2025)</li>
+                  <li><strong>NHBRC Registration:</strong> Pending (expected Q3 2026)</li>
                 </ul>
               </div>
             </div>
