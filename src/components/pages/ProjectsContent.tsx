@@ -51,24 +51,6 @@ const caseStudies: CaseStudy[] = [
     whatWasDone: 'Comprehensive water reticulation system installed, existing road surfaces rehabilitated, drainage corrected to prevent erosion, and the full project delivered without disruption to residents.',
     images: ['https://images.pexels.com/photos/1078884/pexels-photo-1078884.jpeg?auto=compress&cs=tinysrgb&w=800'],
   },
-  {
-    id: 'pmb-commercial-site',
-    name: 'Pietermaritzburg Commercial Site Development',
-    location: 'Pietermaritzburg, KwaZulu-Natal',
-    scope: 'Full site development - earthworks, stormwater, parking, and access roads for a 5000m² commercial complex',
-    challenge: 'A greenfields commercial development required complete civil site preparation from raw land. Tight programme constraints meant zero tolerance for delays between phases.',
-    whatWasDone: 'Bulk earthworks and platform preparation, stormwater design and installation, parking area construction and kerbing, access road formation and surfacing, all phased to allow follow-on contractors to mobilise without delays.',
-    images: ['https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=800'],
-  },
-  {
-    id: 'kzn-rural-road',
-    name: 'KZN Rural Road Rehabilitation',
-    location: 'Rural KwaZulu-Natal',
-    scope: 'Road rehabilitation to restore access and safety for a rural community',
-    challenge: 'A rural access road had failed due to storm damage and years of deferred maintenance. Residents were cut off from essential services.',
-    whatWasDone: 'Full road condition assessment, formation re-grading, culvert installation and cleaning, surface preparation and gravel re-sheeting, with compaction to a standard that restored safe, reliable access.',
-    images: ['https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=800'],
-  },
 ];
 
 function CaseStudyCard({ study }: { study: CaseStudy }) {
