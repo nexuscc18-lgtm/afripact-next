@@ -97,7 +97,7 @@ export default function Header() {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden border-t border-white/10 py-4 space-y-2">
+          <div className="md:hidden bg-black border-t border-white/10 py-4 space-y-2">
             {navItems.map((item) => (
               <Link key={item.href} href={item.href} onClick={() => setIsMenuOpen(false)}
                 className={`block w-full text-left px-4 py-3 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 ${
