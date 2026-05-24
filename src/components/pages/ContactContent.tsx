@@ -166,6 +166,18 @@ export default function ContactContent() {
             </div>
           </div>
 
+          <div className="mb-16 overflow-hidden rounded-[12px]">
+            <iframe
+              src="https://www.google.com/maps?q=193+Pine+Street,+Pietermaritzburg,+South+Africa&output=embed"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+
           <div className="max-w-3xl mx-auto">
             <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 md:p-12 shadow-lg">
               <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Project Assessment Form</h2>
