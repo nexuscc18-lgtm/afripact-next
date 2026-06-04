@@ -12,6 +12,7 @@ interface CaseStudy {
   challenge: string;
   whatWasDone: string;
   images: string[];
+  imagePosition?: string;
 }
 
 const caseStudies: CaseStudy[] = [
@@ -50,6 +51,7 @@ const caseStudies: CaseStudy[] = [
     challenge: 'An established township had inadequate water supply infrastructure and deteriorated road surfaces, limiting access and creating health and safety concerns.',
     whatWasDone: 'Comprehensive water reticulation system installed, existing road surfaces rehabilitated, drainage corrected to prevent erosion, and the full project delivered without disruption to residents.',
     images: ['/imbali-excavation.jpg'],
+    imagePosition: 'object-[center_20%]',
   },
 ];
 
@@ -87,7 +89,7 @@ function CaseStudyCard({ study }: { study: CaseStudy }) {
         <img
           src={study.images[0]}
           alt={`${study.name} - before`}
-          className="absolute inset-0 w-full h-full object-cover"
+          className={`absolute inset-0 w-full h-full object-cover${study.imagePosition ? ` ${study.imagePosition}` : ''}`}
           loading="lazy"
         />
         {hasBeforeAfter && (
