@@ -49,7 +49,7 @@ const caseStudies: CaseStudy[] = [
     scope: 'Water reticulation and road infrastructure upgrade serving 500+ households',
     challenge: 'An established township had inadequate water supply infrastructure and deteriorated road surfaces, limiting access and creating health and safety concerns.',
     whatWasDone: 'Comprehensive water reticulation system installed, existing road surfaces rehabilitated, drainage corrected to prevent erosion, and the full project delivered without disruption to residents.',
-    images: ['https://images.pexels.com/photos/1078884/pexels-photo-1078884.jpeg?auto=compress&cs=tinysrgb&w=800'],
+    images: ['/imbali-excavation.jpg'],
   },
 ];
 
