@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { ArrowRight, Building2, HardHat, Factory, CheckCircle, Handshake } from 'lucide-react';
+import { ArrowRight, Building2, HardHat, Factory, CheckCircle, Handshake, Utensils } from 'lucide-react';
 
 export default function IndustriesContent() {
   const router = useRouter();
@@ -101,6 +101,46 @@ export default function IndustriesContent() {
                 className="bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-7 py-3 rounded-lg font-bold text-lg hover:shadow-xl hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-orange-500/50 inline-flex items-center gap-2">
                 Request Project Assessment <ArrowRight className="w-5 h-5" />
               </button>
+            </div>
+          </div>
+
+          {/* Hospitality & Accommodation */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+            <div>
+              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-xl flex items-center justify-center mb-6">
+                <Utensils className="w-8 h-8 text-black" />
+              </div>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Hospitality &amp; Accommodation</h2>
+              <h3 className="text-2xl font-semibold text-orange-600 mb-6">Renovations Built Around Your Trading Schedule</h3>
+              <p className="text-xl text-gray-700 leading-relaxed mb-8">
+                Hotels, guesthouses, lodges, and restaurants cannot simply close for a renovation. We plan commercial renovation work around your trading calendar, phased delivery, off-season scheduling, or section-by-section handover. Kitchens, bathrooms, dining areas, reception upgrades, and full room refurbishment across KwaZulu-Natal.
+              </p>
+              <div className="space-y-3 mb-8">
+                {([
+                  'Hotel and guesthouse room refurbishment',
+                  'Restaurant and kitchen renovations',
+                  'Reception and front-of-house upgrades',
+                  'Bathroom and ablution renovations',
+                  'Phased delivery around trading operations',
+                ] as string[]).map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">{item}</span>
+                  </div>
+                ))}
+              </div>
+              <button onClick={goToContact}
+                className="bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-7 py-3 rounded-lg font-bold text-lg hover:shadow-xl hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-orange-500/50 inline-flex items-center gap-2">
+                Request a Quote <ArrowRight className="w-5 h-5" />
+              </button>
+            </div>
+            <div className="relative">
+              <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Hospitality and hotel renovation KwaZulu-Natal" className="rounded-2xl shadow-2xl w-full" loading="lazy" />
+              <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-orange-500 to-yellow-500 text-black p-5 rounded-xl shadow-xl hidden md:block">
+                <p className="text-xl font-bold">Trading First</p>
+                <p className="text-sm font-semibold">Zero Downtime</p>
+              </div>
             </div>
           </div>
 
