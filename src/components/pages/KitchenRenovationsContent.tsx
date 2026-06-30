@@ -125,6 +125,24 @@ export default function KitchenRenovationsContent() {
         </div>
       </section>
 
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Related Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            <Link href="/renovations/bathroom"
+              className="bg-gray-50 border-2 border-gray-200 rounded-xl p-8 hover:border-orange-500 hover:shadow-lg transition-all group">
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-500 transition-colors">Bathroom Renovations</h3>
+              <p className="text-gray-600 leading-relaxed">Planning a bathroom renovation too? We coordinate both under one contract.</p>
+            </Link>
+            <Link href="/renovations/commercial"
+              className="bg-gray-50 border-2 border-gray-200 rounded-xl p-8 hover:border-orange-500 hover:shadow-lg transition-all group">
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-500 transition-colors">Commercial Kitchen Fit-Outs</h3>
+              <p className="text-gray-600 leading-relaxed">We also carry out commercial kitchen fit-outs for restaurants and guesthouses.</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 bg-white border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
