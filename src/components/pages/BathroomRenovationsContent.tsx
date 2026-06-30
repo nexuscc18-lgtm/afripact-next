@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { ArrowRight, CheckCircle, Bath, Phone } from 'lucide-react';
+import { ArrowRight, CheckCircle, Bath, Phone, ChevronDown } from 'lucide-react';
 
 export default function BathroomRenovationsContent() {
   const router = useRouter();
@@ -120,6 +120,48 @@ export default function BathroomRenovationsContent() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
                 <p className="text-gray-600 leading-relaxed">{desc}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white border-t border-gray-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Bathroom Renovation FAQs</h2>
+          </div>
+          <div className="space-y-4">
+            {([
+              {
+                q: 'How long does a bathroom renovation take in KZN?',
+                a: '2 to 4 weeks depending on scope. We provide a detailed schedule at quote stage and hold to it.',
+              },
+              {
+                q: 'How much does a bathroom renovation cost in Durban?',
+                a: 'Cost depends on scope, fixtures, and finishes. We provide a fixed quote before any work begins, no open-ended billing.',
+              },
+              {
+                q: 'Do you handle waterproofing as part of the renovation?',
+                a: 'Yes. Waterproofing is not optional on any bathroom we touch. It is built into every scope.',
+              },
+              {
+                q: 'Can you renovate a bathroom while the house is occupied?',
+                a: 'Yes. We phase the work to minimise disruption and agree a clear schedule upfront.',
+              },
+              {
+                q: 'Do you supply fixtures and fittings, or do I source them?',
+                a: 'Both options work. We can procure everything or work with client-supplied fixtures, we will advise on what fits the space and budget.',
+              },
+            ] as { q: string; a: string }[]).map(({ q, a }) => (
+              <details key={q} className="group border-2 border-gray-200 rounded-xl overflow-hidden open:border-orange-500 transition-colors">
+                <summary className="flex items-center justify-between cursor-pointer p-6 font-bold text-lg text-gray-900 list-none select-none hover:bg-orange-50 transition-colors">
+                  {q}
+                  <ChevronDown className="ml-4 flex-shrink-0 w-5 h-5 text-orange-500 group-open:rotate-180 transition-transform duration-200" />
+                </summary>
+                <div className="px-6 pb-6 text-gray-700 leading-relaxed border-t border-gray-100 pt-4">
+                  {a}
+                </div>
+              </details>
             ))}
           </div>
         </div>
