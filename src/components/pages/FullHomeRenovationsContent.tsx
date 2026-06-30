@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { ArrowRight, CheckCircle, House, Phone, Shield, Clock, Award } from 'lucide-react';
+import { ArrowRight, CheckCircle, House, Phone, Shield, Clock, Award, ChevronDown } from 'lucide-react';
 
 export default function FullHomeRenovationsContent() {
   const router = useRouter();
@@ -121,6 +121,71 @@ export default function FullHomeRenovationsContent() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
                 <p className="text-gray-600 leading-relaxed">{desc}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Related Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <Link href="/renovations/bathroom"
+              className="bg-gray-50 border-2 border-gray-200 rounded-xl p-8 hover:border-orange-500 hover:shadow-lg transition-all group">
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-500 transition-colors">Bathroom Renovations</h3>
+              <p className="text-gray-600 leading-relaxed">Waterproofing, tiling, plumbing, and fixtures.</p>
+            </Link>
+            <Link href="/renovations/kitchen"
+              className="bg-gray-50 border-2 border-gray-200 rounded-xl p-8 hover:border-orange-500 hover:shadow-lg transition-all group">
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-500 transition-colors">Kitchen Renovations</h3>
+              <p className="text-gray-600 leading-relaxed">Full kitchen remodels and updates across KZN.</p>
+            </Link>
+            <Link href="/earthworks-kzn"
+              className="bg-gray-50 border-2 border-gray-200 rounded-xl p-8 hover:border-orange-500 hover:shadow-lg transition-all group">
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-500 transition-colors">Earthworks &amp; Site Preparation</h3>
+              <p className="text-gray-600 leading-relaxed">Need site preparation or external civil work?</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white border-t border-gray-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Home Renovation FAQs</h2>
+          </div>
+          <div className="space-y-4">
+            {([
+              {
+                q: 'What does a full home renovation include?',
+                a: 'Structural changes, bathroom and kitchen renovations, flooring, painting, roofing, plumbing and electrical updates, and external works, all under one contract.',
+              },
+              {
+                q: 'How long does a full home renovation take?',
+                a: 'Scope-dependent. A typical full home renovation runs 6 to 12 weeks. We provide a detailed programme at quote stage and hold to it.',
+              },
+              {
+                q: 'Can we live in the house during the renovation?',
+                a: 'Depends on the scope. For full renovations we recommend vacating for the main construction phase. We will advise based on your specific project.',
+              },
+              {
+                q: 'Do you handle council approvals and building plans?',
+                a: 'We advise on what requires approval and can assist with the process. Our CIDB registration supports the compliance documentation.',
+              },
+              {
+                q: 'How do you handle unexpected structural issues discovered mid-renovation?',
+                a: 'We stop, show you exactly what was found, give you options and costs, and only proceed with your sign-off. No surprises added to the bill without your agreement.',
+              },
+            ] as { q: string; a: string }[]).map(({ q, a }) => (
+              <details key={q} className="group border-2 border-gray-200 rounded-xl overflow-hidden open:border-orange-500 transition-colors">
+                <summary className="flex items-center justify-between cursor-pointer p-6 font-bold text-lg text-gray-900 list-none select-none hover:bg-orange-50 transition-colors">
+                  {q}
+                  <ChevronDown className="ml-4 flex-shrink-0 w-5 h-5 text-orange-500 group-open:rotate-180 transition-transform duration-200" />
+                </summary>
+                <div className="px-6 pb-6 text-gray-700 leading-relaxed border-t border-gray-100 pt-4">
+                  {a}
+                </div>
+              </details>
             ))}
           </div>
         </div>
