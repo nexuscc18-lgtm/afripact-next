@@ -81,11 +81,38 @@ export default function LocationsContent() {
             <div>
               <div className="bg-white border-2 border-gray-200 rounded-2xl overflow-hidden shadow-lg h-[600px]">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3553.3765870716237!2d30.36793887548204!3d-29.59735982053684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef70647e8e8e8e1%3A0x1234567890abcdef!2s193%20Pine%20St%2C%20Pietermaritzburg%2C%203201!5e0!3m2!1sen!2sza!4v1234567890123!5m2!1sen!2sza"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3468.7433257980506!2d30.36890067457501!3d-29.611146911317313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef6bceb9afeb063%3A0xfcece237c20f8718!2s193%20Pine%20St%2C%20Pietermaritzburg%2C%203201!5e0!3m2!1sen!2sza!4v1782826100083!5m2!1sen!2sza"
                   width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade" title="Afripact Civils Location Map" />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">What We Build Across KZN</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              From bathroom renovations in Durban to civil infrastructure in Pietermaritzburg, we deliver across KwaZulu-Natal.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {[
+              { href: '/renovations/bathroom', label: 'Bathroom Renovations' },
+              { href: '/renovations/kitchen', label: 'Kitchen Renovations' },
+              { href: '/renovations/home', label: 'Full Home Renovations' },
+              { href: '/renovations/commercial', label: 'Commercial Renovations' },
+              { href: '/earthworks-kzn', label: 'Earthworks & Site Preparation' },
+              { href: '/services', label: 'Civil Infrastructure' },
+            ].map(({ href, label }) => (
+              <Link key={href} href={href}
+                className="bg-white border-2 border-gray-200 rounded-xl p-5 hover:border-orange-500 hover:shadow-md transition-all group flex items-center gap-3">
+                <ArrowRight className="w-4 h-4 text-orange-500 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
+                <span className="font-semibold text-gray-900 group-hover:text-orange-500 transition-colors">{label}</span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
