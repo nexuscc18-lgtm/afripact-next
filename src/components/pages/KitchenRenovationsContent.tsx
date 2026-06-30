@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { ArrowRight, CheckCircle, Utensils, Phone } from 'lucide-react';
+import { ArrowRight, CheckCircle, Utensils, Phone, ChevronDown } from 'lucide-react';
 
 export default function KitchenRenovationsContent() {
   const router = useRouter();
@@ -120,6 +120,48 @@ export default function KitchenRenovationsContent() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
                 <p className="text-gray-600 leading-relaxed">{desc}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white border-t border-gray-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Kitchen Renovation FAQs</h2>
+          </div>
+          <div className="space-y-4">
+            {([
+              {
+                q: 'How long does a kitchen renovation take?',
+                a: 'Typically 3 to 5 weeks for a full remodel. Layout changes and structural work extend the timeline, we detail this at quote stage.',
+              },
+              {
+                q: 'Can you move plumbing and electrical as part of the renovation?',
+                a: 'Yes. We handle plumbing relocation, new connections, and electrical reconfiguration in-house.',
+              },
+              {
+                q: 'Do you do commercial kitchen fit-outs as well as residential?',
+                a: 'Yes. We carry out restaurant, guesthouse, and catering facility kitchen builds to compliance and operational standards.',
+              },
+              {
+                q: 'What is the difference between a kitchen update and a full renovation?',
+                a: 'An update replaces surfaces, cabinetry, countertops, tiling, without demolition. A full renovation starts from scratch and can include layout changes. We will tell you which one your kitchen actually needs.',
+              },
+              {
+                q: 'Do you supply cabinetry and countertops?',
+                a: 'Yes. We can procure and install, or work with a client-supplied joiner. We manage the coordination either way.',
+              },
+            ] as { q: string; a: string }[]).map(({ q, a }) => (
+              <details key={q} className="group border-2 border-gray-200 rounded-xl overflow-hidden open:border-orange-500 transition-colors">
+                <summary className="flex items-center justify-between cursor-pointer p-6 font-bold text-lg text-gray-900 list-none select-none hover:bg-orange-50 transition-colors">
+                  {q}
+                  <ChevronDown className="ml-4 flex-shrink-0 w-5 h-5 text-orange-500 group-open:rotate-180 transition-transform duration-200" />
+                </summary>
+                <div className="px-6 pb-6 text-gray-700 leading-relaxed border-t border-gray-100 pt-4">
+                  {a}
+                </div>
+              </details>
             ))}
           </div>
         </div>
