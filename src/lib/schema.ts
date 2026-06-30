@@ -65,7 +65,7 @@ export const localBusinessSchema = {
       "@type": "EducationalOccupationalCredential",
       "credentialCategory": "Professional Certification",
       "name": "NHBRC Registration (Pending)",
-      "description": "NHBRC registration in progress. Expected confirmation by 30 June 2025."
+      "description": "NHBRC registration in progress. Expected confirmation by August 2026."
     }
   ],
   "knowsAbout": ["Bathroom Renovations", "Kitchen Renovations", "Home Renovations", "Commercial Renovations", "Civil Engineering", "Earthworks", "Site Development"],

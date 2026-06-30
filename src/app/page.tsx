@@ -49,7 +49,7 @@ const faqSchema = {
       "name": "Are you NHBRC registered?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "NHBRC registration is in progress and expected to be confirmed by 30 June 2025. Our current CIDB Grade 2GB registration covers general building work."
+        "text": "NHBRC registration is in progress and expected to be confirmed by August 2026. Our current CIDB Grade 2GB registration covers general building work."
       }
     },
     {

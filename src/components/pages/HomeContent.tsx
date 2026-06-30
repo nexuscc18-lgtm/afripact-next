@@ -305,7 +305,7 @@ export default function HomeContent() {
               },
               {
                 q: 'Are you NHBRC registered?',
-                a: 'NHBRC registration is in progress and expected to be confirmed by 30 June 2025. We will update this page upon confirmation. Our current CIDB Grade 2GB registration covers general building work.',
+                a: 'NHBRC registration is in progress and expected to be confirmed by August 2026. We will update this page upon confirmation. Our current CIDB Grade 2GB registration covers general building work.',
               },
               {
                 q: 'What areas do you serve?',
