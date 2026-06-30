@@ -79,11 +79,6 @@ export const localBusinessSchema = {
     "https://www.facebook.com/p/Afripact-Civils-61563198336813/",
     "https://www.snupit.co.za/pietermaritzburg/imbali/afripact-civils/528170"
   ],
-  "founder": {
-    "@type": "Person",
-    "name": "Cebo Mbatha",
-    "jobTitle": "Founder & CEO"
-  },
   "priceRange": "$$"
 }
 
@@ -94,10 +89,6 @@ export const organizationSchema = {
   "name": "Afripact Civils (PTY) LTD",
   "url": "https://www.afripact.net",
   "logo": "https://www.afripact.net/AfriPact.png",
-  "founder": {
-    "@type": "Person",
-    "name": "Cebo Mbatha"
-  },
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+27330010397",
