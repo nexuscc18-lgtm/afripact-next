@@ -258,16 +258,17 @@ export default function HomeContent() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {[
-              { src: 'https://images.pexels.com/photos/1078884/pexels-photo-1078884.jpeg?auto=compress&cs=tinysrgb&w=600', alt: 'Imbali Township Infrastructure', title: 'Imbali Township Infrastructure', desc: 'Water reticulation and road infrastructure upgrade serving over 500 households.' },
-              { src: 'https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=600', alt: 'Commercial Site Development', title: 'Commercial Site Development', desc: 'Full site development including earthworks and stormwater for a 5000m² commercial complex.' },
-              { src: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=600', alt: 'KZN Rural Road Rehabilitation', title: 'KZN Rural Road Rehabilitation', desc: 'Road rehabilitation delivering improved access and safety for rural communities in KZN.' },
-            ].map(({ src, alt, title, desc }) => (
+              { src: '/project1-before.jpg', alt: 'Driveway Tar Resurfacing Durban', title: 'Driveway Tar Resurfacing', subtitle: 'Durban, KwaZulu-Natal', desc: 'Complete removal of the failed driveway surface, sub-base preparation and compaction, and installation of a new tar surface with correct fall and edge details to direct water away from the structure.' },
+              { src: '/project2-before.jpg', alt: 'Pavement Excavation and Weed Removal KZN', title: 'Pavement Excavation & Weed Removal', subtitle: 'KwaZulu-Natal', desc: 'Full excavation to expose and remove the root systems, installation of a geotextile membrane barrier, re-grading of the formation level, and reinstatement of the surface.' },
+              { src: '/project3-door.jpg', alt: 'Aluminium Doors and Window Frames KZN', title: 'Aluminium Doors & Window Frames', subtitle: 'KwaZulu-Natal', desc: 'New structural openings were formed, aluminium frames with frosted glass were fabricated and installed to specification, and all lock systems were replaced with modern, secure hardware.' },
+            ].map(({ src, alt, title, subtitle, desc }) => (
               <div key={title} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                 <div className="h-48 overflow-hidden">
                   <img src={src} alt={alt} className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">{title}</h3>
+                  <p className="text-sm font-semibold text-orange-500 mb-2">{subtitle}</p>
                   <p className="text-gray-600">{desc}</p>
                 </div>
               </div>
