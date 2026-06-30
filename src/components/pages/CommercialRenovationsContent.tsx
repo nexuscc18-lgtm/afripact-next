@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { ArrowRight, CheckCircle, Store, Phone, Shield, Clock } from 'lucide-react';
+import { ArrowRight, CheckCircle, Store, Phone, Shield, Clock, ChevronDown } from 'lucide-react';
 
 export default function CommercialRenovationsContent() {
   const router = useRouter();
@@ -122,6 +122,66 @@ export default function CommercialRenovationsContent() {
                   <p className="text-gray-600 leading-relaxed">{desc}</p>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Related Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            <Link href="/industries"
+              className="bg-gray-50 border-2 border-gray-200 rounded-xl p-8 hover:border-orange-500 hover:shadow-lg transition-all group">
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-500 transition-colors">Industries We Serve</h3>
+              <p className="text-gray-600 leading-relaxed">Property developers, NGOs, construction companies, and hospitality businesses.</p>
+            </Link>
+            <Link href="/earthworks-kzn"
+              className="bg-gray-50 border-2 border-gray-200 rounded-xl p-8 hover:border-orange-500 hover:shadow-lg transition-all group">
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-500 transition-colors">Civil &amp; Earthworks Capability</h3>
+              <p className="text-gray-600 leading-relaxed">Site preparation and civil infrastructure alongside renovation work.</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white border-t border-gray-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Commercial Renovation FAQs</h2>
+          </div>
+          <div className="space-y-4">
+            {([
+              {
+                q: 'Can you work after hours or in phases to avoid disrupting our business?',
+                a: 'Yes. We structure the work programme around your operational requirements, after-hours, weekend, or phased delivery. This is agreed before work begins.',
+              },
+              {
+                q: 'How do you handle a commercial renovation on a tight deadline?',
+                a: 'Detailed programme drawn up at the outset, sequenced by trade, with single-point accountability. If something threatens the timeline, you hear about it before it becomes a problem.',
+              },
+              {
+                q: 'Do you carry out retail shopfitting as well as office renovations?',
+                a: 'Yes. Retail fitouts, shopfronts, display area renovations, and back-of-house upgrades are all within scope.',
+              },
+              {
+                q: 'What does your CIDB Grade 2CE and 2GB registration mean for a commercial client?',
+                a: 'It means verified competency, compliant documentation, and a contractor that meets procurement requirements for formal commercial projects.',
+              },
+              {
+                q: 'Can you renovate a single floor or section of a building while the rest remains operational?',
+                a: 'Yes. Phased, floor-by-floor, or section-by-section delivery is standard for us on occupied commercial buildings.',
+              },
+            ] as { q: string; a: string }[]).map(({ q, a }) => (
+              <details key={q} className="group border-2 border-gray-200 rounded-xl overflow-hidden open:border-orange-500 transition-colors">
+                <summary className="flex items-center justify-between cursor-pointer p-6 font-bold text-lg text-gray-900 list-none select-none hover:bg-orange-50 transition-colors">
+                  {q}
+                  <ChevronDown className="ml-4 flex-shrink-0 w-5 h-5 text-orange-500 group-open:rotate-180 transition-transform duration-200" />
+                </summary>
+                <div className="px-6 pb-6 text-gray-700 leading-relaxed border-t border-gray-100 pt-4">
+                  {a}
+                </div>
+              </details>
             ))}
           </div>
         </div>
