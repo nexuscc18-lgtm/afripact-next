@@ -125,6 +125,24 @@ export default function BathroomRenovationsContent() {
         </div>
       </section>
 
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Related Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            <Link href="/renovations/kitchen"
+              className="bg-gray-50 border-2 border-gray-200 rounded-xl p-8 hover:border-orange-500 hover:shadow-lg transition-all group">
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-500 transition-colors">Kitchen Renovations</h3>
+              <p className="text-gray-600 leading-relaxed">Planning a kitchen renovation too? We handle all trades under one contract.</p>
+            </Link>
+            <Link href="/renovations/home"
+              className="bg-gray-50 border-2 border-gray-200 rounded-xl p-8 hover:border-orange-500 hover:shadow-lg transition-all group">
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-500 transition-colors">Full Home Renovations</h3>
+              <p className="text-gray-600 leading-relaxed">Considering a full home renovation? One contractor for every room.</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 bg-white border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
