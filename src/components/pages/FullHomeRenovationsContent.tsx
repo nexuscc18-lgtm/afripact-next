@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { ArrowRight, CheckCircle, House, Phone, Shield, Clock, Award, ChevronDown } from 'lucide-react';
+import InlineCallbackForm from '@/components/InlineCallbackForm';
 
 export default function FullHomeRenovationsContent() {
   const router = useRouter();
@@ -83,21 +84,11 @@ export default function FullHomeRenovationsContent() {
                 className="rounded-2xl shadow-2xl w-full mb-8"
                 loading="lazy"
               />
-              <div className="bg-gradient-to-br from-orange-50 to-yellow-50 border-2 border-orange-200 rounded-xl p-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Discuss Your Home Renovation</h3>
-                <p className="text-gray-700 mb-6">
-                  Tell us what you want to achieve. We will come back with an honest assessment, a detailed quote, and a timeline you can plan around.
-                </p>
-                <button onClick={goToContact}
-                  className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-6 py-3 rounded-lg font-bold hover:shadow-xl hover:scale-[1.02] transition-all focus:outline-none focus:ring-4 focus:ring-orange-500/50 inline-flex items-center justify-center gap-2">
-                  Request a Free Quote <ArrowRight className="w-5 h-5" />
-                </button>
-                <div className="mt-4 pt-4 border-t border-orange-200">
-                  <a href="tel:0695036291" className="flex items-center justify-center gap-2 text-orange-600 font-semibold hover:text-orange-700 transition-colors">
-                    <Phone className="w-4 h-4" />069 503 6291
-                  </a>
-                </div>
-              </div>
+              <InlineCallbackForm
+                service="Full Home Renovation"
+                heading="Get a Free Quote"
+                subtext="Leave your name and number. Cebo will call you back to discuss your renovation."
+              />
             </div>
           </div>
         </div>

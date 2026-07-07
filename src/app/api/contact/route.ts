@@ -21,21 +21,25 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Invalid JSON body' }, { status: 400 });
   }
 
-  const { name, company, phone, email, message, service, submissionType } = body;
+  const { name, company, phone, email, service, submissionType } = body;
+  const message = body.message || `Callback requested${service ? ` for ${service}` : ''}.`;
 
-  if (!name || !phone || !email || !message || !submissionType) {
+  if (!name || !phone || !submissionType) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
   }
+
+  // contact_submissions.submission_type has a CHECK constraint allowing only 'contact' | 'quote'
+  const dbSubmissionType = submissionType === 'callback' ? 'contact' : submissionType;
 
   const { error: dbError } = await supabase.from('contact_submissions').insert([
     {
       name,
       company: company || null,
       phone,
-      email,
+      email: email || '',
       message,
       service: service || null,
-      submission_type: submissionType,
+      submission_type: dbSubmissionType,
     },
   ]);
 
@@ -45,16 +49,19 @@ export async function POST(request: NextRequest) {
   }
 
   try {
+    const subjectLabel =
+      submissionType === 'quote' ? 'Quote Request' : submissionType === 'callback' ? 'Callback Request' : 'Contact Message';
+
     await resend.emails.send({
       from: NOTIFICATION_FROM,
       to: NOTIFICATION_TO,
-      replyTo: email,
-      subject: `New ${submissionType === 'quote' ? 'Quote Request' : 'Contact Message'} from ${name}`,
+      ...(email ? { replyTo: email } : {}),
+      subject: `New ${subjectLabel} from ${name}`,
       text: [
         `Name: ${name}`,
         `Company: ${company || '-'}`,
         `Phone: ${phone}`,
-        `Email: ${email}`,
+        `Email: ${email || '-'}`,
         `Service: ${service || '-'}`,
         `Type: ${submissionType}`,
         '',

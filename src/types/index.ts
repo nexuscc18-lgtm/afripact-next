@@ -12,10 +12,10 @@ export interface ContactFormData {
   name: string;
   company?: string;
   phone: string;
-  email: string;
-  message: string;
+  email?: string;
+  message?: string;
   service?: string;
-  submissionType: 'contact' | 'quote';
+  submissionType: 'contact' | 'quote' | 'callback';
 }
 
 export interface Project {

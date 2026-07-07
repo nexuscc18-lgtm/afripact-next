@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { ArrowRight, CheckCircle, Hotel, Phone, Shield, Calendar, Wrench, ChevronDown } from 'lucide-react';
+import InlineCallbackForm from '@/components/InlineCallbackForm';
 
 export default function HospitalityRenovationsContent() {
   const router = useRouter();
@@ -83,21 +84,11 @@ export default function HospitalityRenovationsContent() {
                 className="rounded-2xl shadow-2xl w-full mb-8"
                 loading="lazy"
               />
-              <div className="bg-gradient-to-br from-orange-50 to-yellow-50 border-2 border-orange-200 rounded-xl p-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Request a Hospitality Renovation Quote</h3>
-                <p className="text-gray-700 mb-6 leading-relaxed">
-                  Tell us about your property and what you need done. We will assess the scope, build a programme around your trading calendar, and quote the full job.
-                </p>
-                <button onClick={goToContact}
-                  className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-6 py-3 rounded-lg font-bold hover:shadow-xl hover:scale-[1.02] transition-all focus:outline-none focus:ring-4 focus:ring-orange-500/50 inline-flex items-center justify-center gap-2">
-                  Request a Quote <ArrowRight className="w-5 h-5" />
-                </button>
-                <div className="mt-4 pt-4 border-t border-orange-200">
-                  <a href="tel:0695036291" className="flex items-center justify-center gap-2 text-orange-600 font-semibold hover:text-orange-700 transition-colors">
-                    <Phone className="w-4 h-4" />069 503 6291
-                  </a>
-                </div>
-              </div>
+              <InlineCallbackForm
+                service="Hospitality Renovation"
+                heading="Get a Free Quote"
+                subtext="Leave your name and number. Cebo will call you back to discuss your property."
+              />
             </div>
           </div>
         </div>
