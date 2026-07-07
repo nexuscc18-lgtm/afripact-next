@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, Phone, Mail, MapPin, Send, Loader, CheckCircle } from 'lucide-react';
-import { supabase } from '@/lib/supabase';
 import { ContactFormData } from '@/types';
 
 const projectTypes = [
@@ -62,31 +61,13 @@ export default function ContactContent() {
         submissionType: 'quote',
       };
 
-      const { error: dbError } = await supabase.from('contact_submissions').insert([{
-        name: contactPayload.name,
-        company: contactPayload.company || null,
-        phone: contactPayload.phone,
-        email: contactPayload.email,
-        message: contactPayload.message,
-        service: contactPayload.service || null,
-        submission_type: contactPayload.submissionType,
-      }]);
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(contactPayload),
+      });
 
-      if (dbError) throw dbError;
-
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/send-contact-email`,
-        {
-          method: 'POST',
-          headers: {
-            Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(contactPayload),
-        },
-      );
-
-      if (!response.ok) throw new Error('Failed to send email');
+      if (!response.ok) throw new Error('Failed to submit form');
 
       setSubmitStatus('success');
       setFormData(emptyForm);

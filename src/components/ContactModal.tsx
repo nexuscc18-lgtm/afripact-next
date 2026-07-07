@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { X, Phone, Mail, MapPin, Send, Loader } from 'lucide-react';
-import { supabase } from '@/lib/supabase';
 import { ContactFormData } from '@/types';
 import { services } from '@/data/services';
 
@@ -54,36 +53,13 @@ export default function ContactModal({
     setSubmitStatus('idle');
 
     try {
-      const { error: dbError } = await supabase.from('contact_submissions').insert([
-        {
-          name: formData.name,
-          company: formData.company || null,
-          phone: formData.phone,
-          email: formData.email,
-          message: formData.message,
-          service: formData.service || null,
-          submission_type: formData.submissionType,
-        },
-      ]);
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
-      if (dbError) throw new Error(dbError.message);
-
-      try {
-        const response = await fetch(
-          `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/send-contact-email`,
-          {
-            method: 'POST',
-            headers: {
-              Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-          },
-        );
-        if (!response.ok) console.warn('Email notification failed, submission was saved');
-      } catch (emailError) {
-        console.warn('Email notification failed, submission was saved:', emailError);
-      }
+      if (!response.ok) throw new Error('Failed to submit form');
 
       setSubmitStatus('success');
       setFormData({ name: '', company: '', phone: '', email: '', message: '', service: '', submissionType: 'contact' });
