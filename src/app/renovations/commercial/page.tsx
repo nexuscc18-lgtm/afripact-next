@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import CommercialRenovationsContent from '@/components/pages/CommercialRenovationsContent';
 
 export const metadata: Metadata = {
-  title: 'Commercial Renovations KZN | Office & Retail Refurbishment Durban | Afripact',
+  title: 'Commercial Renovations KZN | CIDB-Registered | Afripact Civils',
   description:
-    'Office fitouts, retail refurbishments, and commercial renovations in Durban, Pietermaritzburg, and KwaZulu-Natal. CIDB-registered contractor. Planned around your operations.',
+    'CIDB-registered commercial renovation contractor in KZN. Office fitouts, retail refurbishments, hospitality renovations. Phased delivery planned around your business hours.',
   alternates: { canonical: 'https://www.afripact.net/renovations/commercial' },
   openGraph: {
     title: 'Commercial Renovations KZN | Afripact',
