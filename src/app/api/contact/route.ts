@@ -10,7 +10,7 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
 );
 
-const NOTIFICATION_TO = 'info@afripact.net';
+const NOTIFICATION_TO = 'ngubo196@gmail.com';
 const NOTIFICATION_FROM = 'onboarding@resend.dev';
 
 export async function POST(request: NextRequest) {
