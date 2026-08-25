@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { Menu, X, Phone, LogOut, LayoutDashboard, LogIn } from 'lucide-react';
+import { Menu, X, Phone, LogOut, LayoutDashboard } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { useQuoteModal } from '@/contexts/QuoteModalContext';
 
@@ -74,13 +74,7 @@ export default function Header() {
                   Sign Out
                 </button>
               </>
-            ) : (
-              <Link href="/login"
-                className="text-white hover:text-orange-400 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 rounded px-3 py-2 flex items-center gap-2">
-                <LogIn className="w-4 h-4" />
-                Admin Login
-              </Link>
-            )}
+            ) : null}
             <button
               onClick={() => openModal('', 'quote')}
               className="bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-6 py-2.5 rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-black flex items-center gap-2">
@@ -125,13 +119,7 @@ export default function Header() {
                   Sign Out
                 </button>
               </>
-            ) : (
-              <Link href="/login" onClick={() => setIsMenuOpen(false)}
-                className="flex items-center gap-2 w-full text-left px-4 py-3 rounded-lg text-white hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500">
-                <LogIn className="w-4 h-4" />
-                Admin Login
-              </Link>
-            )}
+            ) : null}
             <button
               onClick={() => { openModal('', 'quote'); setIsMenuOpen(false); }}
               className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-4 py-3 rounded-lg font-semibold hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-orange-500 flex items-center justify-center gap-2">
