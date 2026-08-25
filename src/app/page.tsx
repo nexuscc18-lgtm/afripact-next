@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import HomeContent from '@/components/pages/HomeContent';
+import { CONTACT } from '@/lib/contact';
 
 export const metadata: Metadata = {
   title: 'Renovation Contractors KZN | Home Renovations Durban & Pietermaritzburg | Afripact',
@@ -73,7 +74,7 @@ const faqSchema = {
       "name": "How do I get a quote?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Call 069 503 6291, email info@afripact.net, or use the contact form on this site. We respond within one business day."
+        "text": `Call ${CONTACT.phoneMobile}, email ${CONTACT.email}, or use the contact form on this site. We respond within one business day.`
       }
     }
   ]

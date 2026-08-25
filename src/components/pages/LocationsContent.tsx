@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { ArrowRight, MapPin, Phone, Mail, Navigation } from 'lucide-react';
 import { useQuoteModal } from '@/contexts/QuoteModalContext';
+import { CONTACT } from '@/lib/contact';
 
 const serviceAreas = ['Pietermaritzburg', 'Durban', 'uMhlanga', 'Ballito', 'Pinetown', 'Margate', 'Port Shepstone'];
 
@@ -36,18 +37,17 @@ export default function LocationsContent() {
                     <h2 className="text-3xl font-bold text-gray-900 mb-2">Head Office</h2>
                     <address className="not-italic text-gray-700 text-lg leading-relaxed">
                       <strong>Afripact</strong><br />
-                      193 Pine Street<br />
-                      Pietermaritzburg<br />
-                      3201
+                      {CONTACT.address.line1}<br />
+                      {CONTACT.address.city}<br />
+                      {CONTACT.address.postalCode}
                     </address>
                   </div>
                 </div>
                 <div className="space-y-4 pt-6 border-t border-orange-200">
                   {[
-                    { href: 'tel:0330010397', label: '033 001 0397', sub: 'Landline', icon: Phone },
-                    { href: 'tel:0695036291', label: '069 503 6291', sub: 'Mobile', icon: Phone },
-                    { href: 'mailto:info@afripact.net', label: 'info@afripact.net', sub: 'Email', icon: Mail },
-                    { href: 'mailto:cebo@afripact.net', label: 'cebo@afripact.net', sub: 'Direct Email', icon: Mail },
+                    { href: CONTACT.phoneLandlineHref, label: CONTACT.phoneLandline, sub: 'Landline', icon: Phone },
+                    { href: CONTACT.phoneMobileHref, label: CONTACT.phoneMobile, sub: 'Mobile', icon: Phone },
+                    { href: CONTACT.emailHref, label: CONTACT.email, sub: 'Email', icon: Mail },
                   ].map(({ href, label, sub, icon: Icon }) => (
                     <a key={href} href={href}
                       className="flex items-center gap-3 text-gray-700 hover:text-orange-500 transition-colors group focus:outline-none focus:ring-2 focus:ring-orange-500 rounded p-2 -ml-2">
@@ -155,7 +155,7 @@ export default function LocationsContent() {
             Do not send a message into the void. Call us directly, come in, or drop us an email - whichever works for you. We respond within one business day and we will tell you upfront whether we are the right fit for your project.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:0330010397"
+            <a href={CONTACT.phoneLandlineHref}
               className="bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-orange-500/50 hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-orange-500/50 inline-flex items-center justify-center gap-2">
               <Phone className="w-5 h-5" />
               Call Us Now

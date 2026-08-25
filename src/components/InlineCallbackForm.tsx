@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Phone, Loader, CheckCircle } from 'lucide-react';
+import { CONTACT } from '@/lib/contact';
 
 interface InlineCallbackFormProps {
   service?: string;
@@ -49,8 +50,8 @@ export default function InlineCallbackForm({
         <h3 className="text-xl font-bold text-gray-900 mb-2">We&apos;ll call you back</h3>
         <p className="text-gray-600">Cebo will be in touch shortly to discuss your project.</p>
         <div className="mt-6 pt-4 border-t border-orange-200">
-          <a href="tel:0695036291" className="flex items-center justify-center gap-2 text-orange-600 font-semibold hover:text-orange-700 transition-colors">
-            <Phone className="w-4 h-4" />Can&apos;t wait? Call now: 069 503 6291
+          <a href={CONTACT.phoneMobileHref} className="flex items-center justify-center gap-2 text-orange-600 font-semibold hover:text-orange-700 transition-colors">
+            <Phone className="w-4 h-4" />Can&apos;t wait? Call now: {CONTACT.phoneMobile}
           </a>
         </div>
       </div>
@@ -83,8 +84,8 @@ export default function InlineCallbackForm({
         </button>
       </form>
       <div className="mt-4 pt-4 border-t border-orange-200">
-        <a href="tel:0695036291" className="flex items-center justify-center gap-2 text-orange-600 font-semibold hover:text-orange-700 transition-colors text-sm">
-          <Phone className="w-4 h-4" />Or call us: 069 503 6291
+        <a href={CONTACT.phoneMobileHref} className="flex items-center justify-center gap-2 text-orange-600 font-semibold hover:text-orange-700 transition-colors text-sm">
+          <Phone className="w-4 h-4" />Or call us: {CONTACT.phoneMobile}
         </a>
       </div>
     </div>

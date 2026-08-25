@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { ArrowRight, CheckCircle, ShoppingBag, Phone, Shield, Clock, Hammer, ChevronDown } from 'lucide-react';
+import { CONTACT } from '@/lib/contact';
 
 export default function RetailRenovationsContent() {
   const router = useRouter();
@@ -34,9 +35,9 @@ export default function RetailRenovationsContent() {
                 className="bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-orange-500/50 hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-orange-500/50 inline-flex items-center gap-2">
                 Request a Retail Quote <ArrowRight className="w-5 h-5" />
               </button>
-              <a href="tel:0695036291"
+              <a href={CONTACT.phoneMobileHref}
                 className="bg-white/10 text-white px-8 py-4 rounded-lg font-bold text-lg border-2 border-white/20 hover:bg-white/20 hover:scale-105 transition-all inline-flex items-center justify-center gap-2">
-                <Phone className="w-5 h-5" />069 503 6291
+                <Phone className="w-5 h-5" />{CONTACT.phoneMobile}
               </a>
             </div>
           </div>
@@ -94,8 +95,8 @@ export default function RetailRenovationsContent() {
                   Request a Quote <ArrowRight className="w-5 h-5" />
                 </button>
                 <div className="mt-4 pt-4 border-t border-orange-200">
-                  <a href="tel:0695036291" className="flex items-center justify-center gap-2 text-orange-600 font-semibold hover:text-orange-700 transition-colors">
-                    <Phone className="w-4 h-4" />069 503 6291
+                  <a href={CONTACT.phoneMobileHref} className="flex items-center justify-center gap-2 text-orange-600 font-semibold hover:text-orange-700 transition-colors">
+                    <Phone className="w-4 h-4" />{CONTACT.phoneMobile}
                   </a>
                 </div>
               </div>
@@ -198,9 +199,9 @@ export default function RetailRenovationsContent() {
               className="bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-orange-500/50 hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-orange-500/50 inline-flex items-center gap-2">
               Request a Quote <ArrowRight className="w-5 h-5" />
             </button>
-            <a href="tel:0695036291"
+            <a href={CONTACT.phoneMobileHref}
               className="bg-white/10 text-white px-8 py-4 rounded-lg font-bold text-lg border-2 border-white/20 hover:bg-white/20 hover:scale-105 transition-all inline-flex items-center justify-center gap-2">
-              <Phone className="w-5 h-5" />069 503 6291
+              <Phone className="w-5 h-5" />{CONTACT.phoneMobile}
             </a>
           </div>
         </div>

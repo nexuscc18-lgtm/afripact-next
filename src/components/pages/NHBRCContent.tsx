@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { ArrowRight, CheckCircle, Award, Shield, Phone } from 'lucide-react';
+import { CONTACT } from '@/lib/contact';
 
 export default function NHBRCContent() {
   const router = useRouter();
@@ -112,9 +113,9 @@ export default function NHBRCContent() {
               className="bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-orange-500/50 hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-orange-500/50 inline-flex items-center gap-2">
               Discuss Your Project <ArrowRight className="w-5 h-5" />
             </button>
-            <a href="tel:0695036291"
+            <a href={CONTACT.phoneMobileHref}
               className="bg-white/10 text-white px-8 py-4 rounded-lg font-bold text-lg border-2 border-white/20 hover:bg-white/20 hover:scale-105 transition-all inline-flex items-center justify-center gap-2">
-              <Phone className="w-5 h-5" />069 503 6291
+              <Phone className="w-5 h-5" />{CONTACT.phoneMobile}
             </a>
           </div>
         </div>

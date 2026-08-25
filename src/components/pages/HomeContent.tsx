@@ -7,6 +7,7 @@ import {
   Shield, Clock, Award, Building2, HardHat, Factory, ChevronDown,
   Bath, Utensils, House, Store, Hammer,
 } from 'lucide-react';
+import { CONTACT } from '@/lib/contact';
 
 export default function HomeContent() {
   const router = useRouter();
@@ -318,7 +319,7 @@ export default function HomeContent() {
               },
               {
                 q: 'How do I get a quote?',
-                a: 'Call 069 503 6291, email info@afripact.net, or use the contact form on this site. We respond within one business day.',
+                a: `Call ${CONTACT.phoneMobile}, email ${CONTACT.email}, or use the contact form on this site. We respond within one business day.`,
               },
             ] as { q: string; a: string }[]).map(({ q, a }) => (
               <details key={q} className="group border-2 border-gray-200 rounded-xl overflow-hidden open:border-orange-500 transition-colors">
@@ -353,9 +354,9 @@ export default function HomeContent() {
               </button>
               <div className="pt-8 border-t border-gray-200">
                 <p className="text-gray-600 mb-2">Need a faster response?</p>
-                <a href="tel:0330010397"
+                <a href={CONTACT.phoneLandlineHref}
                   className="text-2xl font-bold text-orange-500 hover:text-orange-600 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 rounded px-3 py-1">
-                  033 001 0397
+                  {CONTACT.phoneLandline}
                 </a>
               </div>
             </div>

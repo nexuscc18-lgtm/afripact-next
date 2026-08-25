@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { ArrowRight, Target, Award, Users, Heart, Shield, TrendingUp } from 'lucide-react';
 import { useQuoteModal } from '@/contexts/QuoteModalContext';
+import { CONTACT } from '@/lib/contact';
 
 export default function AboutContent() {
   const { openModal } = useQuoteModal();
@@ -100,9 +101,9 @@ export default function AboutContent() {
           <p className="text-gray-700 text-lg leading-relaxed">
             Afripact is a CIDB-registered contractor with Grade 2CE (Civil Engineering) and Grade 2GB (General Building) certifications.
             For tender or project enquiries, contact us at{' '}
-            <a href="tel:0330010397" className="text-orange-500 font-semibold hover:text-orange-600 transition-colors">033 001 0397</a>
+            <a href={CONTACT.phoneLandlineHref} className="text-orange-500 font-semibold hover:text-orange-600 transition-colors">{CONTACT.phoneLandline}</a>
             {' '}or{' '}
-            <a href="mailto:cebo@afripact.net" className="text-orange-500 font-semibold hover:text-orange-600 transition-colors">cebo@afripact.net</a>.
+            <a href={CONTACT.emailHref} className="text-orange-500 font-semibold hover:text-orange-600 transition-colors">{CONTACT.email}</a>.
           </p>
         </div>
       </section>

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { CONTACT } from '@/lib/contact';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -52,21 +53,21 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-4 text-white">Contact Info</h3>
             <ul className="space-y-3">
               <li>
-                <a href="tel:0330010397" className="flex items-center gap-2 text-gray-400 hover:text-orange-500 transition-colors text-sm group focus:outline-none focus:ring-2 focus:ring-orange-500 rounded px-2 py-1 -ml-2">
+                <a href={CONTACT.phoneLandlineHref} className="flex items-center gap-2 text-gray-400 hover:text-orange-500 transition-colors text-sm group focus:outline-none focus:ring-2 focus:ring-orange-500 rounded px-2 py-1 -ml-2">
                   <Phone className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                  033 001 0397
+                  {CONTACT.phoneLandline}
                 </a>
               </li>
               <li>
-                <a href="tel:0695036291" className="flex items-center gap-2 text-gray-400 hover:text-orange-500 transition-colors text-sm group focus:outline-none focus:ring-2 focus:ring-orange-500 rounded px-2 py-1 -ml-2">
+                <a href={CONTACT.phoneMobileHref} className="flex items-center gap-2 text-gray-400 hover:text-orange-500 transition-colors text-sm group focus:outline-none focus:ring-2 focus:ring-orange-500 rounded px-2 py-1 -ml-2">
                   <Phone className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                  069 503 6291
+                  {CONTACT.phoneMobile}
                 </a>
               </li>
               <li>
-                <a href="mailto:info@afripact.net" className="flex items-center gap-2 text-gray-400 hover:text-orange-500 transition-colors text-sm group focus:outline-none focus:ring-2 focus:ring-orange-500 rounded px-2 py-1 -ml-2">
+                <a href={CONTACT.emailHref} className="flex items-center gap-2 text-gray-400 hover:text-orange-500 transition-colors text-sm group focus:outline-none focus:ring-2 focus:ring-orange-500 rounded px-2 py-1 -ml-2">
                   <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                  info@afripact.net
+                  {CONTACT.email}
                 </a>
               </li>
             </ul>
@@ -77,9 +78,9 @@ export default function Footer() {
             <div className="flex items-start gap-2 text-gray-400 text-sm">
               <MapPin className="w-4 h-4 mt-1 flex-shrink-0 text-orange-500" />
               <address className="not-italic leading-relaxed">
-                193 Pine Street<br />
-                Pietermaritzburg<br />
-                3201
+                {CONTACT.address.line1}<br />
+                {CONTACT.address.city}<br />
+                {CONTACT.address.postalCode}
               </address>
             </div>
           </div>

@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { ArrowRight, CheckCircle, Shovel, Map, Droplet } from 'lucide-react';
+import { CONTACT } from '@/lib/contact';
 
 export default function EarthworksKZNContent() {
   const router = useRouter();
@@ -109,11 +110,11 @@ export default function EarthworksKZNContent() {
                 Tell us about your earthworks or site development project. We&apos;ll assess it and come back with a clear plan.
               </p>
               <div className="space-y-4 mb-8">
-                <a href="tel:0330010397" className="block text-2xl font-bold text-orange-500 hover:text-orange-400 transition-colors">
-                  033 001 0397
+                <a href={CONTACT.phoneLandlineHref} className="block text-2xl font-bold text-orange-500 hover:text-orange-400 transition-colors">
+                  {CONTACT.phoneLandline}
                 </a>
-                <a href="mailto:cebo@afripact.net" className="block text-lg text-gray-300 hover:text-white transition-colors">
-                  cebo@afripact.net
+                <a href={CONTACT.emailHref} className="block text-lg text-gray-300 hover:text-white transition-colors">
+                  {CONTACT.email}
                 </a>
               </div>
               <button onClick={goToContact}
