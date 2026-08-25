@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, Phone, Mail, MapPin, Send, Loader, CheckCircle } from 'lucide-react';
-import { ContactFormData } from '@/types';
+import { CONTACT } from '@/lib/contact';
+import { BUDGET_BANDS, POPIA_CONSENT_TEXT } from '@/lib/leadForm';
 
 const projectTypes = [
   'Bathroom Renovation',
@@ -21,23 +22,16 @@ const projectTypes = [
   'Other Works',
 ];
 
-const budgetRanges = [
-  'Under R500,000',
-  'R500,000 – R1,000,000',
-  'R1,000,000 – R2,500,000',
-  'R2,500,000 – R5,000,000',
-  'R5,000,000+',
-  'Not yet determined',
-];
-
 interface AssessmentFormData {
   name: string; company: string; phone: string; email: string;
-  projectType: string; location: string; timeline: string; budgetRange: string; message: string;
+  projectType: string; suburb: string; preferredStartDate: string; budgetBand: string;
+  message: string; photo: File | undefined; popiaConsent: boolean;
 }
 
 const emptyForm: AssessmentFormData = {
   name: '', company: '', phone: '', email: '',
-  projectType: '', location: '', timeline: '', budgetRange: '', message: '',
+  projectType: '', suburb: '', preferredStartDate: '', budgetBand: '',
+  message: '', photo: undefined, popiaConsent: false,
 };
 
 export default function ContactContent() {
@@ -51,21 +45,21 @@ export default function ContactContent() {
     setSubmitStatus('idle');
 
     try {
-      const contactPayload: ContactFormData = {
-        name: formData.name,
-        company: formData.company,
-        phone: formData.phone,
-        email: formData.email,
-        message: `Project Type: ${formData.projectType}\nLocation: ${formData.location}\nTimeline: ${formData.timeline}\nBudget Range: ${formData.budgetRange}\n\n${formData.message}`,
-        service: formData.projectType,
-        submissionType: 'quote',
-      };
+      const body = new FormData();
+      body.append('name', formData.name);
+      body.append('company', formData.company);
+      body.append('phone', formData.phone);
+      body.append('email', formData.email);
+      body.append('service', formData.projectType);
+      body.append('suburb', formData.suburb);
+      body.append('preferredStartDate', formData.preferredStartDate);
+      body.append('budgetBand', formData.budgetBand);
+      body.append('message', formData.message);
+      body.append('popiaConsent', String(formData.popiaConsent));
+      body.append('submissionType', 'quote');
+      if (formData.photo) body.append('photo', formData.photo);
 
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(contactPayload),
-      });
+      const response = await fetch('/api/contact', { method: 'POST', body });
 
       if (!response.ok) throw new Error('Failed to submit form');
 
@@ -122,8 +116,8 @@ export default function ContactContent() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
             {[
-              { icon: Phone, title: 'Call Us', items: [{ href: 'tel:0330010397', label: '033 001 0397' }, { href: 'tel:0695036291', label: '069 503 6291' }] },
-              { icon: Mail, title: 'Email Us', items: [{ href: 'mailto:info@afripact.net', label: 'info@afripact.net' }, { href: 'mailto:cebo@afripact.net', label: 'cebo@afripact.net' }] },
+              { icon: Phone, title: 'Call Us', items: [{ href: CONTACT.phoneLandlineHref, label: CONTACT.phoneLandline }, { href: CONTACT.phoneMobileHref, label: CONTACT.phoneMobile }] },
+              { icon: Mail, title: 'Email Us', items: [{ href: CONTACT.emailHref, label: CONTACT.email }] },
             ].map(({ icon: Icon, title, items }) => (
               <div key={title} className="bg-gradient-to-br from-orange-50 to-yellow-50 border-2 border-orange-200 rounded-xl p-8 hover:shadow-lg transition-all">
                 <Icon className="w-12 h-12 text-orange-500 mb-4" />
@@ -142,7 +136,7 @@ export default function ContactContent() {
               <MapPin className="w-12 h-12 text-orange-500 mb-4" />
               <h3 className="text-xl font-bold text-gray-900 mb-4">Visit Us</h3>
               <address className="not-italic text-gray-700 leading-relaxed">
-                193 Pine Street<br />Pietermaritzburg<br />KwaZulu-Natal<br />South Africa<br />3201
+                {CONTACT.address.line1}<br />{CONTACT.address.city}<br />{CONTACT.address.province}<br />{CONTACT.address.country}<br />{CONTACT.address.postalCode}
               </address>
             </div>
           </div>
@@ -191,19 +185,25 @@ export default function ContactContent() {
                       {projectTypes.map((t) => <option key={t} value={t}>{t}</option>)}
                     </select>
                   </div>
-                  {field('location', 'Project Location', formData.location, (v) => setFormData({ ...formData, location: v }), { required: true, placeholder: 'e.g. Pietermaritzburg, KZN' })}
+                  {field('suburb', 'Suburb', formData.suburb, (v) => setFormData({ ...formData, suburb: v }), { required: true, placeholder: 'e.g. Hayfields, Pietermaritzburg' })}
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {field('timeline', 'Timeline', formData.timeline, (v) => setFormData({ ...formData, timeline: v }), { placeholder: 'e.g. Start Q2 2025, 3-month duration' })}
+                  {field('preferredStartDate', 'Preferred Start Date', formData.preferredStartDate, (v) => setFormData({ ...formData, preferredStartDate: v }), { type: 'date' })}
                   <div>
-                    <label htmlFor="budgetRange" className="block text-sm font-bold text-gray-700 mb-2">Budget Range</label>
-                    <select id="budgetRange" value={formData.budgetRange}
-                      onChange={(e) => setFormData({ ...formData, budgetRange: e.target.value })}
+                    <label htmlFor="budgetBand" className="block text-sm font-bold text-gray-700 mb-2">Budget Band</label>
+                    <select id="budgetBand" value={formData.budgetBand}
+                      onChange={(e) => setFormData({ ...formData, budgetBand: e.target.value })}
                       className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all">
                       <option value="">Select a range (optional)</option>
-                      {budgetRanges.map((r) => <option key={r} value={r}>{r}</option>)}
+                      {BUDGET_BANDS.map((r) => <option key={r} value={r}>{r}</option>)}
                     </select>
                   </div>
+                </div>
+                <div>
+                  <label htmlFor="photo" className="block text-sm font-bold text-gray-700 mb-2">Photo of the property or project (optional)</label>
+                  <input type="file" id="photo" accept="image/*"
+                    onChange={(e) => setFormData({ ...formData, photo: e.target.files?.[0] })}
+                    className="w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-orange-50 file:text-orange-700 file:font-semibold hover:file:bg-orange-100" />
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-bold text-gray-700 mb-2">Additional Project Details</label>
@@ -212,6 +212,12 @@ export default function ContactContent() {
                     rows={5}
                     className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all resize-none"
                     placeholder="Describe your project scope, any specific requirements, or questions..." />
+                </div>
+                <div className="flex items-start gap-3">
+                  <input type="checkbox" id="popiaConsent" required checked={formData.popiaConsent}
+                    onChange={(e) => setFormData({ ...formData, popiaConsent: e.target.checked })}
+                    className="mt-1 w-4 h-4 rounded border-gray-300 text-orange-500 focus:ring-orange-500" />
+                  <label htmlFor="popiaConsent" className="text-sm text-gray-600">{POPIA_CONSENT_TEXT} *</label>
                 </div>
                 <button type="submit" disabled={isSubmitting}
                   className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 text-black font-bold py-4 px-6 rounded-lg hover:shadow-xl hover:scale-[1.02] transition-all disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-4 focus:ring-orange-500/50 flex items-center justify-center gap-2 text-lg">
@@ -235,13 +241,13 @@ export default function ContactContent() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Prefer to Talk Directly?</h2>
           <p className="text-xl text-gray-300 mb-8 leading-relaxed">Give us a call and speak with one of our team members about your project</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:0330010397"
+            <a href={CONTACT.phoneLandlineHref}
               className="bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-orange-500/50 hover:scale-105 transition-all inline-flex items-center justify-center gap-2">
-              <Phone className="w-5 h-5" />033 001 0397
+              <Phone className="w-5 h-5" />{CONTACT.phoneLandline}
             </a>
-            <a href="tel:0695036291"
+            <a href={CONTACT.phoneMobileHref}
               className="bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-bold text-lg border-2 border-white/20 hover:bg-white/20 hover:scale-105 transition-all inline-flex items-center justify-center gap-2">
-              <Phone className="w-5 h-5" />069 503 6291
+              <Phone className="w-5 h-5" />{CONTACT.phoneMobile}
             </a>
           </div>
         </div>

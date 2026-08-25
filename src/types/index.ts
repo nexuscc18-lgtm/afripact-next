@@ -16,6 +16,11 @@ export interface ContactFormData {
   message?: string;
   service?: string;
   submissionType: 'contact' | 'quote' | 'callback';
+  suburb?: string;
+  budgetBand?: string;
+  preferredStartDate?: string;
+  popiaConsent?: boolean;
+  photo?: File;
 }
 
 export interface Project {

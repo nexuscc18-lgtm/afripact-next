@@ -24,16 +24,13 @@ export default function InlineCallbackForm({
     e.preventDefault();
     setSubmitting(true);
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name,
-          phone,
-          service: service || 'General enquiry',
-          submissionType: 'callback',
-        }),
-      });
+      const body = new FormData();
+      body.append('name', name);
+      body.append('phone', phone);
+      body.append('service', service || 'General enquiry');
+      body.append('submissionType', 'callback');
+
+      const res = await fetch('/api/contact', { method: 'POST', body });
       if (!res.ok) throw new Error('Failed');
       setStatus('success');
     } catch {

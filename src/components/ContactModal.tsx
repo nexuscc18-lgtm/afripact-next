@@ -4,6 +4,22 @@ import { useState, useEffect } from 'react';
 import { X, Phone, Mail, MapPin, Send, Loader } from 'lucide-react';
 import { ContactFormData } from '@/types';
 import { services } from '@/data/services';
+import { CONTACT } from '@/lib/contact';
+import { BUDGET_BANDS, POPIA_CONSENT_TEXT } from '@/lib/leadForm';
+
+const emptyFormData = (defaultService: string, submissionType: 'contact' | 'quote'): ContactFormData => ({
+  name: '',
+  company: '',
+  phone: '',
+  email: '',
+  message: '',
+  service: defaultService,
+  submissionType,
+  suburb: '',
+  budgetBand: '',
+  preferredStartDate: '',
+  popiaConsent: false,
+});
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -18,29 +34,13 @@ export default function ContactModal({
   defaultService = '',
   submissionType = 'contact',
 }: ContactModalProps) {
-  const [formData, setFormData] = useState<ContactFormData>({
-    name: '',
-    company: '',
-    phone: '',
-    email: '',
-    message: '',
-    service: defaultService,
-    submissionType,
-  });
+  const [formData, setFormData] = useState<ContactFormData>(emptyFormData(defaultService, submissionType));
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   useEffect(() => {
     if (isOpen) {
-      setFormData({
-        name: '',
-        company: '',
-        phone: '',
-        email: '',
-        message: '',
-        service: defaultService,
-        submissionType,
-      });
+      setFormData(emptyFormData(defaultService, submissionType));
       setSubmitStatus('idle');
     }
   }, [isOpen, defaultService, submissionType]);
@@ -53,16 +53,26 @@ export default function ContactModal({
     setSubmitStatus('idle');
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
+      const body = new FormData();
+      body.append('name', formData.name);
+      body.append('company', formData.company || '');
+      body.append('phone', formData.phone);
+      body.append('email', formData.email || '');
+      body.append('message', formData.message || '');
+      body.append('service', formData.service || '');
+      body.append('submissionType', formData.submissionType);
+      body.append('suburb', formData.suburb || '');
+      body.append('budgetBand', formData.budgetBand || '');
+      body.append('preferredStartDate', formData.preferredStartDate || '');
+      body.append('popiaConsent', String(formData.popiaConsent));
+      if (formData.photo) body.append('photo', formData.photo);
+
+      const response = await fetch('/api/contact', { method: 'POST', body });
 
       if (!response.ok) throw new Error('Failed to submit form');
 
       setSubmitStatus('success');
-      setFormData({ name: '', company: '', phone: '', email: '', message: '', service: '', submissionType: 'contact' });
+      setFormData(emptyFormData('', 'contact'));
       setTimeout(() => {
         onClose();
         setSubmitStatus('idle');
@@ -101,25 +111,25 @@ export default function ContactModal({
 
         <div className="p-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-            <a href="tel:0330010397" className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group focus:outline-none focus:ring-2 focus:ring-orange-500">
+            <a href={CONTACT.phoneLandlineHref} className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group focus:outline-none focus:ring-2 focus:ring-orange-500">
               <Phone className="w-5 h-5 text-orange-500 group-hover:scale-110 transition-transform" />
               <div>
                 <p className="text-xs text-gray-600">Landline</p>
-                <p className="font-semibold text-gray-900">033 001 0397</p>
+                <p className="font-semibold text-gray-900">{CONTACT.phoneLandline}</p>
               </div>
             </a>
-            <a href="tel:0695036291" className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group focus:outline-none focus:ring-2 focus:ring-orange-500">
+            <a href={CONTACT.phoneMobileHref} className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group focus:outline-none focus:ring-2 focus:ring-orange-500">
               <Phone className="w-5 h-5 text-orange-500 group-hover:scale-110 transition-transform" />
               <div>
                 <p className="text-xs text-gray-600">Mobile</p>
-                <p className="font-semibold text-gray-900">069 503 6291</p>
+                <p className="font-semibold text-gray-900">{CONTACT.phoneMobile}</p>
               </div>
             </a>
-            <a href="mailto:info@afripact.net" className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group focus:outline-none focus:ring-2 focus:ring-orange-500">
+            <a href={CONTACT.emailHref} className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group focus:outline-none focus:ring-2 focus:ring-orange-500">
               <Mail className="w-5 h-5 text-orange-500 group-hover:scale-110 transition-transform" />
               <div>
                 <p className="text-xs text-gray-600">Email</p>
-                <p className="font-semibold text-gray-900 text-sm">info@afripact.net</p>
+                <p className="font-semibold text-gray-900 text-sm">{CONTACT.email}</p>
               </div>
             </a>
           </div>
@@ -128,9 +138,9 @@ export default function ContactModal({
             <MapPin className="w-5 h-5 text-orange-500 flex-shrink-0 mt-1" />
             <address className="not-italic text-gray-700 text-sm leading-relaxed">
               <strong className="text-gray-900">Visit Us:</strong><br />
-              193 Pine Street<br />
-              Pietermaritzburg<br />
-              KwaZulu-Natal, South Africa, 3201
+              {CONTACT.address.line1}<br />
+              {CONTACT.address.city}<br />
+              {CONTACT.address.province}, {CONTACT.address.country}, {CONTACT.address.postalCode}
             </address>
           </div>
 
@@ -197,6 +207,40 @@ export default function ContactModal({
               </select>
             </div>
 
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="modal-suburb" className="block text-sm font-semibold text-gray-700 mb-2">Suburb</label>
+                <input type="text" id="modal-suburb"
+                  value={formData.suburb} onChange={(e) => setFormData({ ...formData, suburb: e.target.value })}
+                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                  placeholder="e.g. Hayfields" />
+              </div>
+              <div>
+                <label htmlFor="modal-budget" className="block text-sm font-semibold text-gray-700 mb-2">Budget Band</label>
+                <select id="modal-budget"
+                  value={formData.budgetBand} onChange={(e) => setFormData({ ...formData, budgetBand: e.target.value })}
+                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all">
+                  <option value="">Select a range (optional)</option>
+                  {BUDGET_BANDS.map((b) => <option key={b} value={b}>{b}</option>)}
+                </select>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="modal-start-date" className="block text-sm font-semibold text-gray-700 mb-2">Preferred Start Date</label>
+                <input type="date" id="modal-start-date"
+                  value={formData.preferredStartDate} onChange={(e) => setFormData({ ...formData, preferredStartDate: e.target.value })}
+                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all" />
+              </div>
+              <div>
+                <label htmlFor="modal-photo" className="block text-sm font-semibold text-gray-700 mb-2">Photo (optional)</label>
+                <input type="file" id="modal-photo" accept="image/*"
+                  onChange={(e) => setFormData({ ...formData, photo: e.target.files?.[0] })}
+                  className="w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-orange-50 file:text-orange-700 file:font-semibold hover:file:bg-orange-100" />
+              </div>
+            </div>
+
             <div>
               <label htmlFor="modal-message" className="block text-sm font-semibold text-gray-700 mb-2">Message *</label>
               <textarea id="modal-message" required minLength={10} maxLength={2000}
@@ -204,6 +248,13 @@ export default function ContactModal({
                 rows={5}
                 className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all resize-none"
                 placeholder="Tell us about your project..." />
+            </div>
+
+            <div className="flex items-start gap-3">
+              <input type="checkbox" id="modal-popia" required checked={formData.popiaConsent}
+                onChange={(e) => setFormData({ ...formData, popiaConsent: e.target.checked })}
+                className="mt-1 w-4 h-4 rounded border-gray-300 text-orange-500 focus:ring-orange-500" />
+              <label htmlFor="modal-popia" className="text-sm text-gray-600">{POPIA_CONSENT_TEXT} *</label>
             </div>
 
             <button type="submit" disabled={isSubmitting}

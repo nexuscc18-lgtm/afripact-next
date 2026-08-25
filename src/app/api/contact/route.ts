@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { createClient } from '@supabase/supabase-js';
-import { ContactFormData } from '@/types';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -13,23 +12,58 @@ const supabase = createClient(
 const NOTIFICATION_TO = 'ngubo196@gmail.com';
 const NOTIFICATION_FROM = 'onboarding@resend.dev';
 
+function stringField(formData: FormData, key: string): string | null {
+  const value = formData.get(key);
+  return typeof value === 'string' && value.trim() ? value : null;
+}
+
 export async function POST(request: NextRequest) {
-  let body: ContactFormData;
+  let formData: FormData;
   try {
-    body = await request.json();
+    formData = await request.formData();
   } catch {
-    return NextResponse.json({ error: 'Invalid JSON body' }, { status: 400 });
+    return NextResponse.json({ error: 'Invalid form data' }, { status: 400 });
   }
 
-  const { name, company, phone, email, service, submissionType } = body;
-  const message = body.message || `Callback requested${service ? ` for ${service}` : ''}.`;
+  const name = stringField(formData, 'name');
+  const company = stringField(formData, 'company');
+  const phone = stringField(formData, 'phone');
+  const email = stringField(formData, 'email');
+  const service = stringField(formData, 'service');
+  const submissionType = stringField(formData, 'submissionType');
+  const suburb = stringField(formData, 'suburb');
+  const budgetBand = stringField(formData, 'budgetBand');
+  const preferredStartDate = stringField(formData, 'preferredStartDate');
+  const message = stringField(formData, 'message') || `Callback requested${service ? ` for ${service}` : ''}.`;
+  const photo = formData.get('photo');
 
   if (!name || !phone || !submissionType) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
   }
 
+  // POPIA consent is only collected on the full qualification forms
+  // (contact page, quote modal). The lightweight callback widget doesn't
+  // send this field at all, so it's only enforced when present.
+  const popiaConsentRaw = formData.get('popiaConsent');
+  if (popiaConsentRaw !== null && popiaConsentRaw !== 'true') {
+    return NextResponse.json({ error: 'POPIA consent is required' }, { status: 400 });
+  }
+  const popiaConsent = popiaConsentRaw === null ? null : true;
+
   // contact_submissions.submission_type has a CHECK constraint allowing only 'contact' | 'quote'
   const dbSubmissionType = submissionType === 'callback' ? 'contact' : submissionType;
+
+  let photoPath: string | null = null;
+  if (photo instanceof File && photo.size > 0) {
+    const ext = photo.name.split('.').pop() || 'jpg';
+    const path = `${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
+    const { error: uploadError } = await supabase.storage.from('lead-uploads').upload(path, photo);
+    if (uploadError) {
+      console.error('Supabase storage upload error:', uploadError);
+    } else {
+      photoPath = path;
+    }
+  }
 
   const { error: dbError } = await supabase.from('contact_submissions').insert([
     {
@@ -40,6 +74,11 @@ export async function POST(request: NextRequest) {
       message,
       service: service || null,
       submission_type: dbSubmissionType,
+      suburb: suburb || null,
+      budget_band: budgetBand || null,
+      preferred_start_date: preferredStartDate || null,
+      popia_consent: popiaConsent,
+      photo_path: photoPath,
     },
   ]);
 
@@ -63,6 +102,9 @@ export async function POST(request: NextRequest) {
         `Phone: ${phone}`,
         `Email: ${email || '-'}`,
         `Service: ${service || '-'}`,
+        `Suburb: ${suburb || '-'}`,
+        `Budget: ${budgetBand || '-'}`,
+        `Preferred start date: ${preferredStartDate || '-'}`,
         `Type: ${submissionType}`,
         '',
         'Message:',

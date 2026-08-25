@@ -20,6 +20,11 @@ interface Submission {
   service: string | null;
   submission_type: string;
   created_at: string;
+  suburb: string | null;
+  budget_band: string | null;
+  preferred_start_date: string | null;
+  popia_consent: boolean | null;
+  photo_path: string | null;
 }
 
 export default function DashboardContent() {
@@ -34,6 +39,7 @@ export default function DashboardContent() {
   const [filterType, setFilterType] = useState<'all' | 'contact' | 'quote'>('all');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
   const [selectedSubmission, setSelectedSubmission] = useState<Submission | null>(null);
+  const [photoUrl, setPhotoUrl] = useState<string | null>(null);
 
   // Redirect if not authenticated
   useEffect(() => {
@@ -49,6 +55,13 @@ export default function DashboardContent() {
   useEffect(() => {
     filterAndSortSubmissions();
   }, [submissions, searchTerm, filterType, sortOrder]);
+
+  useEffect(() => {
+    setPhotoUrl(null);
+    if (!selectedSubmission?.photo_path) return;
+    supabase.storage.from('lead-uploads').createSignedUrl(selectedSubmission.photo_path, 3600)
+      .then(({ data }) => setPhotoUrl(data?.signedUrl ?? null));
+  }, [selectedSubmission]);
 
   const fetchSubmissions = async () => {
     try {
@@ -316,6 +329,40 @@ export default function DashboardContent() {
                   </div>
                 )}
               </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {selectedSubmission.suburb && (
+                  <div>
+                    <label className="text-sm font-bold text-gray-600 uppercase tracking-wider mb-1 block">Suburb</label>
+                    <p className="text-gray-900 font-medium">{selectedSubmission.suburb}</p>
+                  </div>
+                )}
+                {selectedSubmission.budget_band && (
+                  <div>
+                    <label className="text-sm font-bold text-gray-600 uppercase tracking-wider mb-1 block">Budget Band</label>
+                    <p className="text-gray-900 font-medium">{selectedSubmission.budget_band}</p>
+                  </div>
+                )}
+                {selectedSubmission.preferred_start_date && (
+                  <div>
+                    <label className="text-sm font-bold text-gray-600 uppercase tracking-wider mb-1 block">Preferred Start Date</label>
+                    <p className="text-gray-900 font-medium">{selectedSubmission.preferred_start_date}</p>
+                  </div>
+                )}
+                {selectedSubmission.popia_consent !== null && (
+                  <div>
+                    <label className="text-sm font-bold text-gray-600 uppercase tracking-wider mb-1 block">POPIA Consent</label>
+                    <p className="text-gray-900 font-medium">{selectedSubmission.popia_consent ? 'Given' : 'Not given'}</p>
+                  </div>
+                )}
+              </div>
+              {photoUrl && (
+                <div>
+                  <label className="text-sm font-bold text-gray-600 uppercase tracking-wider mb-2 block">Photo</label>
+                  <a href={photoUrl} target="_blank" rel="noopener noreferrer">
+                    <img src={photoUrl} alt="Property or project photo" className="max-h-64 rounded-lg border-2 border-gray-200" />
+                  </a>
+                </div>
+              )}
               <div>
                 <label className="text-sm font-bold text-gray-600 uppercase tracking-wider mb-2 block">Message</label>
                 <div className="bg-gray-50 border-2 border-gray-200 rounded-lg p-4">
