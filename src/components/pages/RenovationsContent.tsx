@@ -12,8 +12,8 @@ import { CONTACT } from '@/lib/contact';
 const renovationServices = [
   {
     id: 'bathroom',
-    img: '/bathroom/bathroom-after.jpeg',
-    alt: 'Finished bathroom renovation with new fixtures',
+    img: '/bathroom/bathroom-during-02.jpeg',
+    alt: 'Bathroom renovation in progress, retiling',
     title: 'Bathroom Renovations',
     desc: 'Complete bathroom remodels in Durban and Pietermaritzburg. Tiling, plumbing, waterproofing, fixtures. One team, one quote.',
     href: '/renovations/bathroom',
