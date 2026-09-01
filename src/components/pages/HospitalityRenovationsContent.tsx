@@ -88,7 +88,7 @@ export default function HospitalityRenovationsContent() {
               <InlineCallbackForm
                 service="Hospitality Renovation"
                 heading="Get a Free Quote"
-                subtext="Leave your name and number. Cebo will call you back to discuss your property."
+                subtext="Leave your name and number. We'll call you back to discuss your property."
               />
             </div>
           </div>

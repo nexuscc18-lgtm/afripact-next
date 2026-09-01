@@ -85,8 +85,7 @@ export default function AboutContent() {
                   <Users className="w-16 h-16 text-orange-500" />
                 </div>
                 <div className="text-center text-black">
-                  <h3 className="text-3xl font-bold mb-2">Cebo Mbatha</h3>
-                  <p className="text-xl font-semibold mb-4">Founder & CEO</p>
+                  <h3 className="text-2xl font-bold mb-4">Founder & CEO</h3>
                   <p className="text-lg leading-relaxed">Leading Afripact Civils with a vision to transform communities through quality infrastructure and dedicated service excellence.</p>
                 </div>
               </div>
@@ -94,7 +93,7 @@ export default function AboutContent() {
             <div className="order-1 lg:order-2">
               <h2 className="text-4xl font-bold mb-6">Leadership</h2>
               <div className="space-y-4 text-gray-300 text-lg leading-relaxed">
-                <p>Under the leadership of Founder and CEO Cebo Mbatha, Afripact Civils is built on years of hard work, personal sacrifice, and the determination to create opportunities within the communities we call home.</p>
+                <p>Afripact Civils is led by our Founder and CEO, built on years of hard work, personal sacrifice, and the determination to create opportunities within the communities we call home.</p>
                 <p>Growing up in KwaZulu-Natal, he saw firsthand how reliable infrastructure changes lives. That understanding drives every decision we make. Our leadership ensures that each project reflects our values: solid workmanship, integrity in every interaction, and a responsibility to uplift the people around us.</p>
                 <p>Our team brings together professionals who&apos;ve faced the same challenges, learned the hard lessons, and remain committed to building work that stands the test of time.</p>
               </div>

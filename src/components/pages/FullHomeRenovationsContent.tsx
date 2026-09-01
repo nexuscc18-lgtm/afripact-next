@@ -101,7 +101,7 @@ export default function FullHomeRenovationsContent() {
               <InlineCallbackForm
                 service="Full Home Renovation"
                 heading="Get a Free Quote"
-                subtext="Leave your name and number. Cebo will call you back to discuss your renovation."
+                subtext="Leave your name and number. We'll call you back to discuss your renovation."
               />
             </div>
           </div>

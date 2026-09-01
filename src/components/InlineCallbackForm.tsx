@@ -45,7 +45,7 @@ export default function InlineCallbackForm({
       <div className="bg-gradient-to-br from-orange-50 to-yellow-50 border-2 border-orange-200 rounded-xl p-8 text-center">
         <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
         <h3 className="text-xl font-bold text-gray-900 mb-2">We&apos;ll call you back</h3>
-        <p className="text-gray-600">Cebo will be in touch shortly to discuss your project.</p>
+        <p className="text-gray-600">We'll be in touch shortly to discuss your project.</p>
         <div className="mt-6 pt-4 border-t border-orange-200">
           <a href={CONTACT.phoneMobileHref} className="flex items-center justify-center gap-2 text-orange-600 font-semibold hover:text-orange-700 transition-colors">
             <Phone className="w-4 h-4" />Can&apos;t wait? Call now: {CONTACT.phoneMobile}

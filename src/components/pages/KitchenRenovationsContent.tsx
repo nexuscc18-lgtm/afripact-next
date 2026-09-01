@@ -101,7 +101,7 @@ export default function KitchenRenovationsContent() {
               <InlineCallbackForm
                 service="Kitchen Renovation"
                 heading="Get a Free Quote"
-                subtext="Leave your name and number. Cebo will call you back to discuss your kitchen project."
+                subtext="Leave your name and number. We'll call you back to discuss your kitchen project."
               />
             </div>
           </div>
