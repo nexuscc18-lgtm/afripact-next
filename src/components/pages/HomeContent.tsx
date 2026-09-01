@@ -18,59 +18,60 @@ export default function HomeContent() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <Image
-            src="/images/hero-roof-framing.jpg"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-          <div className="mb-8 inline-flex justify-center">
-            <img src="/AfriPact.png" alt="Afripact Civils" className="h-40 w-auto" />
+      <section className="relative bg-black overflow-hidden">
+        <div className="flex flex-col lg:flex-row lg:min-h-[90vh]">
+          {/* Hero photo - first in DOM so it's on top by default on mobile */}
+          <div className="relative h-64 sm:h-80 lg:h-auto lg:order-2 lg:w-[55%]">
+            <Image
+              src="/images/hero-roof-framing.jpg"
+              alt="Afripact roof framing renovation project"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 55vw"
+              className="object-cover"
+            />
+            {/* Edge fade at the panel/photo seam */}
+            <div className="hidden lg:block absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black to-transparent" />
+            <div className="lg:hidden absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black to-transparent" />
           </div>
-          <p className="text-orange-500 font-semibold uppercase tracking-widest text-sm mb-4">
-            KwaZulu-Natal
-          </p>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Your Renovation. Done Once. Done Right.
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-4 max-w-4xl mx-auto leading-relaxed">
+
+          {/* Dark content panel */}
+          <div className="relative z-10 bg-black lg:order-1 lg:w-[45%] flex items-center">
+            <div className="w-full px-6 py-12 sm:px-10 sm:py-16 lg:px-12 lg:py-16 xl:px-16">
+              <p className="text-orange-500 font-semibold uppercase tracking-widest text-sm mb-4">
+                KwaZulu-Natal
+              </p>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                Your Renovation. Done Once. Done Right.
+              </h1>
+              <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
+                Bathroom, kitchen, full home, and commercial renovations across KwaZulu-Natal.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button onClick={() => router.push('/renovations')}
+                  className="bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-orange-500/50 hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-orange-500/50 flex items-center justify-center gap-2">
+                  View Renovation Services
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+                <button onClick={goToContact}
+                  className="bg-transparent text-white px-8 py-4 rounded-lg font-bold text-lg border-2 border-white hover:bg-white/10 transition-all focus:outline-none focus:ring-4 focus:ring-white/30">
+                  Get a Free Quote
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Hero supporting copy - moved out of the hero panel for minimalism, kept for SEO */}
+      <section className="py-10 bg-white border-b border-gray-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-gray-600 leading-relaxed">
             Bathroom renovations, kitchen remodels, full home renovations, and commercial refurbishment across KwaZulu-Natal. One contractor managing every trade, from first quote to final handover.
           </p>
-          <p className="text-lg text-gray-400 mb-10 max-w-3xl mx-auto">
+          <p className="text-gray-500 text-sm mt-3">
             CIDB Grade 2CE and 2GB registered. The same standards we bring to civil infrastructure - on your home.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
-            <button onClick={() => router.push('/renovations')}
-              className="bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-orange-500/50 hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-orange-500/50 flex items-center gap-2">
-              View Renovation Services
-              <ArrowRight className="w-5 h-5" />
-            </button>
-            <button onClick={goToContact}
-              className="bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-bold text-lg border-2 border-white/20 hover:bg-white/20 hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-white/30">
-              Get a Free Quote
-            </button>
-          </div>
-          {/* Quick renovation links */}
-          <div className="flex flex-wrap justify-center gap-3">
-            {[
-              { href: '/renovations/bathroom', label: 'Bathroom Renovations' },
-              { href: '/renovations/kitchen', label: 'Kitchen Renovations' },
-              { href: '/renovations/home', label: 'Full Home Renovations' },
-              { href: '/renovations/commercial', label: 'Commercial Renovations' },
-            ].map(({ href, label }) => (
-              <Link key={href} href={href}
-                className="text-sm text-gray-400 hover:text-orange-400 border border-white/10 hover:border-orange-500/50 rounded-full px-4 py-1.5 transition-all">
-                {label}
-              </Link>
-            ))}
-          </div>
         </div>
       </section>
 
