@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Target, Award, Users, Heart, Shield, TrendingUp } from 'lucide-react';
 import { useQuoteModal } from '@/contexts/QuoteModalContext';
@@ -37,12 +38,24 @@ export default function AboutContent() {
                 <p>If you want a build that performs for years, not months … we&apos;re the people you bring in.</p>
               </div>
             </div>
-            <div className="relative">
-              <img src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Construction site" className="rounded-2xl shadow-2xl" loading="lazy" />
-              <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-orange-500 to-yellow-500 text-black p-6 rounded-xl shadow-xl">
-                <p className="text-2xl font-bold">CIDB Grade 2CE & 2GB</p>
-                <p className="text-sm font-semibold">Registered Contractor</p>
+            <div>
+              <div className="relative">
+                <img src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Construction site" className="rounded-2xl shadow-2xl" loading="lazy" />
+                <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-orange-500 to-yellow-500 text-black p-6 rounded-xl shadow-xl">
+                  <p className="text-2xl font-bold">CIDB Grade 2CE & 2GB</p>
+                  <p className="text-sm font-semibold">Registered Contractor</p>
+                </div>
+              </div>
+              <div className="mt-10">
+                <Image
+                  src="/images/vehicle-branded-suv.jpeg"
+                  alt="Afripact Civils branded site vehicle"
+                  width={1200}
+                  height={1600}
+                  className="rounded-2xl shadow-xl w-full h-auto max-w-xs mx-auto"
+                />
+                <p className="mt-3 text-sm text-gray-600 text-center">Afripact Civils site vehicle, KwaZulu-Natal</p>
               </div>
             </div>
           </div>

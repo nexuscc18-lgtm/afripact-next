@@ -1,10 +1,20 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { ArrowRight, CheckCircle, Bath, Phone, ChevronDown } from 'lucide-react';
 import InlineCallbackForm from '@/components/InlineCallbackForm';
 import { CONTACT } from '@/lib/contact';
+
+const projectGallery = [
+  { src: '/bathroom/bathroom-before-03.jpeg', caption: 'Before: water damage and outdated fittings' },
+  { src: '/bathroom/bathroom-during-01.jpeg', caption: 'Mid-renovation: retiling and rewiring' },
+  { src: '/bathroom/bathroom-during-02.jpeg', caption: 'Mid-renovation: retiling and rewiring' },
+  { src: '/bathroom/bathroom-during-03.jpeg', caption: 'Mid-renovation: retiling and rewiring' },
+  { src: '/bathroom/bathroom-during-04.jpeg', caption: 'Mid-renovation: retiling and rewiring' },
+  { src: '/bathroom/bathroom-after.jpeg', caption: 'Finished bathroom, fixtures installed' },
+];
 
 export default function BathroomRenovationsContent() {
   const router = useRouter();
@@ -91,6 +101,36 @@ export default function BathroomRenovationsContent() {
                 subtext="Leave your name and number. Cebo will call you back to discuss your bathroom project."
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">A Recent Bathroom Renovation</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">From strip-out to finished fixtures, see the work from start to finish.</p>
+          </div>
+          <div
+            role="region"
+            aria-label="Bathroom renovation photos, scroll horizontally to see more"
+            tabIndex={0}
+            className="no-scrollbar flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth -mx-4 px-4 sm:-mx-6 sm:px-6 lg:mx-0 lg:px-0"
+          >
+            {projectGallery.map((item) => (
+              <div key={item.src} className="w-44 flex-shrink-0 snap-start sm:w-56 md:w-64">
+                <div className="relative aspect-square rounded-xl overflow-hidden shadow-md">
+                  <Image
+                    src={item.src}
+                    alt={item.caption}
+                    fill
+                    sizes="(max-width: 640px) 176px, (max-width: 768px) 224px, 256px"
+                    className="object-cover"
+                  />
+                </div>
+                <p className="mt-2 text-sm text-gray-600 text-center">{item.caption}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { ArrowRight, CheckCircle, House, Phone, Shield, Clock, Award, ChevronDown } from 'lucide-react';
@@ -85,6 +86,18 @@ export default function FullHomeRenovationsContent() {
                 className="rounded-2xl shadow-2xl w-full mb-8"
                 loading="lazy"
               />
+              <div className="mb-8">
+                <div className="relative w-full aspect-[800/527] rounded-2xl shadow-2xl overflow-hidden">
+                  <Image
+                    src="/images/home-maintenance/roof-repair.jpeg"
+                    alt="Roof tile repair, existing home"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+                <p className="mt-2 text-sm text-gray-600 text-center">Roof tile repair, existing home.</p>
+              </div>
               <InlineCallbackForm
                 service="Full Home Renovation"
                 heading="Get a Free Quote"

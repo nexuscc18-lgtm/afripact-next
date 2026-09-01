@@ -1,9 +1,10 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import {
-  ArrowRight, CheckCircle, Bath, Utensils, House, Store, Hammer,
+  ArrowRight, CheckCircle, Hammer,
   Phone, Shield, Clock, Award,
 } from 'lucide-react';
 import { CONTACT } from '@/lib/contact';
@@ -11,28 +12,32 @@ import { CONTACT } from '@/lib/contact';
 const renovationServices = [
   {
     id: 'bathroom',
-    icon: Bath,
+    img: '/bathroom/bathroom-after.jpeg',
+    alt: 'Finished bathroom renovation with new fixtures',
     title: 'Bathroom Renovations',
     desc: 'Complete bathroom remodels in Durban and Pietermaritzburg. Tiling, plumbing, waterproofing, fixtures. One team, one quote.',
     href: '/renovations/bathroom',
   },
   {
     id: 'kitchen',
-    icon: Utensils,
+    img: '/images/kitchen/kitchen-in-progress.jpeg',
+    alt: 'Kitchen renovation in progress',
     title: 'Kitchen Renovations',
     desc: 'Full kitchen transformations. We handle the plumbing, cabinetry, tiling, and electrical, coordinated under one contractor.',
     href: '/renovations/kitchen',
   },
   {
     id: 'home',
-    icon: House,
+    img: '/images/hero-roof-framing.jpg',
+    alt: 'Roof framing on a home renovation project',
     title: 'Full Home Renovations',
     desc: 'Structural changes, layout reconfiguration, complete interior refurbishment. One contractor managing every trade on your behalf.',
     href: '/renovations/home',
   },
   {
     id: 'commercial',
-    icon: Store,
+    img: '/images/commercial/door-restoration-after.jpeg',
+    alt: 'Restored commercial door installation',
     title: 'Commercial Renovations',
     desc: 'Office, retail, and commercial space refurbishment. Planned around your business operations to minimise downtime.',
     href: '/renovations/commercial',
@@ -90,17 +95,26 @@ export default function RenovationsContent() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {renovationServices.map(({ id, icon: Icon, title, desc, href }) => (
+            {renovationServices.map(({ id, img, alt, title, desc, href }) => (
               <Link key={id} href={href}
-                className="group bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-orange-500 hover:shadow-xl transition-all">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Icon className="w-8 h-8 text-black" />
+                className="group relative block overflow-hidden rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div className="absolute inset-0">
+                  <Image
+                    src={img}
+                    alt={alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">{title}</h3>
-                <p className="text-gray-600 leading-relaxed mb-4">{desc}</p>
-                <div className="flex items-center gap-2 text-orange-500 font-semibold group-hover:gap-3 transition-all">
-                  <span>View Details</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/10" />
+                <div className="relative z-10 p-8">
+                  <h3 className="text-2xl font-bold text-white mb-3">{title}</h3>
+                  <p className="text-white/80 leading-relaxed mb-4">{desc}</p>
+                  <div className="flex items-center gap-2 text-white font-semibold group-hover:gap-3 transition-all">
+                    <span>View Details</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </div>
               </Link>
             ))}

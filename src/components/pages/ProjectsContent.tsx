@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, MapPin, CheckCircle } from 'lucide-react';
 
@@ -163,6 +164,34 @@ export default function ProjectsContent() {
               <CaseStudyCard key={study.id} study={study} />
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="max-w-md mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 gap-4">
+            <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-md">
+              <Image
+                src="/images/commercial/door-restoration-before.jpeg"
+                alt="Door restoration, KwaZulu-Natal - before"
+                fill
+                sizes="(max-width: 640px) 45vw, 220px"
+                className="object-cover"
+              />
+              <span className="absolute top-3 left-3 bg-black/70 text-white text-xs font-bold px-2 py-1 rounded">Before</span>
+            </div>
+            <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-md">
+              <Image
+                src="/images/commercial/door-restoration-after.jpeg"
+                alt="Door restoration, KwaZulu-Natal - after"
+                fill
+                sizes="(max-width: 640px) 45vw, 220px"
+                className="object-cover"
+              />
+              <span className="absolute top-3 left-3 bg-black/70 text-white text-xs font-bold px-2 py-1 rounded">After</span>
+            </div>
+          </div>
+          <p className="mt-4 text-center text-sm text-gray-600">Door restoration, KwaZulu-Natal.</p>
         </div>
       </section>
 

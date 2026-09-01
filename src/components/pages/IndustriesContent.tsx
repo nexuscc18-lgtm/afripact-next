@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { ArrowRight, Building2, HardHat, Factory, CheckCircle, Handshake, Utensils } from 'lucide-react';
@@ -229,6 +230,19 @@ export default function IndustriesContent() {
               </button>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="py-12 bg-gray-50 border-t border-gray-100">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Image
+            src="/images/commercial/commercial-signage-install.jpeg"
+            alt="Commercial signage installation"
+            width={960}
+            height={1280}
+            className="rounded-2xl shadow-lg mx-auto h-auto w-full max-w-xs"
+          />
+          <p className="mt-3 text-sm text-gray-600">Commercial signage installation.</p>
         </div>
       </section>
 
