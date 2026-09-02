@@ -107,10 +107,10 @@ export default function RenovationsContent() {
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/45" />
                 <div className="relative z-10 p-8">
-                  <h3 className="text-2xl font-bold text-white mb-3">{title}</h3>
-                  <p className="text-white/80 leading-relaxed mb-4">{desc}</p>
+                  <h3 className="text-2xl font-bold text-white mb-3 [text-shadow:0_1px_3px_rgba(0,0,0,0.6)]">{title}</h3>
+                  <p className="text-white/80 leading-relaxed mb-4 [text-shadow:0_1px_3px_rgba(0,0,0,0.6)]">{desc}</p>
                   <div className="flex items-center gap-2 text-white font-semibold group-hover:gap-3 transition-all">
                     <span>View Details</span>
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

@@ -104,10 +104,10 @@ export default function HomeContent() {
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/45" />
                 <div className="relative z-10 p-8">
-                  <h3 className="text-xl font-bold text-white mb-3">{title}</h3>
-                  <p className="text-white/80 leading-relaxed mb-3">{desc}</p>
+                  <h3 className="text-xl font-bold text-white mb-3 [text-shadow:0_1px_3px_rgba(0,0,0,0.6)]">{title}</h3>
+                  <p className="text-white/80 leading-relaxed mb-3 [text-shadow:0_1px_3px_rgba(0,0,0,0.6)]">{desc}</p>
                   <div className="flex items-center gap-1 text-white font-semibold group-hover:gap-2 transition-all">
                     <span>Learn more</span>
                     <ArrowRight className="w-4 h-4" />
