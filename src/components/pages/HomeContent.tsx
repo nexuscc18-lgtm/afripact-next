@@ -6,7 +6,7 @@ import Link from 'next/link';
 import {
   ArrowRight, CheckCircle, X, Shovel, Droplet, Map, ClipboardCheck,
   Shield, Clock, Award, Building2, HardHat, Factory, ChevronDown,
-  Bath, Utensils, House, Store, Hammer,
+  Hammer,
 } from 'lucide-react';
 import { CONTACT } from '@/lib/contact';
 
@@ -88,21 +88,30 @@ export default function HomeContent() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {[
-              { icon: Bath, title: 'Bathroom Renovations', desc: 'Full bathroom remodels: tiling, plumbing, waterproofing, and fixtures.', href: '/renovations/bathroom' },
-              { icon: Utensils, title: 'Kitchen Renovations', desc: 'Complete kitchen transformations from demolition through to final finishes.', href: '/renovations/kitchen' },
-              { icon: House, title: 'Full Home Renovations', desc: 'Structural changes, layout redesign, and complete interior refurbishment.', href: '/renovations/home' },
-              { icon: Store, title: 'Commercial Renovations', desc: 'Office, retail, and commercial space refurbishment planned around your operations.', href: '/renovations/commercial' },
-            ].map(({ icon: Icon, title, desc, href }) => (
+              { img: '/bathroom/bathroom-during-02.jpeg', alt: 'Bathroom renovation in progress, retiling', title: 'Bathroom Renovations', desc: 'Full bathroom remodels: tiling, plumbing, waterproofing, and fixtures.', href: '/renovations/bathroom' },
+              { img: '/images/kitchen/kitchen-in-progress.jpeg', alt: 'Kitchen renovation in progress', title: 'Kitchen Renovations', desc: 'Complete kitchen transformations from demolition through to final finishes.', href: '/renovations/kitchen' },
+              { img: '/images/hero-roof-framing.jpg', alt: 'Roof framing on a home renovation project', title: 'Full Home Renovations', desc: 'Structural changes, layout redesign, and complete interior refurbishment.', href: '/renovations/home' },
+              { img: '/images/commercial/door-restoration-after.jpeg', alt: 'Restored commercial door installation', title: 'Commercial Renovations', desc: 'Office, retail, and commercial space refurbishment planned around your operations.', href: '/renovations/commercial' },
+            ].map(({ img, alt, title, desc, href }) => (
               <Link key={title} href={href}
-                className="group bg-gray-50 border-2 border-gray-200 rounded-xl p-8 hover:border-orange-500 hover:shadow-lg transition-all">
-                <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Icon className="w-7 h-7 text-black" />
+                className="group relative block overflow-hidden rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div className="absolute inset-0">
+                  <Image
+                    src={img}
+                    alt={alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
-                <p className="text-gray-700 leading-relaxed mb-3">{desc}</p>
-                <div className="flex items-center gap-1 text-orange-500 text-sm font-semibold group-hover:gap-2 transition-all">
-                  <span>Learn more</span>
-                  <ArrowRight className="w-4 h-4" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/10" />
+                <div className="relative z-10 p-8">
+                  <h3 className="text-xl font-bold text-white mb-3">{title}</h3>
+                  <p className="text-white/80 leading-relaxed mb-3">{desc}</p>
+                  <div className="flex items-center gap-1 text-white font-semibold group-hover:gap-2 transition-all">
+                    <span>Learn more</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </div>
                 </div>
               </Link>
             ))}
