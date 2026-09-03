@@ -12,8 +12,8 @@ import { CONTACT } from '@/lib/contact';
 const renovationServices = [
   {
     id: 'bathroom',
-    img: '/bathroom/bathroom-during-02.jpeg',
-    alt: 'Bathroom renovation in progress, retiling',
+    img: '/bathroom/bathroom-during-04.jpeg',
+    alt: 'Bathroom renovation in progress, tiling and fixtures',
     title: 'Bathroom Renovations',
     desc: 'Complete bathroom remodels in Durban and Pietermaritzburg. Tiling, plumbing, waterproofing, fixtures. One team, one quote.',
     href: '/renovations/bathroom',
@@ -95,10 +95,10 @@ export default function RenovationsContent() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {renovationServices.map(({ id, img, alt, title, desc, href }) => (
+            {renovationServices.map(({ id, img, alt, title, href }) => (
               <Link key={id} href={href}
-                className="group relative block overflow-hidden rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                <div className="absolute inset-0">
+                className="group flex flex-col h-full overflow-hidden rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div className="relative h-56 sm:h-64 lg:h-72 flex-shrink-0 overflow-hidden">
                   <Image
                     src={img}
                     alt={alt}
@@ -107,11 +107,9 @@ export default function RenovationsContent() {
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/45" />
-                <div className="relative z-10 p-8">
-                  <h3 className="text-2xl font-bold text-white mb-3 [text-shadow:0_1px_3px_rgba(0,0,0,0.6)]">{title}</h3>
-                  <p className="text-white/80 leading-relaxed mb-4 [text-shadow:0_1px_3px_rgba(0,0,0,0.6)]">{desc}</p>
-                  <div className="flex items-center gap-2 text-white font-semibold group-hover:gap-3 transition-all">
+                <div className="flex-1 flex flex-col justify-center bg-black px-6 py-3">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">{title}</h3>
+                  <div className="flex items-center gap-2 text-orange-500 font-bold group-hover:gap-3 transition-all">
                     <span>View Details</span>
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </div>
