@@ -95,7 +95,7 @@ export default function Footer() {
               Registered civil engineering and construction company
             </p>
             <a href="https://www.avaloncapitalgroup.co.za/ada" className="text-gray-600 text-xs hover:text-gray-400 transition-colors">
-              Digital partner: Avalon Digital Agency
+              Digital partner: Asset Development Automation
             </a>
           </div>
         </div>
