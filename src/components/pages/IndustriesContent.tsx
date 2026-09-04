@@ -14,7 +14,7 @@ export default function IndustriesContent() {
       <section className="bg-gradient-to-br from-black via-gray-900 to-black text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <nav className="text-sm text-gray-400 mb-6 flex items-center justify-center gap-2">
-            <Link href="/" className="hover:text-orange-500 transition-colors">Home</Link>
+            <Link href="/" className="hover:text-orange-500 transition-colors focus:outline-none focus:text-orange-500">Home</Link>
             <ArrowRight className="w-4 h-4" />
             <span className="text-orange-500">Industries</span>
           </nav>
@@ -57,8 +57,15 @@ export default function IndustriesContent() {
               </button>
             </div>
             <div className="relative">
-              <img src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Property development construction" className="rounded-2xl shadow-2xl w-full" loading="lazy" />
+              <div className="relative w-full h-[340px] rounded-2xl shadow-2xl overflow-hidden">
+                <Image
+                  src="/images/industries/house-construction.jpeg"
+                  alt="House under construction on an Afripact development site"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
               <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-orange-500 to-yellow-500 text-black p-5 rounded-xl shadow-xl hidden md:block">
                 <p className="text-xl font-bold">On Time</p>
                 <p className="text-sm font-semibold">Every Phase</p>
@@ -69,8 +76,15 @@ export default function IndustriesContent() {
           {/* Construction Companies */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
             <div className="order-2 lg:order-1 relative">
-              <img src="https://images.pexels.com/photos/1078884/pexels-photo-1078884.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Construction subcontracting" className="rounded-2xl shadow-2xl w-full" loading="lazy" />
+              <div className="relative w-full h-[340px] rounded-2xl shadow-2xl overflow-hidden">
+                <Image
+                  src="/images/commercial/commerical-work.jpeg"
+                  alt="Afripact crew doing elevated industrial installation work, harnesses and hard hats"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
               <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-orange-500 to-yellow-500 text-black p-5 rounded-xl shadow-xl hidden md:block">
                 <p className="text-xl font-bold">No Delays</p>
                 <p className="text-sm font-semibold">No Rework</p>
@@ -114,7 +128,7 @@ export default function IndustriesContent() {
               <h2 className="text-4xl font-bold text-gray-900 mb-4">Hospitality &amp; Accommodation</h2>
               <h3 className="text-2xl font-semibold text-orange-600 mb-6">Renovations Built Around Your Trading Schedule</h3>
               <p className="text-xl text-gray-700 leading-relaxed mb-8">
-                Hotels, guesthouses, lodges, and restaurants cannot simply close for a renovation. We plan commercial renovation work around your trading calendar, phased delivery, off-season scheduling, or section-by-section handover. Kitchens, bathrooms, dining areas, reception upgrades, and full room refurbishment across KwaZulu-Natal.
+                We renovate hotels, guesthouses, lodges, and restaurants around your trading calendar: phased, off-season, or section-by-section. Kitchens, bathrooms, dining areas, reception, and full rooms, without closing your doors.
               </p>
               <div className="space-y-3 mb-8">
                 {([
@@ -136,8 +150,15 @@ export default function IndustriesContent() {
               </button>
             </div>
             <div className="relative">
-              <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Hospitality and hotel renovation KwaZulu-Natal" className="rounded-2xl shadow-2xl w-full" loading="lazy" />
+              <div className="relative w-full h-[340px] rounded-2xl shadow-2xl overflow-hidden">
+                <Image
+                  src="/images/hospitality/tile-repair-1.jpeg"
+                  alt="Removing damaged tile during a commercial ablution retiling job"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
               <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-orange-500 to-yellow-500 text-black p-5 rounded-xl shadow-xl hidden md:block">
                 <p className="text-xl font-bold">Trading First</p>
                 <p className="text-sm font-semibold">Zero Downtime</p>
@@ -175,8 +196,15 @@ export default function IndustriesContent() {
               </button>
             </div>
             <div className="relative">
-              <img src="https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Industrial site development" className="rounded-2xl shadow-2xl w-full" loading="lazy" />
+              <div className="relative w-full h-[340px] rounded-2xl shadow-2xl overflow-hidden">
+                <Image
+                  src="/images/industries/tlb-earthworks.jpeg"
+                  alt="TLB excavator on an Afripact earthworks site"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
               <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-orange-500 to-yellow-500 text-black p-5 rounded-xl shadow-xl hidden md:block">
                 <p className="text-xl font-bold">Built to Spec</p>
                 <p className="text-sm font-semibold">No Compromises</p>
@@ -186,29 +214,26 @@ export default function IndustriesContent() {
 
           {/* NGOs and Philanthropy */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1 relative">
-              <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Community infrastructure projects" className="rounded-2xl shadow-2xl w-full" loading="lazy" />
-              <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-orange-500 to-yellow-500 text-black p-5 rounded-xl shadow-xl hidden md:block">
-                <p className="text-xl font-bold">Accountable</p>
-                <p className="text-sm font-semibold">Community Impact</p>
-              </div>
-            </div>
-            <div className="order-1 lg:order-2">
+            <div>
               <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-xl flex items-center justify-center mb-6">
                 <Handshake className="w-8 h-8 text-black" />
               </div>
               <h2 className="text-4xl font-bold text-gray-900 mb-4">NGOs &amp; Philanthropy</h2>
               <h3 className="text-2xl font-semibold text-orange-600 mb-6">Infrastructure Implementation You Can Account For</h3>
               <p className="text-xl text-gray-700 leading-relaxed mb-8">
-                We understand what accountable delivery means when donor funds, community trust, and reporting obligations are on the line. Our role is to execute infrastructure work that is visible, measurable, and built to serve the people it is meant for.
+                Donor funds, community trust, and reporting obligations mean delivery has to be accountable. We execute infrastructure work that&apos;s visible, measurable, and properly documented for NGOs, donor-funded organisations, foundations, and community upliftment programmes across KwaZulu-Natal.
               </p>
-              <div className="space-y-3 mb-8">
+              <button onClick={goToContact}
+                className="bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-7 py-3 rounded-lg font-bold text-lg hover:shadow-xl hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-orange-500/50 inline-flex items-center gap-2">
+                Discuss Your Programme <ArrowRight className="w-5 h-5" />
+              </button>
+            </div>
+            <div className="bg-orange-50 border-2 border-orange-200 rounded-2xl shadow-2xl p-8">
+              <div className="space-y-4">
                 {[
                   'Community infrastructure and rehabilitation works',
                   'Educational facility support and public-use building upgrades',
                   'Drainage systems and stormwater management',
-                  'Maintenance works with clear scope and documentation',
                   'Reporting-friendly project delivery and sign-off processes',
                   'CIDB-registered, meeting procurement and due-diligence requirements',
                 ].map((item, i) => (
@@ -218,31 +243,56 @@ export default function IndustriesContent() {
                   </div>
                 ))}
               </div>
-              <div className="bg-orange-50 border border-orange-200 rounded-xl p-5 mb-8">
-                <p className="text-sm font-semibold text-orange-800 mb-2">We work with:</p>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  NGOs, development agencies, donor-funded organisations, CSI-funded initiatives, foundations, social infrastructure programmes, faith-based development initiatives, and community upliftment organisations operating across KwaZulu-Natal and South Africa.
-                </p>
-              </div>
-              <button onClick={goToContact}
-                className="bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-7 py-3 rounded-lg font-bold text-lg hover:shadow-xl hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-orange-500/50 inline-flex items-center gap-2">
-                Discuss Your Programme <ArrowRight className="w-5 h-5" />
-              </button>
             </div>
           </div>
         </div>
       </section>
 
       <section className="py-12 bg-gray-50 border-t border-gray-100">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Image
-            src="/images/commercial/commercial-signage-install.jpeg"
-            alt="Commercial signage installation"
-            width={960}
-            height={1280}
-            className="rounded-2xl shadow-lg mx-auto h-auto w-full max-w-xs"
-          />
-          <p className="mt-3 text-sm text-gray-600">Commercial signage installation.</p>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-10 text-center">Recent Signage Work</h2>
+
+          <div className="grid grid-cols-3 gap-4 max-w-xl mx-auto mb-16">
+            {[
+              { src: '/images/commercial/high-signage-before.jpeg', caption: 'Before: bare wall' },
+              { src: '/images/commercial/high-signage-during-3.jpeg', caption: 'Installing new signage' },
+              { src: '/images/commercial/high-signage-after.jpeg', caption: 'New signage installed' },
+            ].map((item) => (
+              <div key={item.src}>
+                <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-md">
+                  <Image
+                    src={item.src}
+                    alt={item.caption}
+                    fill
+                    sizes="(max-width: 640px) 30vw, 180px"
+                    className="object-cover"
+                  />
+                </div>
+                <p className="mt-2 text-xs text-gray-600 text-center">{item.caption}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-3 gap-4 max-w-xl mx-auto">
+            {[
+              { src: '/images/commercial/commercial-signage-install.jpeg', caption: 'New signage installation, DCB Auto Electrical' },
+              { src: '/images/commercial/commercial-signage-install-2.jpeg', caption: 'New signage installation, DCB Auto Electrical' },
+              { src: '/images/commercial/commercial-signage-install-3.jpeg', caption: 'New signage installation, SABAT Batteries' },
+            ].map((item) => (
+              <div key={item.src}>
+                <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-md">
+                  <Image
+                    src={item.src}
+                    alt={item.caption}
+                    fill
+                    sizes="(max-width: 640px) 30vw, 180px"
+                    className="object-cover"
+                  />
+                </div>
+                <p className="mt-2 text-xs text-gray-600 text-center">{item.caption}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
