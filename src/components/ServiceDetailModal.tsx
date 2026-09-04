@@ -4,6 +4,7 @@ import { X, CheckCircle, FileText } from 'lucide-react';
 import {
   Shovel, Route, Droplet, CloudRain, Square, Building2, Truck,
   Paintbrush, Wrench, Home, Zap, Bath, Fence, Grid3x3,
+  Hammer, Utensils, House, Store,
 } from 'lucide-react';
 import { Service } from '@/types';
 
@@ -17,6 +18,7 @@ interface ServiceDetailModalProps {
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Shovel, Route, Droplet, CloudRain, Square, Building2, Truck,
   Paintbrush, Wrench, Home, Zap, Bath, Fence, Grid3x3,
+  Hammer, Utensils, House, Store,
 };
 
 export default function ServiceDetailModal({
