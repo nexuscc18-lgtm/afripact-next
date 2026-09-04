@@ -9,6 +9,12 @@ import {
 } from 'lucide-react';
 import { CONTACT } from '@/lib/contact';
 
+const roofGallery = [
+  { src: '/images/roof/gallery/roof-damaged-1.jpeg', caption: 'Before: cracked and displaced tiles', objectPosition: 'object-bottom' },
+  { src: '/images/roof/gallery/roof-green.jpeg', caption: 'Mid-repair: sealing and resecuring' },
+  { src: '/images/roof/gallery/roof-1.jpeg', caption: 'Roof maintenance and cleaning' },
+];
+
 const renovationServices = [
   {
     id: 'bathroom',
@@ -148,7 +154,7 @@ export default function RenovationsContent() {
       </section>
 
       {/* Also do roofing */}
-      <section className="py-16 bg-white border-t border-gray-100">
+      <section className="py-20 bg-white border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -172,13 +178,26 @@ export default function RenovationsContent() {
                 Get a Roof Repair Quote <ArrowRight className="w-5 h-5" />
               </button>
             </div>
-            <div>
-              <img
-                src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Roof repair and maintenance KZN"
-                className="rounded-2xl shadow-2xl w-full"
-                loading="lazy"
-              />
+            <div
+              role="region"
+              aria-label="Roof repair photos, scroll horizontally to see more"
+              tabIndex={0}
+              className="no-scrollbar flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth"
+            >
+              {roofGallery.map((item) => (
+                <div key={item.src} className="w-44 flex-shrink-0 snap-start sm:w-56 md:w-64">
+                  <div className="relative aspect-square rounded-xl overflow-hidden shadow-md">
+                    <Image
+                      src={item.src}
+                      alt={item.caption}
+                      fill
+                      sizes="(max-width: 640px) 176px, (max-width: 768px) 224px, 256px"
+                      className={`object-cover${item.objectPosition ? ` ${item.objectPosition}` : ''}`}
+                    />
+                  </div>
+                  <p className="mt-2 text-sm text-gray-600 text-center">{item.caption}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

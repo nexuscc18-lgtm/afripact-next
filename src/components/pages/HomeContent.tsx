@@ -4,9 +4,8 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import {
-  ArrowRight, CheckCircle, X, Shovel, Droplet, Map, ClipboardCheck,
+  ArrowRight, CheckCircle,
   Shield, Clock, Award, Building2, HardHat, Factory, ChevronDown,
-  Hammer,
 } from 'lucide-react';
 import { CONTACT } from '@/lib/contact';
 
@@ -123,90 +122,8 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* What you want */}
+      {/* Trust section - merged from the former "What You Actually Want" / "Why People Choose Us" / "Here's What You Avoid With Us" sections */}
       <section className="py-20 bg-white border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">What You Actually Want</h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-12">
-              Whether it is a bathroom renovation, a full home remodel, or a civil infrastructure project, you want it done correctly, finished on time, and to a standard you can see.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {['No blown timelines', 'No "hidden issues" halfway through', 'No shortcuts on materials or method', 'No contractors who disappear after deposit', 'No rework', 'No excuses'].map((item, index) => (
-              <div key={index} className="bg-gray-50 border-2 border-gray-200 rounded-xl p-6 flex items-start gap-4 hover:border-orange-500 transition-all">
-                <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-                <span className="text-lg font-semibold text-gray-900">{item}</span>
-              </div>
-            ))}
-          </div>
-          <div className="text-center">
-            <button onClick={goToContact}
-              className="bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg hover:shadow-xl hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-orange-500/50">
-              Get a Free Quote
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Roof repair callout */}
-      <section className="py-16 bg-white border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-orange-50 to-yellow-50 border-2 border-orange-200 rounded-2xl p-10 flex flex-col md:flex-row items-center gap-8">
-            <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-xl flex items-center justify-center flex-shrink-0">
-              <Hammer className="w-10 h-10 text-black" />
-            </div>
-            <div className="flex-1 text-center md:text-left">
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">Roof Repair &amp; Maintenance in KZN</h2>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Leaking roofs, failed waterproofing, damaged tiles or sheeting: we repair and maintain residential and commercial roofs across KwaZulu-Natal.
-              </p>
-            </div>
-            <button onClick={goToContact}
-              className="flex-shrink-0 bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-6 py-3 rounded-lg font-bold hover:shadow-xl hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-orange-500/50 inline-flex items-center gap-2">
-              Get a Quote <ArrowRight className="w-5 h-5" />
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Civil capabilities - TIER 2 */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-orange-500 font-semibold uppercase tracking-widest text-sm mb-3">Civil &amp; Infrastructure Capability</p>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Scale and Technical Track Record</h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              Our background in civil infrastructure is the foundation of our renovation quality. The discipline, documentation, and execution standards we apply to large civil projects come with every renovation contract.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {[
-              { icon: Shovel, title: 'Earthworks &amp; Site Preparation', desc: 'Bulk excavation, compaction, and site prep: the groundwork that everything else depends on.' },
-              { icon: Droplet, title: 'Civil Infrastructure', desc: 'Stormwater, drainage, water and sewer reticulation, built to engineering specification.' },
-              { icon: Map, title: 'Roads &amp; Paving', desc: 'Access roads, parking areas, and paving surfaces for residential and commercial sites.' },
-              { icon: ClipboardCheck, title: 'Project Management', desc: 'Planning, sequencing, and coordination handled end-to-end. You do not babysit contractors with us.' },
-            ].map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:border-orange-500 transition-all">
-                <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-lg flex items-center justify-center mb-6">
-                  <Icon className="w-7 h-7 text-black" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4" dangerouslySetInnerHTML={{ __html: title }} />
-                <p className="text-gray-300 leading-relaxed text-lg">{desc}</p>
-              </div>
-            ))}
-          </div>
-          <div className="text-center">
-            <Link href="/services"
-              className="bg-white/10 text-white px-8 py-4 rounded-lg font-bold text-lg border-2 border-white/20 hover:bg-white/20 hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-white/30 inline-flex items-center gap-2">
-              View All Services <ArrowRight className="w-5 h-5" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Why choose us */}
-      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Why People Choose Us</h2>
@@ -215,7 +132,7 @@ export default function HomeContent() {
               If there&apos;s a problem, we fix it. If there&apos;s a deadline, we meet it. If we say it&apos;s done, it&apos;s done properly.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
             {[
               { icon: Shield, title: 'Accountability', desc: 'We take responsibility for the entire project. No finger-pointing. No runaround.' },
               { icon: Clock, title: 'Predictable Timelines', desc: 'You get clear scheduling, weekly updates, and zero surprises.' },
@@ -228,34 +145,20 @@ export default function HomeContent() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* What you avoid */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">Here&apos;s What You Avoid With Us</h2>
+          <div className="flex flex-col sm:flex-row gap-3 max-w-2xl mx-auto mb-12">
+            {['No shortcuts on materials or method', 'No contractors who disappear after deposit'].map((item) => (
+              <div key={item} className="flex-1 bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                <span className="text-sm font-semibold text-gray-700">{item}</span>
+              </div>
+            ))}
           </div>
-          <div className="max-w-4xl mx-auto">
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">Bad civils work costs you twice:</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
-              {['fixing rushed mistakes', 'redoing failed groundwork', 'delays caused by poor planning', 'equipment sitting idle', "crews waiting because the site isn't ready", 'bills stacking because timelines slip'].map((item, index) => (
-                <div key={index} className="bg-red-900/20 border border-red-500/30 rounded-lg p-4 flex items-start gap-3">
-                  <X className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
-                  <span className="text-lg text-gray-200">{item}</span>
-                </div>
-              ))}
-            </div>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed text-center">
-              Our clients choose us because they refuse to pay for the same job twice... Why would you?
-            </p>
-            <div className="text-center">
-              <button onClick={goToContact}
-                className="bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-orange-500/50 hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-orange-500/50">
-                Request A Call
-              </button>
-            </div>
+          <div className="text-center">
+            <p className="text-lg text-gray-600 mb-6">Our clients choose us because they refuse to pay for the same job twice.</p>
+            <button onClick={goToContact}
+              className="bg-gradient-to-r from-orange-500 to-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg hover:shadow-xl hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-orange-500/50">
+              Get a Free Quote
+            </button>
           </div>
         </div>
       </section>
@@ -292,6 +195,49 @@ export default function HomeContent() {
               View All Projects
               <ArrowRight className="w-5 h-5" />
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Civil capabilities - TIER 2 */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="text-orange-500 font-semibold uppercase tracking-widest text-sm mb-3">Civil &amp; Infrastructure Capability</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Scale and Technical Track Record</h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+              Our background in civil infrastructure is the foundation of our renovation quality. The discipline, documentation, and execution standards we apply to large civil projects come with every renovation contract.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {[
+              { img: '/images/civil/tlb-in-mud.jpeg', alt: 'TLB excavator on site, earthworks and site preparation', title: 'Earthworks & Site Preparation' },
+              { img: '/images/civil/civil-drainage.jpeg', alt: 'Stormwater drainage pipe installation', title: 'Civil Infrastructure' },
+              { img: '/project1-after.jpg', alt: 'Completed tar driveway resurfacing', title: 'Roads & Paving' },
+              { img: '/images/roof/roof-1-web.jpeg', alt: 'Roof maintenance and cleaning', title: 'Roof Repair & Maintenance' },
+              { img: '/images/civil/project-management.jpeg', alt: 'Afripact site inspection on an elevated walkway overlooking a commercial site', title: 'Project Management' },
+            ].map(({ img, alt, title }) => (
+              <div key={title} className="flex flex-col h-full overflow-hidden rounded-xl shadow-2xl">
+                <div className="relative h-56 flex-shrink-0 overflow-hidden">
+                  <Image
+                    src={img}
+                    alt={alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="flex-1 flex flex-col justify-center bg-black px-6 py-4">
+                  <h3 className="text-xl font-bold text-white">{title}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center">
+            <Link href="/services"
+              className="bg-white/10 text-white px-8 py-4 rounded-lg font-bold text-lg border-2 border-white/20 hover:bg-white/20 hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-white/30 inline-flex items-center gap-2">
+              View All Services <ArrowRight className="w-5 h-5" />
+            </Link>
           </div>
         </div>
       </section>
