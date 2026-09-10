@@ -89,6 +89,10 @@ export default function Footer() {
         <div className="border-t border-white/10 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm text-center sm:text-left">
             © {currentYear} Afripact Civils (PTY) LTD. All rights reserved.
+            {' '}&middot;{' '}
+            <Link href="/privacy-policy" className="hover:text-orange-500 transition-colors focus:outline-none focus:text-orange-500">
+              Privacy Policy
+            </Link>
           </p>
           <div className="flex flex-col items-center sm:items-end gap-1">
             <p className="text-gray-500 text-xs text-center sm:text-right">

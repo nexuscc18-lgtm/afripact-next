@@ -1,11 +1,14 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { X, Phone, Mail, MapPin, Send, Loader } from 'lucide-react';
 import { ContactFormData } from '@/types';
 import { services } from '@/data/services';
 import { CONTACT } from '@/lib/contact';
 import { BUDGET_BANDS, POPIA_CONSENT_TEXT } from '@/lib/leadForm';
+
+const [popiaConsentBefore, popiaConsentAfter] = POPIA_CONSENT_TEXT.split('POPIA');
 
 const emptyFormData = (defaultService: string, submissionType: 'contact' | 'quote'): ContactFormData => ({
   name: '',
@@ -254,7 +257,11 @@ export default function ContactModal({
               <input type="checkbox" id="modal-popia" required checked={formData.popiaConsent}
                 onChange={(e) => setFormData({ ...formData, popiaConsent: e.target.checked })}
                 className="mt-1 w-4 h-4 rounded border-gray-300 text-orange-500 focus:ring-orange-500" />
-              <label htmlFor="modal-popia" className="text-sm text-gray-600">{POPIA_CONSENT_TEXT} *</label>
+              <label htmlFor="modal-popia" className="text-sm text-gray-600">
+                {popiaConsentBefore}
+                <Link href="/privacy-policy" className="text-orange-600 hover:text-orange-700 underline">POPIA</Link>
+                {popiaConsentAfter} *
+              </label>
             </div>
 
             <button type="submit" disabled={isSubmitting}

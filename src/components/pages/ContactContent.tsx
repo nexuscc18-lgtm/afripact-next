@@ -22,6 +22,8 @@ const projectTypes = [
   'Other Works',
 ];
 
+const [popiaConsentBefore, popiaConsentAfter] = POPIA_CONSENT_TEXT.split('POPIA');
+
 interface AssessmentFormData {
   name: string; company: string; phone: string; email: string;
   projectType: string; suburb: string; preferredStartDate: string; budgetBand: string;
@@ -217,7 +219,11 @@ export default function ContactContent() {
                   <input type="checkbox" id="popiaConsent" required checked={formData.popiaConsent}
                     onChange={(e) => setFormData({ ...formData, popiaConsent: e.target.checked })}
                     className="mt-1 w-4 h-4 rounded border-gray-300 text-orange-500 focus:ring-orange-500" />
-                  <label htmlFor="popiaConsent" className="text-sm text-gray-600">{POPIA_CONSENT_TEXT} *</label>
+                  <label htmlFor="popiaConsent" className="text-sm text-gray-600">
+                    {popiaConsentBefore}
+                    <Link href="/privacy-policy" className="text-orange-600 hover:text-orange-700 underline">POPIA</Link>
+                    {popiaConsentAfter} *
+                  </label>
                 </div>
                 <button type="submit" disabled={isSubmitting}
                   className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 text-black font-bold py-4 px-6 rounded-lg hover:shadow-xl hover:scale-[1.02] transition-all disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-4 focus:ring-orange-500/50 flex items-center justify-center gap-2 text-lg">
