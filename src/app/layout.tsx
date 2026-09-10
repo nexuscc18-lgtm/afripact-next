@@ -4,6 +4,7 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 import './globals.css';
 import { AuthProvider } from '@/contexts/AuthContext';
 import LayoutShell from '@/components/LayoutShell';
+import CallTracking from '@/components/CallTracking';
 import { localBusinessSchema, organizationSchema, websiteSchema } from '@/lib/schema';
 
 const geistSans = Geist({
@@ -83,6 +84,7 @@ export default function RootLayout({
           <LayoutShell>{children}</LayoutShell>
         </AuthProvider>
         <GoogleAnalytics gaId="G-1VK3P3GV4T" />
+        <CallTracking />
       </body>
     </html>
   );
