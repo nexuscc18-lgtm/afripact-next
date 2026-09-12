@@ -79,6 +79,7 @@ export default function RetailRenovationsContent() {
               </div>
             </div>
             <div>
+              {/* TODO: replace with real project photo once available — flagged 2026-09-12 */}
               <img
                 src="https://images.pexels.com/photos/1488463/pexels-photo-1488463.jpeg?auto=compress&cs=tinysrgb&w=800"
                 alt="Retail renovation and shopfitting KwaZulu-Natal"

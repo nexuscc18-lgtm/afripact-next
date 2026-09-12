@@ -80,11 +80,12 @@ export default function HospitalityRenovationsContent() {
             </div>
             <div>
               <img
-                src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Hotel and hospitality renovation KwaZulu-Natal"
-                className="rounded-2xl shadow-2xl w-full mb-8"
+                src="/images/hospitality/tile-repair-2.jpeg"
+                alt="Tile repair, hospitality venue"
+                className="rounded-2xl shadow-2xl w-full"
                 loading="lazy"
               />
+              <p className="mt-2 text-sm text-gray-600 text-center mb-8">Tile repair, hospitality venue.</p>
               <InlineCallbackForm
                 service="Hospitality Renovation"
                 heading="Get a Free Quote"

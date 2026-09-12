@@ -80,11 +80,12 @@ export default function CommercialRenovationsContent() {
             </div>
             <div>
               <img
-                src="https://images.pexels.com/photos/1170412/pexels-photo-1170412.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Commercial renovations KwaZulu-Natal"
-                className="rounded-2xl shadow-2xl w-full mb-8"
+                src="/images/hospitality/tile-repair-3.jpeg"
+                alt="Tile installation and repair, commercial renovation project"
+                className="rounded-2xl shadow-2xl w-full"
                 loading="lazy"
               />
+              <p className="mt-2 text-sm text-gray-600 text-center mb-8">Tile repair and installation, commercial renovation project.</p>
               <InlineCallbackForm
                 service="Commercial Renovation"
                 heading="Get a Free Quote"

@@ -40,13 +40,14 @@ export default function AboutContent() {
             </div>
             <div>
               <div className="relative">
-                <img src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Construction site" className="rounded-2xl shadow-2xl" loading="lazy" />
+                <img src="/images/afripact-project-management.jpeg"
+                  alt="Afripact team member on site, project oversight and inspection" className="rounded-2xl shadow-2xl" loading="lazy" />
                 <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-orange-500 to-yellow-500 text-black p-6 rounded-xl shadow-xl">
                   <p className="text-2xl font-bold">CIDB Grade 2CE & 2GB</p>
                   <p className="text-sm font-semibold">Registered Contractor</p>
                 </div>
               </div>
+              <p className="mt-8 text-sm text-gray-600 text-center">Afripact on site, project oversight and inspection.</p>
               <div className="mt-10">
                 <Image
                   src="/images/vehicle-branded-suv.jpeg"

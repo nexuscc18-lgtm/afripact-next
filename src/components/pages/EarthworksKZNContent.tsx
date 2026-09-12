@@ -39,29 +39,18 @@ export default function EarthworksKZNContent() {
               </div>
             </div>
             <div>
-              <img src="https://images.pexels.com/photos/1078884/pexels-photo-1078884.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Earthworks in KwaZulu-Natal" className="rounded-2xl shadow-2xl w-full" loading="lazy" />
-              <div className="grid grid-cols-2 gap-4 mt-6">
-                <div>
-                  <Image
-                    src="/images/civil/civil-drainage.jpeg"
-                    alt="Drainage installation"
-                    width={1600}
-                    height={1200}
-                    className="rounded-xl shadow-lg w-full h-auto"
-                  />
-                  <p className="mt-2 text-xs sm:text-sm text-gray-600 text-center">Drainage installation</p>
-                </div>
-                <div>
-                  <Image
-                    src="/images/civil/civil-wall-clearing.jpeg"
-                    alt="Site clearing, boundary wall"
-                    width={1600}
-                    height={1200}
-                    className="rounded-xl shadow-lg w-full h-auto"
-                  />
-                  <p className="mt-2 text-xs sm:text-sm text-gray-600 text-center">Site clearing, boundary wall</p>
-                </div>
+              <img src="/images/civil/civil-wall-clearing.jpeg"
+                alt="Site clearing, boundary wall" className="rounded-2xl shadow-2xl w-full" loading="lazy" />
+              <p className="mt-2 text-sm text-gray-600 text-center">Site clearing, boundary wall.</p>
+              <div className="mt-6">
+                <Image
+                  src="/images/civil/civil-drainage.jpeg"
+                  alt="Drainage installation"
+                  width={1600}
+                  height={1200}
+                  className="rounded-xl shadow-lg w-full h-auto"
+                />
+                <p className="mt-2 text-sm text-gray-600 text-center">Drainage installation</p>
               </div>
             </div>
           </div>

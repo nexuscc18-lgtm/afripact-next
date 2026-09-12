@@ -78,7 +78,7 @@ export default function IndustriesContent() {
             <div className="order-2 lg:order-1 relative">
               <div className="relative w-full h-[340px] rounded-2xl shadow-2xl overflow-hidden">
                 <Image
-                  src="/images/commercial/commerical-work.jpeg"
+                  src="/images/commercial/commercial-work.jpeg"
                   alt="Afripact crew doing elevated industrial installation work, harnesses and hard hats"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"

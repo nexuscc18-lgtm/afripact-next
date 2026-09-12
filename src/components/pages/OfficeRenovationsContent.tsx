@@ -79,6 +79,7 @@ export default function OfficeRenovationsContent() {
               </div>
             </div>
             <div>
+              {/* TODO: replace with real project photo once available — flagged 2026-09-12 */}
               <img
                 src="https://images.pexels.com/photos/260931/pexels-photo-260931.jpeg?auto=compress&cs=tinysrgb&w=800"
                 alt="Office renovation and fitout KwaZulu-Natal"

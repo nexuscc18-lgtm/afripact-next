@@ -90,7 +90,7 @@ export default function HomeContent() {
               { img: '/bathroom/bathroom-during-04.jpeg', alt: 'Bathroom renovation in progress, tiling and fixtures', title: 'Bathroom Renovations', desc: 'Full bathroom remodels: tiling, plumbing, waterproofing, and fixtures.', href: '/renovations/bathroom' },
               { img: '/images/kitchen/kitchen-in-progress.jpeg', alt: 'Kitchen renovation in progress', title: 'Kitchen Renovations', desc: 'Complete kitchen transformations from demolition through to final finishes.', href: '/renovations/kitchen' },
               { img: '/images/hero-roof-framing.jpg', alt: 'Roof framing on a home renovation project', title: 'Full Home Renovations', desc: 'Structural changes, layout redesign, and complete interior refurbishment.', href: '/renovations/home' },
-              { img: '/images/commercial/door-restoration-after.jpeg', alt: 'Restored commercial door installation', title: 'Commercial Renovations', desc: 'Office, retail, and commercial space refurbishment planned around your operations.', href: '/renovations/commercial' },
+              { img: '/images/hospitality/tile-repair-3.jpeg', alt: 'Tile repair and installation, commercial renovation project', title: 'Commercial Renovations', desc: 'Office, retail, and commercial space refurbishment planned around your operations.', href: '/renovations/commercial' },
             ].map(({ img, alt, title, href }) => (
               <Link key={title} href={href}
                 className="group flex flex-col h-full overflow-hidden rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300">

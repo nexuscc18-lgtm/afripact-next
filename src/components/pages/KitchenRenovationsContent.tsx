@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { ArrowRight, CheckCircle, Utensils, Phone, ChevronDown } from 'lucide-react';
@@ -80,23 +79,13 @@ export default function KitchenRenovationsContent() {
               </div>
             </div>
             <div>
-              <img
-                src="https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Kitchen renovation KwaZulu-Natal"
-                className="rounded-2xl shadow-2xl w-full mb-8"
-                loading="lazy"
-              />
-              <div className="mb-8">
-                <div className="relative w-full aspect-[800/533] rounded-2xl shadow-2xl overflow-hidden">
-                  <Image
-                    src="/images/kitchen/kitchen-in-progress.jpeg"
-                    alt="Kitchen renovation in progress"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover"
-                  />
-                </div>
-                <p className="mt-2 text-sm text-gray-600 text-center">Kitchen renovation in progress.</p>
+              <div className="relative w-full aspect-[4/3] rounded-2xl shadow-2xl overflow-hidden mb-8">
+                <img
+                  src="/images/kitchen/kitchen-in-progress.jpeg"
+                  alt="Kitchen renovation in progress"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                />
               </div>
               <InlineCallbackForm
                 service="Kitchen Renovation"
